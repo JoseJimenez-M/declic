@@ -1,0 +1,252 @@
+[
+  {
+    "id": "m-126", "kind": "mood", "context": "daily",
+    "sentence": "Il est impératif que le serveur de test ___ (être) de nouveau en ligne demain à 8 h : les clients de Québec se connectent à cette heure-là.",
+    "verb": "être", "mood": "subj", "stem": "irregular",
+    "accepted": ["soit"], "ruleId": "SUBJ-necessity",
+    "why": {
+      "es": "«Il est impératif que» expresa una necesidad, como «hace falta que», y pide subjuntivo: «es indispensable que el servidor esté en línea».",
+      "fr": "« Il est impératif que » exprime la nécessité, comme « il faut que » : il demande toujours le subjonctif, même si l'action est pour demain."
+    }
+  },
+  {
+    "id": "m-127", "kind": "mood", "context": "exam",
+    "sentence": "Je pense que, chaque été, les habitants de Venise ___ (devoir) se faufiler entre des milliers de touristes pour simplement aller au travail.",
+    "verb": "devoir", "mood": "ind",
+    "accepted": ["doivent"], "ruleId": "IND-affirmed-opinion",
+    "why": {
+      "es": "«Je pense que» en afirmativo expresa una opinión firme y va con indicativo, como «pienso que deben abrirse paso entre miles de turistas». Es algo que se repite cada verano: presente.",
+      "fr": "« Je pense que » à la forme affirmative exprime une opinion ferme : indicatif (à la forme négative, on passerait au subjonctif). « Chaque été » indique une situation qui se répète : présent."
+    }
+  },
+  {
+    "id": "m-128", "kind": "mood", "context": "daily",
+    "sentence": "Les matins de tempête, je déplace ma voiture avant que le déneigeur ___ (passer) dans notre rue, vers 7 h.",
+    "verb": "passer", "mood": "subj", "stem": "regular",
+    "accepted": ["passe"], "ruleId": "SUBJ-conjunction",
+    "why": {
+      "es": "«Avant que» siempre pide subjuntivo, igual que «antes de que» en español: «antes de que pase la máquina quitanieves».",
+      "fr": "« Avant que » demande toujours le subjonctif (à l'inverse d'« après que »), et les sujets sont différents (je, le déneigeur)."
+    }
+  },
+  {
+    "id": "m-129", "kind": "mood", "context": "exam",
+    "sentence": "Je ne suis pas convaincu que la semaine de quatre jours, si elle est adoptée l'an prochain, ___ (faire) baisser le stress des employés.",
+    "verb": "faire", "mood": "subj", "stem": "irregular",
+    "accepted": ["fasse"], "ruleId": "SUBJ-doubt",
+    "why": {
+      "es": "«Ne pas être convaincu que» expresa duda y pide subjuntivo, como «no estoy convencido de que la semana de cuatro días reduzca el estrés»; con «je suis convaincu que» iría indicativo.",
+      "fr": "« Ne pas être convaincu que » exprime le doute et demande le subjonctif (à la forme affirmative, « je suis convaincu que » prend l'indicatif)."
+    }
+  },
+  {
+    "id": "m-130", "kind": "mood", "context": "daily",
+    "sentence": "Je suis sûr que, tous les matins, beaucoup de passagers ___ (monter) à Berri-UQAM vers 8 h : la rame est toujours bondée quand elle repart.",
+    "verb": "monter", "mood": "ind",
+    "accepted": ["montent"], "ruleId": "IND-certainty",
+    "why": {
+      "es": "«Je suis sûr que» expresa certeza y va con indicativo, como «estoy seguro de que suben»; solo en negativo («je ne suis pas sûr que») cambiaría a subjuntivo. «Tous les matins» marca un hábito: presente.",
+      "fr": "« Je suis sûr que » exprime la certitude : indicatif (à la forme négative, on passerait au subjonctif). « Tous les matins » marque une habitude : présent."
+    }
+  },
+  {
+    "id": "m-131", "kind": "mood", "context": "exam",
+    "sentence": "Je suis persuadé qu'aujourd'hui les enseignants ___ (comprendre) tout de suite quand un devoir vient d'une IA : le style change d'un paragraphe à l'autre.",
+    "verb": "comprendre", "mood": "ind",
+    "accepted": ["comprennent"], "ruleId": "IND-certainty",
+    "why": {
+      "es": "«Je suis persuadé que» expresa certeza y va con indicativo, como «estoy convencido de que los maestros entienden enseguida»; solo en negativo cambiaría a subjuntivo. «Aujourd'hui» marca el presente.",
+      "fr": "« Je suis persuadé que » exprime la certitude : indicatif (la forme négative demanderait le subjonctif). « Aujourd'hui » indique une situation actuelle, donc le présent."
+    }
+  },
+  {
+    "id": "m-132", "kind": "mood", "context": "daily",
+    "sentence": "J'espère que le dépanneur du coin ___ (recevoir) son lait demain matin : il ne reste plus un seul carton.",
+    "verb": "recevoir", "mood": "ind",
+    "accepted": ["recevra", "reçoit", "va recevoir"], "ruleId": "IND-esperer",
+    "why": {
+      "es": "En español «espero que reciba» lleva subjuntivo, pero «espérer que» va con indicativo, nunca con subjuntivo. La entrega de la leche es mañana: futur (o presente con valor de futuro).",
+      "fr": "« Espérer que » se construit avec l'indicatif, jamais avec le subjonctif. La livraison du lait est prévue demain matin : futur (ou présent à valeur de futur)."
+    }
+  },
+  {
+    "id": "m-133", "kind": "mood", "context": "exam",
+    "sentence": "Il est absurde que les enseignants ___ (perdre) dix minutes chaque matin à vérifier la couleur des chaussettes de l'uniforme.",
+    "verb": "perdre", "mood": "subj", "stem": "regular",
+    "accepted": ["perdent"], "ruleId": "SUBJ-impersonal-judgement",
+    "why": {
+      "es": "«Il est absurde que» es un juicio impersonal, como «es absurdo que», y pide subjuntivo: «es absurdo que los maestros pierdan diez minutos».",
+      "fr": "« Il est absurde que » est un jugement impersonnel, comme « il est dommage que » : subjonctif obligatoire, même pour une habitude (« chaque matin »)."
+    }
+  },
+  {
+    "id": "m-134", "kind": "mood", "context": "daily",
+    "sentence": "Notre propriétaire acceptera de repeindre la cuisine à condition que nous ___ (vouloir) bien renouveler le bail pour un an.",
+    "verb": "vouloir", "mood": "subj", "stem": "irregular",
+    "accepted": ["voulions"], "ruleId": "SUBJ-conjunction",
+    "why": {
+      "es": "«À condition que» siempre pide subjuntivo, igual que «a condición de que» en español: «a condición de que renovemos el contrato».",
+      "fr": "« À condition que » demande toujours le subjonctif, et les sujets sont différents (le propriétaire, nous)."
+    }
+  },
+  {
+    "id": "m-135", "kind": "mood", "context": "exam",
+    "sentence": "Les salariés espèrent que leur employeur ___ (tenir) sa promesse de maintenir deux jours de télétravail par semaine à partir de janvier prochain.",
+    "verb": "tenir", "mood": "ind",
+    "accepted": ["tiendra", "tient", "va tenir"], "ruleId": "IND-esperer",
+    "why": {
+      "es": "En español «esperan que cumpla» lleva subjuntivo, pero «espérer que» va con indicativo, nunca con subjuntivo. La promesa vale desde enero próximo: futur (o presente con valor de futuro).",
+      "fr": "« Espérer que » se construit avec l'indicatif, jamais avec le subjonctif. L'engagement vaut à partir de janvier prochain : futur (ou présent à valeur de futur)."
+    }
+  },
+  {
+    "id": "m-136", "kind": "mood", "context": "daily",
+    "sentence": "Il est regrettable qu'il ___ (falloir) toujours attendre trois semaines pour voir un médecin de famille à Montréal.",
+    "verb": "falloir", "mood": "subj", "stem": "irregular",
+    "accepted": ["faille"], "ruleId": "SUBJ-impersonal-judgement",
+    "why": {
+      "es": "«Il est regrettable que» es un juicio impersonal, como «il est dommage que», y pide subjuntivo: «es lamentable que haya que esperar tanto».",
+      "fr": "« Il est regrettable que » est un jugement impersonnel, comme « il est dommage que » : subjonctif obligatoire, même pour un fait habituel."
+    }
+  },
+  {
+    "id": "m-137", "kind": "mood", "context": "exam",
+    "sentence": "Les enseignants sont consternés que certains élèves ___ (croire) encore tout ce qu'ils lisent sur les réseaux sociaux.",
+    "verb": "croire", "mood": "subj", "stem": "regular",
+    "accepted": ["croient"], "ruleId": "SUBJ-emotion",
+    "why": {
+      "es": "«Être consterné que» expresa un sentimiento y pide subjuntivo, igual que «les consterna que algunos alumnos crean todo lo que leen».",
+      "fr": "« Être consterné que » exprime un sentiment : il est toujours suivi du subjonctif, et les sujets sont différents (les enseignants, certains élèves)."
+    }
+  },
+  {
+    "id": "m-138", "kind": "mood", "context": "daily",
+    "sentence": "Il est crucial que vous ___ (envoyer) votre formulaire de demande de résidence permanente demain : le bureau ferme vendredi.",
+    "verb": "envoyer", "mood": "subj", "stem": "regular",
+    "accepted": ["envoyiez"], "ruleId": "SUBJ-necessity",
+    "why": {
+      "es": "«Il est crucial que» expresa necesidad, como «es crucial que», y pide subjuntivo: «es crucial que ustedes envíen el formulario».",
+      "fr": "« Il est crucial que » exprime la nécessité, comme « il faut que » : il demande toujours le subjonctif, même quand l'action est pour demain."
+    }
+  },
+  {
+    "id": "m-139", "kind": "mood", "context": "exam",
+    "sentence": "La ville ferme le centre-ville aux voitures chaque dimanche pour que les enfants ___ (courir) librement dans les rues.",
+    "verb": "courir", "mood": "subj", "stem": "regular",
+    "accepted": ["courent"], "ruleId": "SUBJ-conjunction",
+    "why": {
+      "es": "«Pour que» expresa finalidad y siempre pide subjuntivo, igual que «para que» en español: «para que los niños corran libremente».",
+      "fr": "« Pour que » exprime le but et demande toujours le subjonctif ; les sujets sont différents (la ville, les enfants), sinon on dirait « pour » + infinitif."
+    }
+  },
+  {
+    "id": "m-140", "kind": "mood", "context": "daily",
+    "sentence": "Il est peu probable que Diego ___ (aller) au bar avec nous vendredi prochain : il travaille jusqu'à minuit.",
+    "verb": "aller", "mood": "subj", "stem": "irregular",
+    "accepted": ["aille"], "ruleId": "SUBJ-doubt",
+    "why": {
+      "es": "«Il est peu probable que» expresa duda (es poco probable) y pide subjuntivo, como «es poco probable que Diego vaya».",
+      "fr": "« Il est peu probable que » exprime le doute : il est toujours suivi du subjonctif, même pour un projet de vendredi prochain."
+    }
+  },
+  {
+    "id": "m-141", "kind": "mood", "context": "exam",
+    "sentence": "Le maire ne croit pas que la ville ___ (pouvoir) financer la gratuité du métro l'an prochain sans augmenter les taxes foncières.",
+    "verb": "pouvoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["puisse"], "ruleId": "SUBJ-negated-opinion",
+    "why": {
+      "es": "«Ne pas croire que» (en negativo) expresa una opinión dudosa y pide subjuntivo, como «el alcalde no cree que la ciudad pueda financiar»; en afirmativo iría indicativo.",
+      "fr": "« Ne pas croire que » à la forme négative exprime une opinion incertaine : subjonctif (à la forme affirmative, l'indicatif)."
+    }
+  },
+  {
+    "id": "m-142", "kind": "mood", "context": "daily",
+    "sentence": "Je crois que mes coéquipiers ___ (boire) toujours trop de café avant les matchs du dimanche matin : ils sont survoltés sur la glace.",
+    "verb": "boire", "mood": "ind",
+    "accepted": ["boivent"], "ruleId": "IND-affirmed-opinion",
+    "why": {
+      "es": "«Je crois que» en afirmativo expresa una opinión firme y va con indicativo, como «creo que toman demasiado café». «Toujours» marca un hábito: presente.",
+      "fr": "« Je crois que » à la forme affirmative exprime une opinion ferme : indicatif (à la forme négative, le subjonctif). Le mot « toujours » marque une habitude : présent."
+    }
+  },
+  {
+    "id": "m-143", "kind": "mood", "context": "exam",
+    "sentence": "Les lundis, à l'école primaire, après que l'enseignante ___ (lire) le texte à voix haute, les élèves le recopient à la main dans leur cahier.",
+    "verb": "lire", "mood": "ind",
+    "accepted": ["a lu"], "ruleId": "IND-apres-que",
+    "why": {
+      "es": "«Après que» va siempre con indicativo, al revés que «avant que». La lectura del texto viene antes de que los alumnos lo copien: es un hecho ya terminado, passé composé.",
+      "fr": "« Après que » se construit avec l'indicatif, jamais avec le subjonctif (à l'inverse d'« avant que »). La lecture précède la copie : fait terminé, donc passé composé."
+    }
+  },
+  {
+    "id": "m-144", "kind": "mood", "context": "daily",
+    "sentence": "Je ne pense pas que tu ___ (devoir) ajouter autant de sel dans les haricots noirs : ta mère les trouvera trop salés.",
+    "verb": "devoir", "mood": "subj", "stem": "regular",
+    "accepted": ["doives"], "ruleId": "SUBJ-negated-opinion",
+    "why": {
+      "es": "«Je ne pense pas que» (en negativo) expresa una opinión dudosa y pide subjuntivo, como «no creo que debas ponerle tanta sal»; en afirmativo iría indicativo.",
+      "fr": "« Ne pas penser que » : l'opinion niée devient incertaine et demande le subjonctif (à la forme affirmative, on aurait l'indicatif)."
+    }
+  },
+  {
+    "id": "m-145", "kind": "mood", "context": "exam",
+    "sentence": "Les parents réclament que chaque fabricant de jeux vidéo ___ (promettre) de supprimer les achats intégrés destinés aux enfants.",
+    "verb": "promettre", "mood": "subj", "stem": "regular",
+    "accepted": ["promette"], "ruleId": "SUBJ-will",
+    "why": {
+      "es": "«Réclamer que» expresa voluntad (una exigencia) y pide subjuntivo, como «los padres reclaman que cada fabricante prometa suprimir las compras integradas».",
+      "fr": "« Réclamer que » exprime la volonté (une exigence) et demande le subjonctif ; ici, les sujets sont différents (les parents, chaque fabricant)."
+    }
+  },
+  {
+    "id": "m-146", "kind": "mood", "context": "daily",
+    "sentence": "Je suis touché que les enfants de ma voisine ___ (savoir) maintenant compter jusqu'à dix en espagnol : je leur donne une petite leçon tous les mercredis.",
+    "verb": "savoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["sachent"], "ruleId": "SUBJ-emotion",
+    "why": {
+      "es": "«Être touché que» expresa una emoción y pide subjuntivo, igual que «me conmueve que los niños de mi vecina sepan contar hasta diez».",
+      "fr": "« Être touché que » exprime un sentiment : il est toujours suivi du subjonctif, et les sujets sont différents (je, les enfants de ma voisine)."
+    }
+  },
+  {
+    "id": "m-147", "kind": "mood", "context": "exam",
+    "sentence": "Quand la nouvelle cantine ___ (ouvrir) ses portes en janvier prochain, les élèves y prendront un repas chaud pour quelques dollars.",
+    "verb": "ouvrir", "mood": "ind",
+    "accepted": ["ouvrira", "aura ouvert"], "ruleId": "IND-quand-futur",
+    "why": {
+      "es": "En español se dice «cuando abra» (subjuntivo), pero en francés «quand» + acción futura (enero próximo) va con indicativo, en futur, como «prendront» en la principal.",
+      "fr": "Après « quand », une action à venir (janvier prochain) se met au futur de l'indicatif, comme « prendront » dans la principale ; jamais de subjonctif."
+    }
+  },
+  {
+    "id": "m-148", "kind": "mood", "context": "daily",
+    "sentence": "Chaque samedi, je rapporte mes courses de l'épicerie à vélo sans que les œufs ___ (tomber) du panier.",
+    "verb": "tomber", "mood": "subj", "stem": "regular",
+    "accepted": ["tombent"], "ruleId": "SUBJ-conjunction",
+    "why": {
+      "es": "«Sans que» siempre pide subjuntivo, igual que «sin que» en español: «sin que se caigan los huevos».",
+      "fr": "« Sans que » demande toujours le subjonctif, et les sujets sont différents (je, les œufs) ; avec le même sujet, on dirait « sans » + infinitif."
+    }
+  },
+  {
+    "id": "m-149", "kind": "mood", "context": "exam",
+    "sentence": "Le ministre désire que chaque élève ___ (avoir) un tuteur pendant son stage de bénévolat obligatoire l'an prochain.",
+    "verb": "avoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["ait"], "ruleId": "SUBJ-will",
+    "why": {
+      "es": "«Désirer que» expresa voluntad y pide subjuntivo, como «el ministro desea que cada alumno tenga un tutor»; los sujetos son diferentes (el ministro, cada alumno).",
+      "fr": "« Désirer que » exprime la volonté et demande le subjonctif ; ici, les sujets sont différents (le ministre, chaque élève)."
+    }
+  },
+  {
+    "id": "m-150", "kind": "mood", "context": "daily",
+    "sentence": "Quand ma sœur ___ (vivre) à Montréal avec nous l'an prochain, nous partagerons un grand appartement près du métro Rosemont.",
+    "verb": "vivre", "mood": "ind",
+    "accepted": ["vivra"], "ruleId": "IND-quand-futur",
+    "why": {
+      "es": "En español se dice «cuando viva» (subjuntivo), pero en francés «quand» + acción futura (el próximo año) va con indicativo, en futur, como «partagerons» en la principal.",
+      "fr": "Après « quand », une action à venir (l'an prochain) se met au futur de l'indicatif, comme « partagerons » dans la principale ; jamais de subjonctif."
+    }
+  }
+]
