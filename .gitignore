@@ -3,6 +3,8 @@ dist/
 *.p12
 *.key
 *.crt
+*.jks
+*.keystore
 *.b64
 .DS_Store
 .claude/
