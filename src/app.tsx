@@ -1,6 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import { loadContent } from "./content/load";
 import type { Item } from "./content/types";
+import { completeIfExhausted, finishItem, type Daily } from "./daily";
 import { localDate } from "./dates";
 import type { Attempt } from "./flow";
 import { buildSession } from "./session";
@@ -17,10 +18,14 @@ const DAILY = 10;
 
 type Screen = { name: "home" } | { name: "exercise"; queue: Item[]; extra: boolean } | { name: "stats" } | { name: "settings" };
 
+/** Copies the day accounting back into the app state, keeping the same object when nothing changed. */
+const withDaily = (prev: AppState, d: Daily): AppState => (d === prev ? prev : { ...prev, today: d.today, completedDays: d.completedDays });
+
 export function App() {
   const [state, setState] = useState<AppState | null>(null);
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   const [screen, setScreen] = useState<Screen>({ name: "home" });
+  const [tick, setTick] = useState(0);
 
   useEffect(() => {
     void Promise.all([loadState(), loadAttempts()]).then(([s, a]) => {
@@ -28,6 +33,31 @@ export function App() {
       setAttempts(a);
     });
   }, []);
+
+  // Android keeps the WebView alive in the background: render again when the app comes back, so the day rolls over after midnight.
+  useEffect(() => {
+    const onVisible = () => {
+      if (document.visibilityState === "visible") setTick((t) => t + 1);
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => document.removeEventListener("visibilitychange", onVisible);
+  }, []);
+
+  /** Every state change goes through a functional update and is persisted right away. */
+  const change = (fn: (prev: AppState) => AppState) =>
+    setState((prev) => {
+      if (!prev) return prev;
+      const next = fn(prev);
+      if (next !== prev) void saveState(next);
+      return next;
+    });
+
+  // With nothing left to practise for the current filter the day counts as done, so the streak never breaks through no fault of the learner.
+  useEffect(() => {
+    if (!state || screen.name !== "home") return;
+    const day = localDate();
+    change((prev) => withDaily(prev, completeIfExhausted(prev, day, buildSession(content.items, prev.states, day, prev.settings.filter, 1).length)));
+  }, [state, screen.name, tick]);
 
   if (!state) {
     return (
@@ -40,15 +70,6 @@ export function App() {
   const today = localDate();
   const doneToday = state.today.date === today ? state.today.done : 0;
   const home = () => setScreen({ name: "home" });
-
-  /** Every state change goes through a functional update and is persisted right away. */
-  const change = (fn: (prev: AppState) => AppState) =>
-    setState((prev) => {
-      if (!prev) return prev;
-      const next = fn(prev);
-      if (next !== prev) void saveState(next);
-      return next;
-    });
 
   const patchSettings = (patch: Partial<Settings>) => change((prev) => ({ ...prev, settings: { ...prev.settings, ...patch } }));
 
@@ -65,16 +86,12 @@ export function App() {
 
   const onItemDone = (item: Item, outcome: Outcome, extra: boolean) =>
     change((prev) => {
+      // The day is decided when the item finishes, not when the round started: a round that crosses midnight counts for the new day.
       const day = localDate();
-      const done = (prev.today.date === day ? prev.today.done : 0) + (extra ? 0 : 1);
-      const completedDays =
-        !extra && done >= DAILY && !prev.completedDays.includes(day) ? [...prev.completedDays, day] : prev.completedDays;
-      return {
-        ...prev,
-        states: { ...prev.states, [item.id]: nextState(prev.states[item.id], outcome, day) },
-        today: { date: day, done },
-        completedDays,
-      };
+      const states = { ...prev.states, [item.id]: nextState(prev.states[item.id], outcome, day) };
+      const remaining = buildSession(content.items, states, day, prev.settings.filter, 1).length;
+      const d = finishItem(prev, day, extra, remaining, DAILY);
+      return { ...prev, states, today: d.today, completedDays: d.completedDays };
     });
 
   const onReport = (itemId: string) =>
@@ -115,10 +132,13 @@ export function App() {
       />
     );
   }
+  const exhausted = buildSession(content.items, state.states, today, state.settings.filter, 1).length === 0;
   return (
     <Home
       doneToday={doneToday}
       daily={DAILY}
+      complete={doneToday >= DAILY || state.completedDays.includes(today)}
+      exhausted={exhausted}
       streak={streak(state.completedDays, today)}
       filter={state.settings.filter}
       onFilter={(filter) => patchSettings({ filter })}
