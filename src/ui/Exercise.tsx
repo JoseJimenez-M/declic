@@ -12,7 +12,7 @@ const LABELS: Record<string, string> = {
   ind: "Indicatif",
   subj: "Subjonctif",
   regular: "Raíz regular",
-  irregular: "Irregular",
+  irregular: "Raíz irregular",
 };
 
 const NEAR_HINT: Record<string, string> = {
@@ -182,6 +182,7 @@ export function Exercise(p: Props) {
             <input
               ref={inputRef}
               type="text"
+              aria-label="Tu respuesta"
               value={input}
               onInput={(e) => setInput((e.target as HTMLInputElement).value)}
               autoFocus

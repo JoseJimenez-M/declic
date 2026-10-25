@@ -72,6 +72,7 @@ describe("parseBackup validation", () => {
     ["JSON null", "null"],
     ["wrong version", withPatch((b) => (b.version = 2))],
     ["missing exportedAt", withPatch((b) => delete b.exportedAt)],
+    ["an exportedAt that is not a date", withPatch((b) => (b.exportedAt = "x"))],
     ["states null", withPatch((b) => (b.states = null))],
     ["states array", withPatch((b) => (b.states = []))],
     ["a state with box 6", withPatch((b) => (b.states["p-test-1"].box = 6))],

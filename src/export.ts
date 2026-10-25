@@ -68,7 +68,7 @@ export function parseBackup(json: string): Backup {
   } catch {
     throw bad("no es JSON");
   }
-  if (!isObject(b) || b.app !== "declic" || b.version !== 1 || typeof b.exportedAt !== "string") throw bad();
+  if (!isObject(b) || b.app !== "declic" || b.version !== 1 || !isTime(b.exportedAt)) throw bad();
   if (!isObject(b.states) || !Object.values(b.states).every(isCardState)) throw bad("estados");
   checkList(b.attempts, isAttempt, "intento");
   checkList(b.completedDays, isDay, "día");
