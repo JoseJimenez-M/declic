@@ -9,7 +9,8 @@ const BUCKETS = ["past:daily", "mood:daily", "past:exam", "mood:exam"];
 export function interleave(items: Item[]): Item[] {
   const buckets = BUCKETS.map((key) => items.filter((i) => `${i.kind}:${i.context}` === key));
   const out: Item[] = [];
-  for (let round = 0; out.length < items.length; round++) {
+  const rounds = Math.max(0, ...buckets.map((b) => b.length));
+  for (let round = 0; round < rounds; round++) {
     for (const b of buckets) if (round < b.length) out.push(b[round]);
   }
   return out;
