@@ -31,6 +31,17 @@ describe("finishItem", () => {
     expect(finishItem(prev, DAY, true, 5, DAILY)).toEqual(at(DAY, 1, [YESTERDAY]));
   });
 
+  it("counts every item of an extra round that finishes after midnight", () => {
+    const first = finishItem(at(YESTERDAY, 10, [YESTERDAY]), DAY, true, 5, DAILY);
+    expect(first).toEqual(at(DAY, 1, [YESTERDAY]));
+    expect(finishItem(first, DAY, true, 5, DAILY)).toEqual(at(DAY, 2, [YESTERDAY]));
+  });
+
+  it("leaves the state unchanged for an extra-round item on a day that is already complete", () => {
+    const prev = at(DAY, 3, [DAY]);
+    expect(finishItem(prev, DAY, true, 5, DAILY)).toBe(prev);
+  });
+
   it("resets done on a new day for a normal item", () => {
     expect(finishItem(at(YESTERDAY, 7), DAY, false, 5, DAILY)).toEqual(at(DAY, 1));
   });
