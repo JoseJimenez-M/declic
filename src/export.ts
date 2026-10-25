@@ -1,4 +1,5 @@
 import type { Rule } from "./content/types";
+import { localDate } from "./dates";
 import type { Attempt } from "./flow";
 import type { CardState } from "./srs";
 import type { Ratio, Stats } from "./stats";
@@ -19,26 +20,70 @@ export function buildBackup(data: Omit<Backup, "app" | "version" | "exportedAt">
   return { app: "declic", version: 1, exportedAt, ...data };
 }
 
+const BAD = "Archivo de respaldo no válido";
+const bad = (why?: string) => new Error(why ? `${BAD}: ${why}` : BAD);
+
+const DATE = /^\d{4}-\d{2}-\d{2}$/;
+const CATEGORIES: readonly unknown[] = ["accent", "agreement", "auxiliary", "ending", "stem", "other", "far"];
+
+type Obj = Record<string, unknown>;
+const isObject = (v: unknown): v is Obj => typeof v === "object" && v !== null && !Array.isArray(v);
+const isInt = (v: unknown, min: number, max: number) => Number.isInteger(v) && (v as number) >= min && (v as number) <= max;
+const isDay = (v: unknown) => typeof v === "string" && DATE.test(v);
+const isTime = (v: unknown) => typeof v === "string" && !Number.isNaN(Date.parse(v));
+const isId = (v: unknown) => typeof v === "string" && v !== "";
+
+const isCardState = (v: unknown) => isObject(v) && isInt(v.box, 1, 5) && isDay(v.due);
+const isReport = (v: unknown) => isObject(v) && isId(v.itemId) && isTime(v.at);
+const isAttempt = (v: unknown) =>
+  isObject(v) &&
+  isTime(v.at) &&
+  isId(v.itemId) &&
+  isInt(v.slot, 0, Infinity) &&
+  (v.kind === "past" || v.kind === "mood") &&
+  typeof v.verb === "string" &&
+  typeof v.ruleId === "string" &&
+  (v.step === 1 || v.step === 2 || v.step === 3) &&
+  typeof v.chosen === "string" &&
+  typeof v.correct === "boolean" &&
+  (v.attempt === 1 || v.attempt === 2) &&
+  typeof v.help === "boolean" &&
+  typeof v.ms === "number" &&
+  Number.isFinite(v.ms) &&
+  v.ms >= 0 &&
+  (v.category === undefined || CATEGORIES.includes(v.category));
+
+/** `what` is the singular Spanish name of an element; it names the first bad one, e.g. "intento 3". */
+function checkList(list: unknown, ok: (v: unknown) => boolean, what: string): void {
+  if (!Array.isArray(list)) throw bad(`${what}s`);
+  const i = list.findIndex((v) => !ok(v));
+  if (i >= 0) throw bad(`${what} ${i + 1}`);
+}
+
+/** Rejects anything that could crash the app later, before the caller replaces any data. */
 export function parseBackup(json: string): Backup {
-  const b = JSON.parse(json);
-  const ok =
-    b?.app === "declic" &&
-    b.version === 1 &&
-    typeof b.exportedAt === "string" &&
-    Array.isArray(b.attempts) &&
-    typeof b.states === "object" &&
-    b.states !== null &&
-    Array.isArray(b.completedDays) &&
-    Array.isArray(b.reports);
-  if (!ok) throw new Error("Archivo de respaldo no válido");
-  return b as Backup;
+  let b: unknown;
+  try {
+    b = JSON.parse(json);
+  } catch {
+    throw bad("no es JSON");
+  }
+  if (!isObject(b) || b.app !== "declic" || b.version !== 1 || typeof b.exportedAt !== "string") throw bad();
+  if (!isObject(b.states) || !Object.values(b.states).every(isCardState)) throw bad("estados");
+  checkList(b.attempts, isAttempt, "intento");
+  checkList(b.completedDays, isDay, "día");
+  checkList(b.reports, isReport, "reporte");
+  return b as unknown as Backup;
 }
 
 const pct = (r: Ratio) => (r.total === 0 ? "n/a" : `${Math.round((100 * r.correct) / r.total)}% (${r.correct}/${r.total})`);
 
+/** A pipe inside a cell would split the Markdown table row. */
+const escapeCell = (s: string) => s.replace(/\|/g, "\\|");
+
 function table(head: string[], rows: string[][]): string[] {
   if (rows.length === 0) return ["None."];
-  return [`| ${head.join(" | ")} |`, `|${head.map(() => "---").join("|")}|`, ...rows.map((r) => `| ${r.join(" | ")} |`)];
+  return [`| ${head.join(" | ")} |`, `|${head.map(() => "---").join("|")}|`, ...rows.map((r) => `| ${r.map(escapeCell).join(" | ")} |`)];
 }
 
 const WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -110,7 +155,7 @@ export function statsMarkdown(stats: Stats, rules: Map<string, Rule>, reports: R
     "",
     "## Reported sentences",
     "",
-    ...(reports.length === 0 ? ["None."] : reports.map((r) => `- \`${r.itemId}\` (${r.at.slice(0, 10)})`)),
+    ...(reports.length === 0 ? ["None."] : reports.map((r) => `- \`${r.itemId}\` (${localDate(new Date(r.at))})`)),
     "",
   ].join("\n");
 }
