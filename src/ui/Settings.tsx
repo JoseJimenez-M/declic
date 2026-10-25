@@ -18,21 +18,27 @@ type Props = {
 
 export function SettingsScreen({ state, attempts, rules, today, onSettings, onImported, onBack }: Props) {
   const [message, setMessage] = useState("");
+  const [busy, setBusy] = useState(false);
 
   const exportAll = async () => {
-    const stats = computeStats(attempts, state.states, state.completedDays, today);
-    const backup = buildBackup(
-      { attempts, states: state.states, completedDays: state.completedDays, reports: state.reports },
-      new Date().toISOString(),
-    );
+    setBusy(true);
     try {
+      const stats = computeStats(attempts, state.states, state.completedDays, today);
+      const backup = buildBackup(
+        { attempts, states: state.states, completedDays: state.completedDays, reports: state.reports },
+        new Date().toISOString(),
+      );
       await shareFiles([
         { name: `declic-stats-${today}.md`, content: statsMarkdown(stats, rules, state.reports, today), mime: "text/markdown" },
         { name: `declic-data-${today}.json`, content: JSON.stringify(backup), mime: "application/json" },
       ]);
-      setMessage("Exportado.");
+      setMessage("Archivos listos para compartir.");
     } catch (e) {
-      setMessage(`No se pudo exportar: ${(e as Error).message}`);
+      const reason = e instanceof Error ? e.message : String(e);
+      // Closing the share sheet is a choice, not an error.
+      setMessage(/cancel/i.test(reason) ? "" : `No se pudo exportar: ${reason}`);
+    } finally {
+      setBusy(false);
     }
   };
 
@@ -41,10 +47,15 @@ export function SettingsScreen({ state, attempts, rules, today, onSettings, onIm
       const backup = parseBackup(await file.text());
       if (!confirm(`Esto reemplaza tus datos con el respaldo del ${backup.exportedAt.slice(0, 10)}. ¿Seguir?`)) return;
       await replaceAll(backup);
-      onImported(await loadState(), await loadAttempts());
-      setMessage("Respaldo importado.");
     } catch (e) {
       setMessage(`No se pudo importar: ${(e as Error).message}`);
+      return;
+    }
+    try {
+      onImported(await loadState(), await loadAttempts());
+      setMessage("Respaldo importado.");
+    } catch {
+      setMessage("Respaldo importado; reinicia la app para ver los datos.");
     }
   };
 
@@ -66,15 +77,17 @@ export function SettingsScreen({ state, attempts, rules, today, onSettings, onIm
       <section class="card">
         <h2>Datos</h2>
         <p class="muted">Exportar crea el resumen en Markdown para Cortex y el respaldo completo en JSON.</p>
-        <button class="primary" onClick={() => void exportAll()}>Exportar</button>
+        <button class="primary" disabled={busy} onClick={() => void exportAll()}>Exportar</button>
         <label class="field">
           Importar respaldo (JSON)
           <input
             type="file"
             accept="application/json,.json"
             onChange={(e) => {
-              const f = (e.target as HTMLInputElement).files?.[0];
-              if (f) void importFile(f);
+              const input = e.target as HTMLInputElement;
+              const f = input.files?.[0];
+              // Clearing the input lets the same file be picked again.
+              if (f) void importFile(f).finally(() => (input.value = ""));
             }}
           />
         </label>

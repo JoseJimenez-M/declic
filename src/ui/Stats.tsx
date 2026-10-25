@@ -1,12 +1,16 @@
+import { useState } from "preact/hooks";
 import type { Rule } from "../content/types";
 import type { Attempt } from "../flow";
 import { computeStats, type Ratio } from "../stats";
 import type { AppState } from "../storage";
+import { Explanation } from "./Explanation";
 
 type Props = { attempts: Attempt[]; state: AppState; rules: Map<string, Rule>; today: string; onBack: () => void };
 
 const pct = (r: Ratio) => (r.total === 0 ? 0 : Math.round((100 * r.correct) / r.total));
 const WEEKDAYS = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
+/** "2026-10-19" becomes "Sem. 19/10". */
+const weekLabel = (week: string) => `Sem. ${week.slice(8, 10)}/${week.slice(5, 7)}`;
 const ERROR_LABELS: Record<string, string> = {
   accent: "Acentos",
   agreement: "Concordancia",
@@ -31,7 +35,7 @@ function Bar({ label, ratio }: { label: string; ratio: Ratio }) {
 
 export function StatsScreen({ attempts, state, rules, today, onBack }: Props) {
   const s = computeStats(attempts, state.states, state.completedDays, today);
-  const lang = state.settings.lang;
+  const [lang, setLang] = useState(state.settings.lang);
   const errors = Object.entries(s.writingErrors).filter(([, n]) => n > 0);
   return (
     <main class="app">
@@ -50,7 +54,7 @@ export function StatsScreen({ attempts, state, rules, today, onBack }: Props) {
         <Bar label="Elegir tiempo o modo" ratio={s.byStep[1]} />
         <Bar label="Auxiliar o raíz" ratio={s.byStep[2]} />
         <Bar label="Escritura" ratio={s.byStep[3]} />
-        <Bar label="PC vs. imparfait" ratio={s.byKind.past} />
+        <Bar label="Passé composé vs. imparfait" ratio={s.byKind.past} />
         <Bar label="Ind. vs. subj." ratio={s.byKind.mood} />
       </section>
       <section class="card">
@@ -60,9 +64,8 @@ export function StatsScreen({ attempts, state, rules, today, onBack }: Props) {
           const rule = rules.get(r.key);
           return (
             <details key={r.key}>
-              <summary>{rule ? rule.title[lang] : r.key}: {r.fails} de {r.total}</summary>
-              {rule && <p>{rule.explanation[lang]}</p>}
-              {rule?.trap && <p class="trap">{rule.trap[lang]}</p>}
+              <summary>{rule ? rule.title[lang] : r.key}: {r.fails} de {r.total} con error</summary>
+              {rule && <Explanation rule={rule} lang={lang} onLang={setLang} />}
             </details>
           );
         })}
@@ -71,7 +74,7 @@ export function StatsScreen({ attempts, state, rules, today, onBack }: Props) {
       </section>
       <section class="card">
         <h2>Verbos</h2>
-        {s.topVerbs.length === 0 ? <p class="muted">Todavía no hay fallos.</p> : s.topVerbs.map((v) => <p key={v.key}>{v.key}: {v.fails} de {v.total}</p>)}
+        {s.topVerbs.length === 0 ? <p class="muted">Todavía no hay fallos.</p> : s.topVerbs.map((v) => <p key={v.key}>{v.key}: {v.fails} de {v.total} con error</p>)}
       </section>
       <section class="card">
         <h2>Cuándo</h2>
@@ -80,7 +83,7 @@ export function StatsScreen({ attempts, state, rules, today, onBack }: Props) {
         <Bar label="Noche" ratio={s.byBand.evening} />
         {s.byWeekday.map((r, i) => <Bar key={WEEKDAYS[i]} label={WEEKDAYS[i]} ratio={r} />)}
         <h2>Por semana</h2>
-        {s.weekly.map((w) => <Bar key={w.week} label={w.week.slice(5)} ratio={w.ratio} />)}
+        {s.weekly.map((w) => <Bar key={w.week} label={weekLabel(w.week)} ratio={w.ratio} />)}
       </section>
     </main>
   );

@@ -12,7 +12,7 @@ export async function shareFiles(files: OutFile[]): Promise<void> {
       const written = await Filesystem.writeFile({ path: f.name, data: f.content, directory: Directory.Cache, encoding: Encoding.UTF8 });
       uris.push(written.uri);
     }
-    await Share.share({ title: "Déclic", files: uris });
+    await Share.share({ title: "Déclic", dialogTitle: "Exportar Déclic", files: uris });
     return;
   }
   for (const f of files) {
