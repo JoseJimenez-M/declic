@@ -40,9 +40,12 @@ function openDb(): Promise<IDBDatabase> {
   if (dbPromise) return dbPromise;
   const promise: Promise<IDBDatabase> = new Promise<IDBDatabase>((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, 1);
-    request.onupgradeneeded = () => {
-      request.result.createObjectStore(ATTEMPTS);
-      request.result.createObjectStore(STATE);
+    request.onupgradeneeded = (event) => {
+      // Only a fresh database needs the stores; a later version must not try to create them again.
+      if (event.oldVersion < 1) {
+        request.result.createObjectStore(ATTEMPTS);
+        request.result.createObjectStore(STATE);
+      }
     };
     request.onsuccess = () => {
       const db = request.result;
@@ -121,8 +124,12 @@ export async function saveState(state: AppState): Promise<void> {
   });
 }
 
-/** Replaces the attempts and the card data with the backup's, keeping `settings` and `today`, all or nothing. */
-export async function replaceAll(backup: Backup): Promise<void> {
+/**
+ * Replaces the attempts and the card data with the backup's, keeping `settings` and `today`, all or nothing.
+ * Resolves with the state it wrote, so the caller can show it even if reading it back fails.
+ */
+export async function replaceAll(backup: Backup): Promise<AppState> {
+  let written: AppState | undefined;
   await inTransaction([ATTEMPTS, STATE], "readwrite", (tx) => {
     const attempts = tx.objectStore(ATTEMPTS);
     const state = tx.objectStore(STATE);
@@ -131,7 +138,10 @@ export async function replaceAll(backup: Backup): Promise<void> {
     const current = state.get("app");
     current.onsuccess = () => {
       const kept = withDefaults(current.result);
-      state.put({ ...kept, states: backup.states, completedDays: backup.completedDays, reports: backup.reports }, "app");
+      written = { ...kept, states: backup.states, completedDays: backup.completedDays, reports: backup.reports };
+      state.put(written, "app");
     };
   });
+  if (!written) throw new Error(STORAGE_ERROR);
+  return written;
 }

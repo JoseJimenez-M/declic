@@ -1,11 +1,11 @@
 import { useState } from "preact/hooks";
 import type { Rule } from "../content/types";
 import { localDate } from "../dates";
-import { buildBackup, parseBackup, statsMarkdown } from "../export";
+import { buildBackup, parseBackup, statsMarkdown, type Backup } from "../export";
 import type { Attempt } from "../flow";
 import { shareFiles } from "../share";
 import { computeStats } from "../stats";
-import { loadAttempts, loadState, replaceAll, type AppState, type Settings } from "../storage";
+import { loadAttempts, replaceAll, type AppState, type Settings } from "../storage";
 
 type Props = {
   state: AppState;
@@ -46,20 +46,25 @@ export function SettingsScreen({ state, attempts, rules, today, onSettings, onIm
   };
 
   const importFile = async (file: File) => {
+    let backup: Backup;
+    let written: AppState;
     try {
-      const backup = parseBackup(await file.text());
+      backup = parseBackup(await file.text());
       if (!confirm(`Esto reemplaza tus datos con el respaldo del ${localDate(new Date(backup.exportedAt))}. ¿Seguir?`)) return;
-      await replaceAll(backup);
+      written = await replaceAll(backup);
     } catch (e) {
       setMessage(`No se pudo importar: ${errorText(e)}`);
       return;
     }
+    // The import is committed: the app must show what was written, or its next save would overwrite the import.
+    let attempts = backup.attempts;
     try {
-      onImported(await loadState(), await loadAttempts());
-      setMessage("Respaldo importado.");
+      attempts = await loadAttempts();
     } catch {
-      setMessage("Respaldo importado; reinicia la app para ver los datos.");
+      // The backup's attempts are what was written, so they stand in for the reload.
     }
+    onImported(written, attempts);
+    setMessage("Respaldo importado.");
   };
 
   return (
@@ -85,7 +90,7 @@ export function SettingsScreen({ state, attempts, rules, today, onSettings, onIm
           Importar respaldo (JSON)
           <input
             type="file"
-            accept="application/json,.json"
+            accept="application/json,.json,text/plain,application/octet-stream"
             onChange={(e) => {
               const input = e.target as HTMLInputElement;
               const f = input.files?.[0];

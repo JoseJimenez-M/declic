@@ -192,6 +192,17 @@ describe("storage", () => {
       expect((await storage.loadAttempts()).map((a) => a.at)).toEqual(["2026-10-25T09:00:00.000Z"]);
     });
 
+    it("resolves with the state it wrote, so the caller does not have to read it back", async () => {
+      const before = await seed();
+      const written = await storage.replaceAll(backup([attempt("2026-10-25T09:00:00.000Z")]));
+      expect(written.states).toEqual({ fresh: { box: 2, due: "2026-10-28" } });
+      expect(written.completedDays).toEqual(["2026-10-25"]);
+      expect(written.reports).toEqual([{ itemId: "fresh-item", at: "2026-10-25T08:00:00.000Z" }]);
+      expect(written.settings).toEqual(before.settings);
+      expect(written.today).toEqual(before.today);
+      expect(written).toEqual(await storage.loadState());
+    });
+
     it("rejects with a real Error when a request fails inside the transaction", async () => {
       await seed();
       // Two adds under one key make the second request fail with a ConstraintError.
