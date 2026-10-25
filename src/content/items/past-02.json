@@ -18,9 +18,9 @@
     "past": "Dans la nuit de jeudi, il était deux heures du matin quand les habitants de l'immeuble se sont réveillés à cause de la fumée.",
     "slots": [
       { "verb": "être", "subject": "il", "tense": "imp", "accepted": ["était"], "ruleId": "IMP-state",
-        "why": { "es": "La hora es un dato de estado, como 'eran las dos de la mañana': imparfait.", "fr": "L'heure se met à l'imparfait : il était deux heures du matin." } },
+        "why": { "es": "La hora es un dato de estado, como 'eran las dos de la mañana': imparfait.", "fr": "L'heure indiquée est un état qui sert de décor à la scène : imparfait." } },
       { "verb": "se réveiller", "subject": "les habitants de l'immeuble", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-pronominal", "accepted": ["se sont réveillés"], "ruleId": "PC-punctual-event",
-        "why": { "es": "Despertarse por el humo es el hecho puntual que ocurre a esa hora: 'se despertaron', passé composé; todo verbo pronominal usa être, con concordancia: réveillés.", "fr": "Se réveiller à cause de la fumée est un événement ponctuel : passé composé ; verbe pronominal, donc être : se sont réveillés." } }
+        "why": { "es": "Despertarse por el humo es el hecho puntual que ocurre a esa hora: 'se despertaron', passé composé.", "fr": "Se réveiller à cause de la fumée est un événement ponctuel qui survient dans ce décor : passé composé." } }
     ]
   },
   {
@@ -30,9 +30,9 @@
     "past": "Ce matin-là, je me suis assis au fond de l'autobus 24, puis j'ai sorti mes écouteurs.",
     "slots": [
       { "verb": "s'asseoir", "subject": "je", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-pronominal", "accepted": ["me suis assis", "me suis assise"], "ruleId": "PC-sequence",
-        "why": { "es": "'Ce matin-là' fija un solo día y 'puis' abre una cadena: 'me senté', passé composé; todo verbo pronominal usa être.", "fr": "« Ce matin-là » fixe un jour précis et « puis » ouvre une séquence : passé composé ; s'asseoir est pronominal, donc être : me suis assis(e)." } },
+        "why": { "es": "'Ce matin-là' fija un solo día y 'puis' abre una cadena: 'me senté', hecho puntual, passé composé.", "fr": "« Ce matin-là » fixe un jour précis et « puis » ouvre une séquence : passé composé." } },
       { "verb": "sortir", "subject": "je", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-transitive-switch", "accepted": ["ai sorti"], "ruleId": "PC-sequence",
-        "why": { "es": "'Puis' encadena el hecho siguiente: 'saqué mis audífonos', passé composé. Con complemento directo (mes écouteurs), sortir usa avoir, no être.", "fr": "« Puis » enchaîne l'événement suivant : passé composé. Avec un COD (mes écouteurs), sortir prend avoir : « j'ai sorti mes écouteurs »." } }
+        "why": { "es": "'Puis' encadena el hecho siguiente: 'saqué mis audífonos', passé composé.", "fr": "« Puis » enchaîne l'événement suivant : passé composé." } }
     ]
   },
   {
@@ -44,7 +44,7 @@
       { "verb": "chercher", "subject": "une famille", "tense": "imp", "accepted": ["cherchait"], "ruleId": "IMP-ongoing-interrupted",
         "why": { "es": "'Depuis une semaine' y 'quand': buscar es la acción larga en curso cuando llegó el vecino: 'buscaba', imparfait.", "fr": "« Depuis une semaine » présente la recherche comme une action en cours quand le voisin arrive : imparfait." } },
       { "verb": "venir", "subject": "un voisin", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est venu"], "ruleId": "PC-interrupting-event",
-        "why": { "es": "La visita del vecino es el hecho puntual que interrumpe la búsqueda: 'vino', passé composé con être (venir es verbo de movimiento).", "fr": "La venue du voisin est l'événement ponctuel qui coupe la recherche : passé composé ; venir prend être : est venu." } }
+        "why": { "es": "La visita del vecino es el hecho puntual que interrumpe la búsqueda: 'vino', passé composé.", "fr": "L'arrivée du voisin est l'événement ponctuel qui coupe la recherche : passé composé." } }
     ]
   },
   {
@@ -56,7 +56,7 @@
       { "verb": "attendre", "subject": "je", "tense": "imp", "accepted": ["attendais"], "ruleId": "IMP-ongoing-interrupted",
         "why": { "es": "Yo estaba esperando mi turno ('esperaba') cuando vi al vecino: acción en curso, imparfait.", "fr": "Attendre son tour est l'action en cours au moment où je vois le voisin : imparfait." } },
       { "verb": "voir", "subject": "je", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["ai vu"], "ruleId": "PC-interrupting-event",
-        "why": { "es": "Ver al vecino es el hecho puntual que interrumpe la espera: 'vi', passé composé con avoir.", "fr": "Voir le voisin est l'événement ponctuel qui interrompt l'attente : passé composé avec avoir." } }
+        "why": { "es": "Ver al vecino es el hecho puntual que interrumpe la espera: 'vi', passé composé.", "fr": "Voir le voisin est l'événement ponctuel qui interrompt l'attente : passé composé." } }
     ]
   },
   {
@@ -68,7 +68,7 @@
       { "verb": "courir", "subject": "un voleur", "tense": "imp", "accepted": ["courait"], "ruleId": "IMP-ongoing-interrupted",
         "why": { "es": "El ladrón iba corriendo ('corría') cuando apareció el mesero: acción en curso, imparfait.", "fr": "Courir est l'action en cours au moment où le serveur surgit : imparfait." } },
       { "verb": "sortir", "subject": "un serveur", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est sorti"], "ruleId": "PC-sudden",
-        "why": { "es": "Soudain marca el hecho imprevisto: 'salió un mesero', passé composé; sortir sin complemento directo ('d'un café' no lo es) usa être.", "fr": "« Soudain » annonce un fait imprévu : passé composé ; « d'un café » n'est pas un COD, donc être : est sorti." } }
+        "why": { "es": "Soudain marca el hecho imprevisto: 'salió un mesero', passé composé.", "fr": "« Soudain » annonce un fait imprévu : passé composé." } }
     ]
   },
   {
@@ -78,9 +78,9 @@
     "past": "Jeudi soir, à l'IGA, j'ai cherché des tomates mûres pendant dix minutes, puis je suis passé à la caisse.",
     "slots": [
       { "verb": "chercher", "subject": "je", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["ai cherché"], "ruleId": "PC-bounded-duration",
-        "why": { "es": "'Pendant dix minutes' le pone principio y fin a la búsqueda: 'busqué tomates maduros durante diez minutos', hecho terminado, passé composé con avoir.", "fr": "« Pendant dix minutes » donne une durée délimitée : la recherche est terminée, donc passé composé avec avoir." } },
+        "why": { "es": "'Pendant dix minutes' le pone principio y fin a la búsqueda: 'busqué tomates maduros durante diez minutos', hecho terminado, passé composé.", "fr": "« Pendant dix minutes » donne une durée délimitée : la recherche est terminée, donc passé composé." } },
       { "verb": "passer", "subject": "je", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["suis passé", "suis passée"], "ruleId": "PC-sequence",
-        "why": { "es": "'Puis' encadena el hecho siguiente: 'pasé a la caja', passé composé; passer sin complemento directo ('à la caisse' no lo es) usa être.", "fr": "« Puis » enchaîne l'événement suivant ; passer sans COD prend être : suis passé(e)." } }
+        "why": { "es": "'Puis' encadena el hecho siguiente: 'pasé a la caja', passé composé.", "fr": "« Puis » enchaîne l'événement suivant : passé composé." } }
     ]
   },
   {
@@ -92,7 +92,7 @@
       { "verb": "attendre", "subject": "les passagers", "tense": "imp", "accepted": ["attendaient"], "ruleId": "IMP-ongoing-interrupted",
         "why": { "es": "'Depuis dix minutes' muestra la espera como algo en curso cuando el conductor abrió: 'esperaban', imparfait.", "fr": "« Depuis dix minutes » présente l'attente comme une action en cours : imparfait." } },
       { "verb": "ouvrir", "subject": "le conducteur", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["a ouvert"], "ruleId": "PC-interrupting-event",
-        "why": { "es": "Abrir las puertas es el hecho puntual que corta la espera: 'abrió', passé composé con avoir.", "fr": "L'ouverture des portes est l'événement ponctuel qui interrompt l'attente : passé composé avec avoir." } }
+        "why": { "es": "Abrir las puertas es el hecho puntual que corta la espera: 'abrió', passé composé.", "fr": "Ouvrir les portes est l'événement ponctuel qui interrompt l'attente : passé composé." } }
     ]
   },
   {
@@ -104,7 +104,7 @@
       { "verb": "faire", "subject": "il", "tense": "imp", "accepted": ["faisait"], "ruleId": "IMP-state",
         "why": { "es": "El frío es el estado del clima en el momento en que llega el autobús: 'hacía veinticinco grados bajo cero', imparfait.", "fr": "La météo au moment où le bus arrive est un état : imparfait." } },
       { "verb": "arriver", "subject": "l'autobus 80", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est arrivé"], "ruleId": "PC-punctual-event",
-        "why": { "es": "La llegada del autobús ese martes, con su retraso medido, es un hecho puntual y terminado: 'llegó', passé composé; arriver usa être.", "fr": "L'arrivée du bus, avec vingt minutes de retard, est un fait ponctuel de mardi matin : passé composé ; arriver prend être : est arrivé." } }
+        "why": { "es": "La llegada del autobús ese martes, con veinte minutos de retraso, es un hecho puntual y terminado: 'llegó', passé composé.", "fr": "Arriver avec vingt minutes de retard est un fait ponctuel de mardi matin : passé composé." } }
     ]
   },
   {
@@ -114,7 +114,7 @@
     "past": "Jeudi soir, à cause de la tempête, des centaines de conducteurs sont restés bloqués pendant huit heures sur l'autoroute 40.",
     "slots": [
       { "verb": "rester", "subject": "des centaines de conducteurs", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["sont restés"], "ruleId": "PC-bounded-duration",
-        "why": { "es": "'Pendant huit heures' delimita la duración: 'se quedaron bloqueados ocho horas', passé composé; rester usa être y concuerda con el sujeto plural: restés.", "fr": "« Pendant huit heures » donne une durée délimitée : passé composé ; rester prend être, accord : restés." } }
+        "why": { "es": "'Pendant huit heures' delimita la duración: 'se quedaron bloqueados ocho horas', passé composé.", "fr": "« Pendant huit heures » donne une durée délimitée : le fait est terminé, donc passé composé." } }
     ]
   },
   {
@@ -124,7 +124,7 @@
     "past": "L'an dernier, ma mère est venue deux fois de Guadalajara pour me voir.",
     "slots": [
       { "verb": "venir", "subject": "ma mère", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est venue"], "ruleId": "PC-counted-repetition",
-        "why": { "es": "'Deux fois' cuenta las visitas del año pasado: 'vino dos veces', passé composé; venir usa être y concuerda con el sujeto femenino: venue.", "fr": "« Deux fois » compte les visites : le fait est terminé, donc passé composé ; venir prend être, accord : est venue." } }
+        "why": { "es": "'Deux fois' cuenta las visitas del año pasado: 'vino dos veces', hecho terminado, passé composé.", "fr": "« Deux fois » compte les visites : le fait est terminé, donc passé composé." } }
     ]
   },
   {
@@ -134,9 +134,9 @@
     "past": "Samedi matin, une cycliste suivait la piste cyclable de la rue Rachel quand, soudain, un automobiliste a ouvert sa portière.",
     "slots": [
       { "verb": "suivre", "subject": "une cycliste", "tense": "imp", "accepted": ["suivait"], "ruleId": "IMP-ongoing-interrupted",
-        "why": { "es": "La ciclista iba por la ciclovía ('seguía') cuando pasó algo: acción en curso, imparfait.", "fr": "Suivre la piste cyclable est l'action en cours au moment où la portière s'ouvre : imparfait." } },
+        "why": { "es": "La ciclista iba por la ciclovía ('seguía') cuando el automovilista abrió la puerta: acción en curso, imparfait.", "fr": "Suivre la piste cyclable est l'action en cours au moment où la portière s'ouvre : imparfait." } },
       { "verb": "ouvrir", "subject": "un automobiliste", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["a ouvert"], "ruleId": "PC-sudden",
-        "why": { "es": "Soudain marca el hecho imprevisto: 'abrió la puerta', passé composé con avoir.", "fr": "« Soudain » annonce un fait imprévu qui coupe l'action : passé composé avec avoir." } }
+        "why": { "es": "Soudain marca el hecho imprevisto: 'abrió la puerta', passé composé.", "fr": "« Soudain » annonce un fait imprévu qui coupe l'action : passé composé." } }
     ]
   },
   {
@@ -148,7 +148,7 @@
       { "verb": "parler", "subject": "nous", "tense": "imp", "accepted": ["parlions"], "ruleId": "IMP-ongoing-interrupted",
         "why": { "es": "Estábamos hablando de la migración ('hablábamos') cuando entró mi colega: acción en curso, imparfait.", "fr": "Parler de la migration est l'action en cours au moment où la collègue entre : imparfait." } },
       { "verb": "entrer", "subject": "une collègue", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est entrée"], "ruleId": "PC-interrupting-event",
-        "why": { "es": "La entrada de la colega es el hecho puntual que interrumpe: 'entró', passé composé con être; concuerda con el sujeto femenino: entrée.", "fr": "L'entrée de la collègue est l'événement ponctuel qui interrompt la discussion : passé composé ; entrer prend être, accord : entrée." } }
+        "why": { "es": "La entrada de la colega es el hecho puntual que interrumpe: 'entró', passé composé.", "fr": "L'arrivée de la collègue est l'événement ponctuel qui interrompt la discussion : passé composé." } }
     ]
   },
   {
@@ -158,9 +158,9 @@
     "past": "Cette semaine, le chanteur est tombé malade la veille du concert, puis les organisateurs ont écrit aux fans pour annuler la soirée.",
     "slots": [
       { "verb": "tomber", "subject": "le chanteur", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est tombé"], "ruleId": "PC-punctual-event",
-        "why": { "es": "Enfermarse la víspera es un hecho único: 'se enfermó', passé composé; tomber malade usa être.", "fr": "Tomber malade est un événement ponctuel (« la veille du concert ») ; tomber prend être : est tombé." } },
+        "why": { "es": "Enfermarse la víspera del concierto ('la veille du concert') es un hecho único: 'se enfermó', passé composé.", "fr": "Tomber malade est un événement ponctuel (« la veille du concert ») : passé composé." } },
       { "verb": "écrire", "subject": "les organisateurs", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["ont écrit"], "ruleId": "PC-sequence",
-        "why": { "es": "'Puis' encadena el hecho siguiente: 'escribieron a los fans', passé composé con avoir.", "fr": "« Puis » enchaîne l'événement suivant : passé composé avec avoir." } }
+        "why": { "es": "'Puis' encadena el hecho siguiente: 'escribieron a los fans', passé composé.", "fr": "« Puis » enchaîne l'événement suivant : passé composé." } }
     ]
   },
   {
@@ -170,7 +170,7 @@
     "past": "Ce jour-là, je suis retourné deux fois à la pharmacie pour mon ordonnance.",
     "slots": [
       { "verb": "retourner", "subject": "je", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["suis retourné", "suis retournée"], "ruleId": "PC-counted-repetition",
-        "why": { "es": "'Deux fois' cuenta las veces y 'ce jour-là' cierra el día: 'regresé dos veces', passé composé con être (retourner sin complemento directo).", "fr": "« Deux fois » compte les retours : fait terminé, passé composé ; retourner sans COD prend être : suis retourné(e)." } }
+        "why": { "es": "'Deux fois' cuenta las veces y 'ce jour-là' cierra el día: 'regresé dos veces', passé composé.", "fr": "« Deux fois » compte les retours : fait terminé, passé composé." } }
     ]
   },
   {
@@ -180,9 +180,9 @@
     "past": "Mardi dernier, une dame a oublié son sac dans un taxi, et le soir même, le chauffeur est retourné chez elle avec le sac.",
     "slots": [
       { "verb": "oublier", "subject": "une dame", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["a oublié"], "ruleId": "PC-punctual-event",
-        "why": { "es": "Olvidar el bolso en el taxi es un hecho único: 'olvidó', passé composé con avoir.", "fr": "Oublier le sac dans le taxi est un fait ponctuel : passé composé avec avoir." } },
+        "why": { "es": "Olvidar la bolsa en el taxi es un hecho único: 'olvidó', passé composé.", "fr": "Oublier le sac dans le taxi est un fait ponctuel : passé composé." } },
       { "verb": "retourner", "subject": "le chauffeur", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est retourné"], "ruleId": "PC-sequence",
-        "why": { "es": "'Le soir même' encadena el hecho siguiente: 'regresó a su casa', passé composé con être (retourner sin complemento directo; 'avec le sac' lleva preposición).", "fr": "« Le soir même » enchaîne l'événement suivant ; retourner sans COD (« avec le sac » est introduit par une préposition) prend être : est retourné." } }
+        "why": { "es": "'Le soir même' encadena el hecho siguiente: 'regresó a su casa', passé composé.", "fr": "« Le soir même » enchaîne l'événement suivant : passé composé." } }
     ]
   },
   {
@@ -192,9 +192,9 @@
     "past": "En janvier, j'ai envoyé mon dossier d'immigration, puis j'ai reçu un accusé de réception deux jours plus tard.",
     "slots": [
       { "verb": "envoyer", "subject": "je", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["ai envoyé"], "ruleId": "PC-sequence",
-        "why": { "es": "Enviar el expediente es el primer hecho de la cadena (puis): 'envié', passé composé con avoir.", "fr": "Envoyer le dossier est le premier événement de la séquence (puis) : passé composé avec avoir." } },
+        "why": { "es": "Enviar el expediente es el primer hecho de la cadena (puis): 'envié', passé composé.", "fr": "Envoyer le dossier est le premier événement de la séquence (puis) : passé composé." } },
       { "verb": "recevoir", "subject": "je", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["ai reçu"], "ruleId": "PC-sequence",
-        "why": { "es": "'Puis' y 'deux jours plus tard' marcan el hecho siguiente: 'recibí', passé composé con avoir.", "fr": "« Puis » enchaîne l'événement suivant : passé composé avec avoir." } }
+        "why": { "es": "'Puis' y 'deux jours plus tard' marcan el hecho siguiente: 'recibí', passé composé.", "fr": "« Puis » enchaîne l'événement suivant : passé composé." } }
     ]
   },
   {
@@ -204,9 +204,9 @@
     "past": "Dimanche matin, à Gatineau, un pompier est monté dans un grand érable, puis il a descendu un chat coincé là-haut depuis deux jours.",
     "slots": [
       { "verb": "monter", "subject": "un pompier", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est monté"], "ruleId": "PC-sequence",
-        "why": { "es": "Subir al árbol es el primer hecho de la cadena (puis): 'subió', passé composé; monter sin complemento directo ('dans un grand érable' lleva preposición) usa être.", "fr": "Monter dans l'érable est le premier événement de la séquence : passé composé ; monter sans COD prend être : est monté." } },
+        "why": { "es": "Subir al árbol es el primer hecho de la cadena (puis): 'subió', passé composé.", "fr": "Monter dans l'érable est le premier événement de la séquence : passé composé." } },
       { "verb": "descendre", "subject": "il", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-transitive-switch", "accepted": ["a descendu"], "ruleId": "PC-sequence",
-        "why": { "es": "'Puis' encadena el segundo hecho: 'bajó al gato', passé composé. Con complemento directo (un chat), descendre usa avoir, no être.", "fr": "« Puis » enchaîne le deuxième événement : passé composé. Avec un COD (un chat), descendre prend avoir : « il a descendu un chat »." } }
+        "why": { "es": "'Puis' encadena el segundo hecho: 'bajó al gato', passé composé.", "fr": "« Puis » enchaîne le deuxième événement : passé composé." } }
     ]
   },
   {
@@ -218,7 +218,7 @@
       { "verb": "se promener", "subject": "nous", "tense": "imp", "accepted": ["nous promenions"], "ruleId": "IMP-ongoing-interrupted",
         "why": { "es": "Nos estábamos paseando ('paseábamos') cuando vimos los fuegos artificiales: acción en curso, imparfait.", "fr": "Se promener est l'action en cours au moment où le feu d'artifice apparaît : imparfait." } },
       { "verb": "voir", "subject": "nous", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["avons vu"], "ruleId": "PC-interrupting-event",
-        "why": { "es": "Ver los fuegos artificiales es el hecho puntual que interrumpe el paseo: 'vimos', passé composé con avoir.", "fr": "Voir le feu d'artifice est l'événement ponctuel qui interrompt la promenade : passé composé avec avoir." } }
+        "why": { "es": "Ver los fuegos artificiales es el hecho puntual que interrumpe el paseo: 'vimos', passé composé.", "fr": "Voir le feu d'artifice est l'événement ponctuel qui interrompt la promenade : passé composé." } }
     ]
   },
   {
@@ -228,9 +228,9 @@
     "past": "Jeudi soir, il pleuvait à verse quand, tout à coup, le quartier a perdu le courant.",
     "slots": [
       { "verb": "pleuvoir", "subject": "il", "tense": "imp", "accepted": ["pleuvait"], "ruleId": "IMP-state",
-        "why": { "es": "La lluvia es el clima de fondo cuando se fue la luz: 'llovía a cántaros', imparfait.", "fr": "La pluie est la météo de fond au moment où le courant saute : imparfait." } },
+        "why": { "es": "La lluvia es el clima de fondo cuando se fue la luz: 'llovía a cántaros', imparfait.", "fr": "La pluie est la météo de fond au moment de la panne de courant : imparfait." } },
       { "verb": "perdre", "subject": "le quartier", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["a perdu"], "ruleId": "PC-sudden",
-        "why": { "es": "'Tout à coup' anuncia el hecho imprevisto: 'perdió la luz', passé composé con avoir.", "fr": "« Tout à coup » annonce un fait imprévu : passé composé avec avoir." } }
+        "why": { "es": "'Tout à coup' anuncia el hecho imprevisto: 'perdió la luz', passé composé.", "fr": "« Tout à coup » annonce un fait imprévu : passé composé." } }
     ]
   },
   {
@@ -242,7 +242,7 @@
       { "verb": "faire", "subject": "il", "tense": "imp", "accepted": ["faisait"], "ruleId": "IMP-state",
         "why": { "es": "'Déjà' y 'au départ' fijan el clima en ese momento: 'hacía treinta grados', imparfait.", "fr": "La météo au moment du départ est un état de décor, renforcé par « déjà » : imparfait." } },
       { "verb": "réussir", "subject": "je", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["ai réussi"], "ruleId": "PC-punctual-event",
-        "why": { "es": "'Mais' presenta lo que logré esa vez: 'logré terminar', hecho puntual, passé composé con avoir.", "fr": "Réussir à finir est un résultat ponctuel de ce dimanche-là : passé composé avec avoir." } }
+        "why": { "es": "'Mais' presenta lo que logré esa vez: 'logré terminar', hecho puntual, passé composé.", "fr": "Réussir à finir est un résultat ponctuel de ce dimanche-là : passé composé." } }
     ]
   },
   {
@@ -252,9 +252,9 @@
     "past": "L'été dernier, un ouvrier conduisait une pelleteuse sur un chantier de Québec quand, soudain, il a trouvé des ossements anciens dans la terre.",
     "slots": [
       { "verb": "conduire", "subject": "un ouvrier", "tense": "imp", "accepted": ["conduisait"], "ruleId": "IMP-ongoing-interrupted",
-        "why": { "es": "El obrero manejaba la excavadora ('manejaba') cuando pasó algo: acción en curso, imparfait.", "fr": "Conduire la pelleteuse est l'action en cours au moment de la découverte : imparfait." } },
+        "why": { "es": "El obrero iba manejando la excavadora ('manejaba') cuando encontró los huesos: acción en curso, imparfait.", "fr": "Conduire la pelleteuse est l'action en cours au moment de la découverte : imparfait." } },
       { "verb": "trouver", "subject": "il", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["a trouvé"], "ruleId": "PC-sudden",
-        "why": { "es": "Soudain marca el hecho imprevisto: 'encontró huesos', passé composé con avoir.", "fr": "« Soudain » annonce un fait imprévu qui coupe l'action : passé composé avec avoir." } }
+        "why": { "es": "Soudain marca el hecho imprevisto: 'encontró huesos', passé composé.", "fr": "« Soudain » annonce un fait imprévu qui coupe l'action : passé composé." } }
     ]
   },
   {
@@ -266,7 +266,7 @@
       { "verb": "habiter", "subject": "mes parents", "tense": "imp", "accepted": ["habitaient"], "ruleId": "IMP-background",
         "why": { "es": "'Encore' muestra que mis papás vivían ahí todavía cuando nació mi hermana: es el escenario, 'vivían', imparfait.", "fr": "« Encore » décrit la situation de fond au moment de la naissance : imparfait." } },
       { "verb": "naître", "subject": "ma sœur", "tense": "pc", "aux": "etre", "auxRuleId": "AUX-etre-motion", "accepted": ["est née"], "ruleId": "PC-punctual-event",
-        "why": { "es": "El nacimiento es un hecho puntual: 'nació', passé composé; naître usa être y concuerda con el sujeto femenino: née.", "fr": "La naissance est un événement ponctuel ; naître prend être, accord : née." } }
+        "why": { "es": "El nacimiento es un hecho puntual: 'nació', passé composé.", "fr": "La naissance est un événement ponctuel : passé composé." } }
     ]
   },
   {
@@ -278,7 +278,7 @@
       { "verb": "être", "subject": "une retraitée de Sherbrooke", "tense": "imp", "accepted": ["était"], "ruleId": "IMP-background",
         "why": { "es": "Estar en el dépanneur es la situación de fondo cuando llega la llamada: 'estaba', imparfait.", "fr": "Être au dépanneur décrit la situation de fond au moment de l'appel : imparfait." } },
       { "verb": "recevoir", "subject": "elle", "tense": "pc", "aux": "avoir", "auxRuleId": "AUX-avoir-default", "accepted": ["a reçu"], "ruleId": "PC-punctual-event",
-        "why": { "es": "Recibir la llamada es el hecho puntual que ocurre en ese momento: 'recibió', passé composé con avoir.", "fr": "Recevoir l'appel est l'événement ponctuel qui survient dans ce décor : passé composé avec avoir." } }
+        "why": { "es": "Recibir la llamada es el hecho puntual que ocurre en ese momento: 'recibió', passé composé.", "fr": "Recevoir l'appel est l'événement ponctuel qui survient dans ce décor : passé composé." } }
     ]
   },
   {

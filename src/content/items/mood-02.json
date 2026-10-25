@@ -5,8 +5,8 @@
     "verb": "descendre", "mood": "subj", "stem": "regular",
     "accepted": ["descendes"], "ruleId": "SUBJ-necessity",
     "why": {
-      "es": "«Il est essentiel que» expresa necesidad y pide subjuntivo, como «es esencial que bajes». Radical de «ils descendent»: que tu descendes.",
-      "fr": "« Il est essentiel que » exprime la nécessité et demande le subjonctif. Descendre garde le radical d'« ils descendent » : que tu descendes."
+      "es": "«Il est essentiel que» expresa necesidad y pide subjuntivo, como «es esencial que te bajes».",
+      "fr": "« Il est essentiel que » exprime la nécessité et demande le subjonctif."
     }
   },
   {
@@ -15,8 +15,8 @@
     "verb": "lire", "mood": "ind",
     "accepted": ["lisent"], "ruleId": "IND-affirmed-opinion",
     "why": {
-      "es": "«Je pense que» en afirmativo expresa una opinión firme y va con indicativo, como «pienso que leen». «De nos jours» sitúa la acción en el presente: ils lisent.",
-      "fr": "« Je pense que » à la forme affirmative exprime une opinion ferme : indicatif. « De nos jours » situe l'action dans le présent : ils lisent."
+      "es": "«Je pense que» en afirmativo expresa una opinión firme y va con indicativo, como «pienso que leen». «De nos jours» sitúa la acción en el presente.",
+      "fr": "« Je pense que » à la forme affirmative exprime une opinion ferme : indicatif. « De nos jours » situe l'action dans le présent."
     }
   },
   {
@@ -25,8 +25,8 @@
     "verb": "vendre", "mood": "subj", "stem": "regular",
     "accepted": ["vende"], "ruleId": "SUBJ-emotion",
     "why": {
-      "es": "«Être surpris que» expresa una emoción y pide subjuntivo, como «me sorprende que venda». Radical de «ils vendent»: que le dépanneur vende.",
-      "fr": "« Être surpris que » exprime un sentiment et demande le subjonctif. Vendre garde le radical d'« ils vendent » : que le dépanneur vende."
+      "es": "«Être surpris que» expresa una emoción y pide subjuntivo, como «me sorprende que venda».",
+      "fr": "« Être surpris que » exprime un sentiment et demande le subjonctif."
     }
   },
   {
@@ -35,8 +35,8 @@
     "verb": "réussir", "mood": "subj", "stem": "regular",
     "accepted": ["réussisse"], "ruleId": "SUBJ-doubt",
     "why": {
-      "es": "«Douter que» expresa duda y pide subjuntivo, como «dudo que logre». Radical de «ils réussissent»: que la gratuité réussisse.",
-      "fr": "« Douter que » exprime le doute et demande le subjonctif. Réussir garde le radical d'« ils réussissent » : que la gratuité réussisse."
+      "es": "«Douter que» expresa duda y pide subjuntivo, como «dudo que logre».",
+      "fr": "« Douter que » exprime le doute et demande le subjonctif, même quand l'action est à venir (« l'an prochain »)."
     }
   },
   {
@@ -45,8 +45,8 @@
     "verb": "être", "mood": "ind",
     "accepted": ["serons"], "ruleId": "IND-quand-futur",
     "why": {
-      "es": "En español dirías «cuando estemos» (subjuntivo), pero en francés «quand» + acción futura va con futur: quand nous serons. La principal también está en futuro («préparera»).",
-      "fr": "Après « quand », une action à venir se met au futur, comme dans la principale (« préparera ») : quand nous serons. Jamais le subjonctif."
+      "es": "En español dirías «cuando estemos» (subjuntivo), pero en francés «quand» + acción futura va con indicativo, en futuro, como la principal («préparera»).",
+      "fr": "Après « quand », une action à venir se met au futur de l'indicatif, comme dans la principale (« préparera ») ; jamais le subjonctif."
     }
   },
   {
@@ -55,8 +55,8 @@
     "verb": "faire", "mood": "subj", "stem": "irregular",
     "accepted": ["fasse"], "ruleId": "SUBJ-will",
     "why": {
-      "es": "«Exiger que» expresa voluntad y pide subjuntivo, como «exigen que cada alumno haga». «Faire» es irregular: que chaque élève fasse.",
-      "fr": "« Exiger que » exprime la volonté et demande le subjonctif, car le sujet change. Faire est irrégulier : que chaque élève fasse."
+      "es": "«Exiger que» expresa voluntad y pide subjuntivo, como «exigen que cada alumno haga».",
+      "fr": "« Exiger que » exprime la volonté et demande le subjonctif ; ici le sujet change (les députés, chaque élève), sinon on aurait l'infinitif."
     }
   },
   {
@@ -65,8 +65,8 @@
     "verb": "attendre", "mood": "ind",
     "accepted": ["attend"], "ruleId": "IND-certainty",
     "why": {
-      "es": "«Je suis certain que» expresa certeza y va con indicativo (con negación, «je ne suis pas certain que», pediría subjuntivo). «En ce moment» pide presente: Léa nous attend.",
-      "fr": "« Je suis certain que » exprime la certitude : indicatif (à la forme négative, on passerait au subjonctif). « En ce moment » demande le présent : Léa nous attend."
+      "es": "«Je suis certain que» expresa certeza y va con indicativo (con negación, «je ne suis pas certain que», pediría subjuntivo). «En ce moment» pide presente.",
+      "fr": "« Je suis certain que » exprime la certitude : indicatif (à la forme négative, on passerait au subjonctif). « En ce moment » demande le présent."
     }
   },
   {
@@ -75,8 +75,8 @@
     "verb": "pouvoir", "mood": "subj", "stem": "irregular",
     "accepted": ["puissent"], "ruleId": "SUBJ-impersonal-judgement",
     "why": {
-      "es": "«Il est important que» es un juicio impersonal y pide subjuntivo, como «es importante que puedan». «Pouvoir» es irregular: que les piétons puissent.",
-      "fr": "« Il est important que » est un jugement impersonnel et demande le subjonctif. Pouvoir est irrégulier : que les piétons puissent."
+      "es": "«Il est important que» es un juicio impersonal y pide subjuntivo, como «es importante que puedan».",
+      "fr": "« Il est important que » est un jugement impersonnel et demande le subjonctif."
     }
   },
   {
@@ -85,8 +85,8 @@
     "verb": "éteindre", "mood": "subj", "stem": "regular",
     "accepted": ["éteignions"], "ruleId": "SUBJ-will",
     "why": {
-      "es": "«Exiger que» expresa voluntad y pide subjuntivo, como «exige que apaguemos». Con «nous» se usa el radical de «nous éteignons»: que nous éteignions.",
-      "fr": "« Exiger que » exprime la volonté et demande le subjonctif, car le sujet change. Avec « nous », radical de « nous éteignons » : que nous éteignions."
+      "es": "«Exiger que» expresa voluntad y pide subjuntivo, como «exige que apaguemos».",
+      "fr": "« Exiger que » exprime la volonté et demande le subjonctif ; ici le sujet change (la propriétaire, nous), sinon on aurait l'infinitif."
     }
   },
   {
@@ -95,8 +95,8 @@
     "verb": "offrir", "mood": "ind",
     "accepted": ["offrent"], "ruleId": "IND-certainty",
     "why": {
-      "es": "«Il est certain que» expresa certeza y va con indicativo, no con subjuntivo. «Chaque jour» describe un hecho habitual actual, en presente y en plural: les cantines offrent.",
-      "fr": "« Il est certain que » exprime une certitude : indicatif. « Chaque jour » décrit un fait habituel actuel, donc le présent : les cantines offrent."
+      "es": "«Il est certain que» expresa certeza y va con indicativo, no con subjuntivo. «Chaque jour» describe un hecho habitual actual, así que va en presente.",
+      "fr": "« Il est certain que » exprime une certitude : indicatif. « Chaque jour » décrit un fait habituel actuel, donc le présent."
     }
   },
   {
@@ -105,8 +105,8 @@
     "verb": "valoir", "mood": "ind",
     "accepted": ["vaut"], "ruleId": "IND-affirmed-opinion",
     "why": {
-      "es": "«Je crois que» en afirmativo expresa una opinión firme y va con indicativo, como «creo que vale la pena». Es una verdad general, en presente: il vaut (con «je ne crois pas que» sería subjuntivo: vaille).",
-      "fr": "« Je crois que » à la forme affirmative exprime une opinion ferme : indicatif, « il vaut ». Avec « je ne crois pas que », on aurait le subjonctif : « vaille »."
+      "es": "«Je crois que» en afirmativo expresa una opinión firme y va con indicativo, como «creo que vale la pena». Es una verdad general, así que va en presente (con «je ne crois pas que» pasaría a subjuntivo).",
+      "fr": "« Je crois que » à la forme affirmative exprime une opinion ferme : indicatif. C'est une vérité générale, donc le présent (avec « je ne crois pas que », on passerait au subjonctif)."
     }
   },
   {
@@ -115,8 +115,8 @@
     "verb": "savoir", "mood": "subj", "stem": "irregular",
     "accepted": ["sachent"], "ruleId": "SUBJ-necessity",
     "why": {
-      "es": "«Il faut que» expresa necesidad y siempre pide subjuntivo. «Savoir» es irregular: que les élèves sachent.",
-      "fr": "« Il faut que » exprime la nécessité et demande le subjonctif. Savoir est irrégulier : que les élèves sachent."
+      "es": "«Il faut que» expresa necesidad y siempre pide subjuntivo.",
+      "fr": "« Il faut que » exprime la nécessité et demande toujours le subjonctif."
     }
   },
   {
@@ -125,8 +125,8 @@
     "verb": "vouloir", "mood": "subj", "stem": "irregular",
     "accepted": ["veuille"], "ruleId": "SUBJ-doubt",
     "why": {
-      "es": "«Il se peut que» expresa una posibilidad incierta y pide subjuntivo, como «puede que quiera». «Vouloir» es irregular: que le médecin veuille.",
-      "fr": "« Il se peut que » exprime une possibilité incertaine et demande le subjonctif. Vouloir est irrégulier : que le médecin veuille."
+      "es": "«Il se peut que» expresa una posibilidad incierta y pide subjuntivo, como «puede que quiera».",
+      "fr": "« Il se peut que » exprime une possibilité incertaine et demande le subjonctif."
     }
   },
   {
@@ -135,8 +135,8 @@
     "verb": "permettre", "mood": "subj", "stem": "regular",
     "accepted": ["permette"], "ruleId": "SUBJ-conjunction",
     "why": {
-      "es": "«Bien que» siempre pide subjuntivo y, a diferencia de «aunque», nunca lleva indicativo. Radical de «ils permettent»: que le télétravail permette.",
-      "fr": "« Bien que » demande toujours le subjonctif, jamais l'indicatif (contrairement à « aunque » en espagnol). Permettre garde le radical d'« ils permettent » : que le télétravail permette."
+      "es": "«Bien que» siempre pide subjuntivo y, a diferencia de «aunque», que admite indicativo o subjuntivo, nunca lleva indicativo.",
+      "fr": "« Bien que » demande toujours le subjonctif, jamais l'indicatif (contrairement à « aunque » en espagnol, qui admet les deux)."
     }
   },
   {
@@ -145,8 +145,8 @@
     "verb": "manger", "mood": "ind",
     "accepted": ["avons mangé"], "ruleId": "IND-apres-que",
     "why": {
-      "es": "«Après que» siempre va con indicativo, nunca con subjuntivo (a diferencia de «avant que»). La principal está en presente de costumbre («lavons»), así que la acción anterior va en passé composé: avons mangé.",
-      "fr": "« Après que » se construit avec l'indicatif, jamais le subjonctif (à la différence d'« avant que »). La principale est au présent d'habitude (« lavons »), donc l'action antérieure se met au passé composé : avons mangé."
+      "es": "«Après que» siempre va con indicativo, nunca con subjuntivo (a diferencia de «avant que»). La principal está en presente de costumbre («lavons»), así que la acción anterior va en passé composé.",
+      "fr": "« Après que » se construit avec l'indicatif, jamais le subjonctif (à la différence d'« avant que »). La principale est au présent d'habitude (« lavons »), donc l'action antérieure se met au passé composé."
     }
   },
   {
@@ -155,8 +155,8 @@
     "verb": "avoir", "mood": "subj", "stem": "irregular",
     "accepted": ["aient"], "ruleId": "SUBJ-emotion",
     "why": {
-      "es": "«Regretter que» expresa una emoción y pide subjuntivo, como «lamentan que tengan». «Avoir» es irregular: que leurs enfants aient.",
-      "fr": "« Regretter que » exprime un sentiment et demande le subjonctif. Avoir est irrégulier : que leurs enfants aient."
+      "es": "«Regretter que» expresa una emoción y pide subjuntivo, como «lamentan que tengan».",
+      "fr": "« Regretter que » exprime un sentiment et demande le subjonctif."
     }
   },
   {
@@ -165,8 +165,8 @@
     "verb": "sortir", "mood": "subj", "stem": "regular",
     "accepted": ["sortions"], "ruleId": "SUBJ-conjunction",
     "why": {
-      "es": "«Avant que» siempre pide subjuntivo, a diferencia de «après que». Con «nous» se usa el radical de «nous sortons»: que nous sortions.",
-      "fr": "« Avant que » demande toujours le subjonctif, à la différence d'« après que ». Avec « nous », radical de « nous sortons » : que nous sortions."
+      "es": "«Avant que» siempre pide subjuntivo, a diferencia de «après que».",
+      "fr": "« Avant que » demande toujours le subjonctif, à la différence d'« après que »."
     }
   },
   {
@@ -175,8 +175,8 @@
     "verb": "valoir", "mood": "subj", "stem": "irregular",
     "accepted": ["vaille"], "ruleId": "SUBJ-negated-opinion",
     "why": {
-      "es": "«Je ne crois pas que» expresa una opinión dudosa y pide subjuntivo (en afirmativo, «je crois que», llevaría indicativo: vaut). «Valoir» es irregular: que l'écriture vaille.",
-      "fr": "« Je ne crois pas que » exprime une opinion niée : subjonctif (à la forme affirmative, on aurait l'indicatif : « vaut »). Valoir est irrégulier : que l'écriture vaille."
+      "es": "«Je ne crois pas que» expresa una opinión dudosa y pide subjuntivo (en afirmativo, «je crois que», llevaría indicativo).",
+      "fr": "« Je ne crois pas que » exprime une opinion niée : subjonctif (à la forme affirmative, on aurait l'indicatif)."
     }
   },
   {
@@ -185,8 +185,8 @@
     "verb": "avoir", "mood": "ind",
     "accepted": ["aura", "a"], "ruleId": "IND-esperer",
     "why": {
-      "es": "En español «espero que nuestro equipo tenga» lleva subjuntivo, pero «j'espère que» va con indicativo: «aura» (futur) o «a» (presente), nunca «ait».",
-      "fr": "« J'espère que » se construit avec l'indicatif : « aura » (futur) ou « a » (présent à valeur de futur proche), jamais « ait »."
+      "es": "En español «espero que nuestro equipo tenga» lleva subjuntivo, pero «j'espère que» va con indicativo, nunca con subjuntivo. El partido es mañana por la noche: futuro (o presente con valor de futuro).",
+      "fr": "« J'espère que » se construit avec l'indicatif, jamais avec le subjonctif. Le match est demain soir : futur (ou présent à valeur de futur proche)."
     }
   },
   {
@@ -195,8 +195,8 @@
     "verb": "falloir", "mood": "subj", "stem": "irregular",
     "accepted": ["faille"], "ruleId": "SUBJ-doubt",
     "why": {
-      "es": "«Il est possible que» expresa una posibilidad incierta y pide subjuntivo, como «es posible que haga falta». «Falloir» es irregular: qu'il faille.",
-      "fr": "« Il est possible que » exprime une possibilité incertaine et demande le subjonctif. Falloir est irrégulier : qu'il faille."
+      "es": "«Il est possible que» expresa una posibilidad incierta y pide subjuntivo, como «es posible que haga falta».",
+      "fr": "« Il est possible que » exprime une possibilité incertaine et demande le subjonctif."
     }
   },
   {
@@ -205,8 +205,8 @@
     "verb": "acheter", "mood": "subj", "stem": "regular",
     "accepted": ["achetions"], "ruleId": "SUBJ-impersonal-judgement",
     "why": {
-      "es": "«Il vaut mieux que» es un juicio impersonal y pide subjuntivo, como «más vale que compremos». Con «nous» se usa el radical de «nous achetons»: que nous achetions.",
-      "fr": "« Il vaut mieux que » est un jugement impersonnel et demande le subjonctif. Avec « nous », radical de « nous achetons » : que nous achetions."
+      "es": "«Il vaut mieux que» es un juicio impersonal y pide subjuntivo, como «más vale que compremos».",
+      "fr": "« Il vaut mieux que » est un jugement impersonnel et demande le subjonctif."
     }
   },
   {
@@ -215,8 +215,8 @@
     "verb": "choisir", "mood": "ind",
     "accepted": ["choisira", "choisit"], "ruleId": "IND-esperer",
     "why": {
-      "es": "En español «esperan que elija» lleva subjuntivo, pero «espérer que» va con indicativo: «choisira» (futur) o «choisit» (presente), nunca «choisisse».",
-      "fr": "« Espérer que » se construit avec l'indicatif : « choisira » (futur) ou « choisit » (présent à valeur de futur proche), jamais « choisisse »."
+      "es": "En español «esperan que elija» lleva subjuntivo, pero «espérer que» va con indicativo, nunca con subjuntivo. La reunión es el próximo martes: futuro (o presente con valor de futuro).",
+      "fr": "« Espérer que » se construit avec l'indicatif, jamais avec le subjonctif. La réunion a lieu mardi prochain : futur (ou présent à valeur de futur proche)."
     }
   },
   {
@@ -225,8 +225,8 @@
     "verb": "répondre", "mood": "subj", "stem": "regular",
     "accepted": ["réponde"], "ruleId": "SUBJ-negated-opinion",
     "why": {
-      "es": "«Je ne pense pas que» expresa una opinión dudosa y pide subjuntivo, como «no creo que responda» (en afirmativo, «je pense que», llevaría indicativo). Radical de «ils répondent»: que l'agent réponde.",
-      "fr": "« Je ne pense pas que » exprime une opinion niée : subjonctif (à la forme affirmative, on aurait l'indicatif). Répondre garde le radical d'« ils répondent » : que l'agent réponde."
+      "es": "«Je ne pense pas que» expresa una opinión dudosa y pide subjuntivo, como «no creo que responda» (en afirmativo, «je pense que», llevaría indicativo).",
+      "fr": "« Je ne pense pas que » exprime une opinion niée : subjonctif (à la forme affirmative, on aurait l'indicatif)."
     }
   },
   {
@@ -235,8 +235,8 @@
     "verb": "pouvoir", "mood": "ind",
     "accepted": ["pourront"], "ruleId": "IND-quand-futur",
     "why": {
-      "es": "En español se dice «cuando puedan» (subjuntivo), pero en francés «quand» + acción futura va con futur: quand les salariés pourront. La principal también está en futuro («auront»).",
-      "fr": "Après « quand », une action à venir se met au futur, comme dans la principale (« auront ») : quand les salariés pourront. Le subjonctif est impossible ici."
+      "es": "En español se dice «cuando puedan» (subjuntivo), pero en francés «quand» + acción futura va con indicativo, en futuro, como la principal («auront»).",
+      "fr": "Après « quand », une action à venir se met au futur de l'indicatif, comme dans la principale (« auront ») ; le subjonctif est impossible ici."
     }
   },
   {
@@ -245,8 +245,8 @@
     "verb": "être", "mood": "subj", "stem": "irregular",
     "accepted": ["sois"], "ruleId": "SUBJ-conjunction",
     "why": {
-      "es": "«Pour que» siempre pide subjuntivo, como «para que estés». «Être» es irregular: que tu sois.",
-      "fr": "« Pour que » demande toujours le subjonctif. Être est irrégulier : que tu sois."
+      "es": "«Pour que» siempre pide subjuntivo, como «para que estés».",
+      "fr": "« Pour que » demande toujours le subjonctif ; ici le sujet change (je, tu), sinon on aurait « pour » + infinitif."
     }
   }
 ]
