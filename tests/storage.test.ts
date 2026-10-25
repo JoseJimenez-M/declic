@@ -1,5 +1,5 @@
 import { IDBFactory as FakeIDBFactory } from "fake-indexeddb";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { Backup } from "../src/export";
 import type { Attempt } from "../src/flow";
 import type { AppState } from "../src/storage";
@@ -10,6 +10,10 @@ beforeEach(async () => {
   globalThis.indexedDB = new FakeIDBFactory() as unknown as IDBFactory;
   vi.resetModules();
   storage = await import("../src/storage");
+});
+
+afterEach(() => {
+  vi.restoreAllMocks();
 });
 
 const attempt = (at: string): Attempt => ({
@@ -86,6 +90,38 @@ describe("storage", () => {
     expect((await storage.loadState()).settings.lang).toBe("es");
   });
 
+  describe("closed connections", () => {
+    it("reopens the database after another tab deletes it", async () => {
+      await storage.saveState({ ...(await storage.loadState()), settings: { lang: "fr", filter: "past" } });
+      // A versionchange handler that does not close the connection would leave the delete blocked.
+      await new Promise<void>((resolve, reject) => {
+        const req = indexedDB.deleteDatabase("declic");
+        req.onsuccess = () => resolve();
+        req.onerror = () => reject(req.error);
+        req.onblocked = () => reject(new Error("the connection did not close on versionchange"));
+      });
+      expect((await storage.loadState()).settings).toEqual({ lang: "es", filter: "all" });
+      await storage.addAttempts([attempt("2026-10-25T10:00:00.000Z")]);
+      expect(await storage.loadAttempts()).toHaveLength(1);
+    });
+
+    it("reopens the database after the browser closes the connection", async () => {
+      const real = indexedDB.open.bind(indexedDB);
+      let db: IDBDatabase | undefined;
+      vi.spyOn(globalThis.indexedDB, "open").mockImplementation((name, version) => {
+        const req = real(name, version);
+        req.addEventListener("success", () => (db = req.result));
+        return req;
+      });
+      await storage.loadState();
+      expect(db).toBeDefined();
+      // A forced close fires `close` on the connection; closing it by hand stands in for the browser doing so.
+      db!.close();
+      db!.onclose?.(new Event("close"));
+      expect((await storage.loadState()).settings.lang).toBe("es");
+    });
+  });
+
   it("fills in the default filter for a state saved before the filter existed", async () => {
     const base = await storage.loadState();
     const older = { ...base, settings: { lang: "fr" } } as unknown as AppState;
@@ -154,6 +190,20 @@ describe("storage", () => {
       expect(after.settings).toEqual(before.settings);
       expect(after.today).toEqual(before.today);
       expect((await storage.loadAttempts()).map((a) => a.at)).toEqual(["2026-10-25T09:00:00.000Z"]);
+    });
+
+    it("rejects with a real Error when a request fails inside the transaction", async () => {
+      await seed();
+      // Two adds under one key make the second request fail with a ConstraintError.
+      vi.spyOn(crypto, "randomUUID").mockReturnValue("00000000-0000-4000-8000-000000000000");
+      const twin = attempt("2026-10-25T09:00:00.000Z");
+      const error = await storage.replaceAll(backup([twin, twin])).then(
+        () => undefined,
+        (e: unknown) => e,
+      );
+      expect(error).toBeInstanceOf(Error);
+      expect((error as Error).message).not.toBe("");
+      expect((await storage.loadAttempts()).map((a) => a.at)).toEqual(["2026-10-02T10:00:00.000Z"]);
     });
 
     it("leaves the old data untouched when the write fails", async () => {

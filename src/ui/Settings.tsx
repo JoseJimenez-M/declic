@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
 import type { Rule } from "../content/types";
+import { localDate } from "../dates";
 import { buildBackup, parseBackup, statsMarkdown } from "../export";
 import type { Attempt } from "../flow";
 import { shareFiles } from "../share";
@@ -15,6 +16,8 @@ type Props = {
   onImported: (state: AppState, attempts: Attempt[]) => void;
   onBack: () => void;
 };
+
+const errorText = (e: unknown) => (e instanceof Error ? e.message : String(e));
 
 export function SettingsScreen({ state, attempts, rules, today, onSettings, onImported, onBack }: Props) {
   const [message, setMessage] = useState("");
@@ -34,7 +37,7 @@ export function SettingsScreen({ state, attempts, rules, today, onSettings, onIm
       ]);
       setMessage("Archivos listos para compartir.");
     } catch (e) {
-      const reason = e instanceof Error ? e.message : String(e);
+      const reason = errorText(e);
       // Closing the share sheet is a choice, not an error.
       setMessage(/cancel/i.test(reason) ? "" : `No se pudo exportar: ${reason}`);
     } finally {
@@ -45,10 +48,10 @@ export function SettingsScreen({ state, attempts, rules, today, onSettings, onIm
   const importFile = async (file: File) => {
     try {
       const backup = parseBackup(await file.text());
-      if (!confirm(`Esto reemplaza tus datos con el respaldo del ${backup.exportedAt.slice(0, 10)}. ¿Seguir?`)) return;
+      if (!confirm(`Esto reemplaza tus datos con el respaldo del ${localDate(new Date(backup.exportedAt))}. ¿Seguir?`)) return;
       await replaceAll(backup);
     } catch (e) {
-      setMessage(`No se pudo importar: ${(e as Error).message}`);
+      setMessage(`No se pudo importar: ${errorText(e)}`);
       return;
     }
     try {

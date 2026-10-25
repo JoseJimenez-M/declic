@@ -81,7 +81,8 @@ export function Exercise(p: Props) {
     );
   }
 
-  const ms = () => Date.now() - shownAt.current;
+  // A backward clock change must not produce a negative time, which the backup validation rejects.
+  const ms = () => Math.max(0, Date.now() - shownAt.current);
 
   const send = (event: FlowEvent) => {
     const r = apply(flow, event, new Date().toISOString());

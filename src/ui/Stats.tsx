@@ -64,7 +64,7 @@ export function StatsScreen({ attempts, state, rules, today, onBack }: Props) {
           const rule = rules.get(r.key);
           return (
             <details key={r.key}>
-              <summary>{rule ? rule.title[lang] : r.key}: {r.fails} de {r.total} con error</summary>
+              <summary>{rule ? rule.title[lang] : r.key} (fallos: {r.fails} de {r.total})</summary>
               {rule && <Explanation rule={rule} lang={lang} onLang={setLang} />}
             </details>
           );
@@ -74,7 +74,7 @@ export function StatsScreen({ attempts, state, rules, today, onBack }: Props) {
       </section>
       <section class="card">
         <h2>Verbos</h2>
-        {s.topVerbs.length === 0 ? <p class="muted">Todavía no hay fallos.</p> : s.topVerbs.map((v) => <p key={v.key}>{v.key}: {v.fails} de {v.total} con error</p>)}
+        {s.topVerbs.length === 0 ? <p class="muted">Todavía no hay fallos.</p> : s.topVerbs.map((v) => <p key={v.key}>{v.key} (fallos: {v.fails} de {v.total})</p>)}
       </section>
       <section class="card">
         <h2>Cuándo</h2>

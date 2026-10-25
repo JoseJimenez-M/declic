@@ -83,6 +83,22 @@ describe("parseBackup validation", () => {
     ["an attempt with negative ms", withPatch((b) => (b.attempts[0].ms = -1))],
     ["completedDays with 2026-1-5", withPatch((b) => (b.completedDays = ["2026-1-5"]))],
     ["a report without at", withPatch((b) => delete b.reports[0].at)],
+    ["attempts that is not an array", withPatch((b) => (b.attempts = {}))],
+    ["completedDays that is not an array", withPatch((b) => (b.completedDays = TODAY))],
+    ["reports that is not an array", withPatch((b) => (b.reports = null))],
+    ["a state value that is not an object", withPatch((b) => (b.states["p-test-1"] = 5))],
+    ["an attempt with an empty itemId", withPatch((b) => (b.attempts[0].itemId = ""))],
+    ["an attempt with slot -1", withPatch((b) => (b.attempts[0].slot = -1))],
+    ["an attempt with slot 1.5", withPatch((b) => (b.attempts[0].slot = 1.5))],
+    ["an attempt with kind x", withPatch((b) => (b.attempts[0].kind = "x"))],
+    ["an attempt whose verb is not a string", withPatch((b) => (b.attempts[0].verb = 5))],
+    ["an attempt whose ruleId is not a string", withPatch((b) => (b.attempts[0].ruleId = 5))],
+    ["an attempt whose chosen is not a string", withPatch((b) => (b.attempts[0].chosen = 5))],
+    ["an attempt whose correct is not a boolean", withPatch((b) => (b.attempts[0].correct = "yes"))],
+    ["an attempt with attempt 3", withPatch((b) => (b.attempts[0].attempt = 3))],
+    ["an attempt whose help is not a boolean", withPatch((b) => (b.attempts[0].help = 0))],
+    ["an attempt with ms as a string", withPatch((b) => (b.attempts[0].ms = "5"))],
+    ["a report with an empty itemId", withPatch((b) => (b.reports[0].itemId = ""))],
   ];
 
   it.each(rejected)("rejects %s", (_name, json) => {

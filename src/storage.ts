@@ -27,21 +27,42 @@ const STATE = "state"; // one record under the key "app"
 
 let dbPromise: Promise<IDBDatabase> | undefined;
 
-/** Opens the database on first use (so tests can swap `indexedDB`) and caches it unless opening fails. */
+const STORAGE_ERROR = "Error de almacenamiento";
+
+/** IndexedDB failures can arrive as null or as a DOMException; callers always get a real Error. */
+const asError = (e: unknown): Error => (e instanceof Error ? e : new Error(STORAGE_ERROR));
+
+/**
+ * Opens the database on first use (so tests can swap `indexedDB`) and caches it until opening fails
+ * or the connection goes away (deleted or upgraded elsewhere, or closed by the browser), so the next call reopens it.
+ */
 function openDb(): Promise<IDBDatabase> {
-  dbPromise ??= new Promise<IDBDatabase>((resolve, reject) => {
+  if (dbPromise) return dbPromise;
+  const promise: Promise<IDBDatabase> = new Promise<IDBDatabase>((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, 1);
     request.onupgradeneeded = () => {
       request.result.createObjectStore(ATTEMPTS);
       request.result.createObjectStore(STATE);
     };
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
+    request.onsuccess = () => {
+      const db = request.result;
+      const forget = () => {
+        if (dbPromise === promise) dbPromise = undefined;
+      };
+      db.onversionchange = () => {
+        db.close();
+        forget();
+      };
+      db.onclose = forget;
+      resolve(db);
+    };
+    request.onerror = () => reject(asError(request.error));
   }).catch((e) => {
-    dbPromise = undefined;
+    if (dbPromise === promise) dbPromise = undefined;
     throw e;
   });
-  return dbPromise;
+  dbPromise = promise;
+  return promise;
 }
 
 /**
@@ -54,12 +75,13 @@ async function inTransaction<T>(stores: string[], mode: IDBTransactionMode, work
     const tx = db.transaction(stores, mode);
     let result: T;
     tx.oncomplete = () => resolve(result);
-    tx.onerror = () => reject(tx.error);
-    tx.onabort = () => reject(tx.error ?? new Error("Transaction aborted"));
+    // A failed request fires `error` before the abort, when `tx.error` is still null, so the request's own error is the reason.
+    tx.onerror = (e) => reject(asError((e.target as IDBRequest | null)?.error ?? tx.error));
+    tx.onabort = () => reject(asError(tx.error));
     try {
       result = work(tx);
     } catch (e) {
-      reject(e);
+      reject(asError(e));
       tx.abort();
     }
   });
