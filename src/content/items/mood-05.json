@@ -1,0 +1,252 @@
+[
+  {
+    "id": "m-101", "kind": "mood", "context": "daily",
+    "sentence": "Pour ton premier demi-marathon dimanche prochain, il est primordial que tu ___ (avoir) de bons souliers de course.",
+    "verb": "avoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["aies"], "ruleId": "SUBJ-necessity",
+    "why": {
+      "es": "«Il est primordial que» expresa necesidad y pide subjuntivo, igual que en español: «es primordial que tengas buenos tenis para correr».",
+      "fr": "« Il est primordial que » exprime la nécessité, comme « il faut que » : il demande toujours le subjonctif, même quand l'action est à venir (dimanche prochain)."
+    }
+  },
+  {
+    "id": "m-102", "kind": "mood", "context": "exam",
+    "sentence": "Au nom du droit à la déconnexion, le syndicat exige que les employés en télétravail ___ (pouvoir) ignorer les courriels reçus après 18 h.",
+    "verb": "pouvoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["puissent"], "ruleId": "SUBJ-will",
+    "why": {
+      "es": "«Exiger que» expresa voluntad (una exigencia) y pide subjuntivo, como «el sindicato exige que los empleados puedan ignorar los correos».",
+      "fr": "« Exiger que » exprime la volonté ; comme les sujets sont différents (le syndicat, les employés), le subjonctif s'impose."
+    }
+  },
+  {
+    "id": "m-103", "kind": "mood", "context": "daily",
+    "sentence": "J'espère que Sofia ___ (arriver) au brunch de dimanche prochain avec son célèbre guacamole.",
+    "verb": "arriver", "mood": "ind",
+    "accepted": ["arrivera", "arrive"], "ruleId": "IND-esperer",
+    "why": {
+      "es": "En español «espero que llegue» lleva subjuntivo, pero «espérer que» va con indicativo, nunca con subjuntivo. El brunch es el próximo domingo: futur (o presente con valor de futuro).",
+      "fr": "« Espérer que » se construit avec l'indicatif, jamais avec le subjonctif. Le brunch est dimanche prochain : futur (ou présent à valeur de futur)."
+    }
+  },
+  {
+    "id": "m-104", "kind": "mood", "context": "exam",
+    "sentence": "Je crois qu'en général les jeunes ___ (chercher) surtout l'approbation de leurs amis sur les réseaux sociaux.",
+    "verb": "chercher", "mood": "ind",
+    "accepted": ["cherchent"], "ruleId": "IND-affirmed-opinion",
+    "why": {
+      "es": "«Je crois que» en afirmativo expresa una opinión firme y va con indicativo, como «creo que buscan sobre todo la aprobación»; solo en negativo («je ne crois pas que») pasaría a subjuntivo. Es una tendencia general: presente.",
+      "fr": "« Je crois que » à la forme affirmative exprime une opinion ferme : indicatif (à la forme négative, on passerait au subjonctif). C'est une tendance générale, donc le présent."
+    }
+  },
+  {
+    "id": "m-105", "kind": "mood", "context": "daily",
+    "sentence": "Il est capital que tu ___ (conduire) lentement ce soir : les routes sont couvertes de glace.",
+    "verb": "conduire", "mood": "subj", "stem": "regular",
+    "accepted": ["conduises"], "ruleId": "SUBJ-necessity",
+    "why": {
+      "es": "«Il est capital que» expresa necesidad y pide subjuntivo, igual que «es fundamental que manejes despacio esta noche».",
+      "fr": "« Il est capital que » exprime la nécessité, comme « il faut que » : il demande toujours le subjonctif."
+    }
+  },
+  {
+    "id": "m-106", "kind": "mood", "context": "exam",
+    "sentence": "Contrairement au maire, je doute que l'interdiction des voitures au centre-ville ___ (faire) vraiment disparaître les embouteillages : beaucoup d'automobilistes passeront simplement par les rues voisines.",
+    "verb": "faire", "mood": "subj", "stem": "irregular",
+    "accepted": ["fasse"], "ruleId": "SUBJ-doubt",
+    "why": {
+      "es": "«Douter que» expresa duda y pide subjuntivo: «dudo que la prohibición haga desaparecer los embotellamientos».",
+      "fr": "« Douter que » exprime le doute : il est toujours suivi du subjonctif, même quand le résultat ne se verra que plus tard."
+    }
+  },
+  {
+    "id": "m-107", "kind": "mood", "context": "daily",
+    "sentence": "Le gérant du dépanneur aimerait que nous lui ___ (dire) chaque matin quels produits sont presque périmés.",
+    "verb": "dire", "mood": "subj", "stem": "regular",
+    "accepted": ["disions"], "ruleId": "SUBJ-will",
+    "why": {
+      "es": "«Aimerait que» expresa un deseo (voluntad) y pide subjuntivo, como «le gustaría que le dijéramos cada mañana».",
+      "fr": "« Aimerait que » exprime un souhait, donc la volonté : subjonctif, d'autant que les sujets sont différents (le gérant, nous)."
+    }
+  },
+  {
+    "id": "m-108", "kind": "mood", "context": "exam",
+    "sentence": "Lorsque les élèves ___ (essayer) d'écrire à la main pendant tout l'examen de juin prochain, beaucoup auront mal au poignet.",
+    "verb": "essayer", "mood": "ind",
+    "accepted": ["essaieront", "essayeront"], "ruleId": "IND-quand-futur",
+    "why": {
+      "es": "En español se dice «cuando intenten» (subjuntivo), pero en francés «lorsque», como «quand», + acción futura (el examen del próximo junio) va con indicativo, en futur, como la principal («auront»).",
+      "fr": "Après « lorsque », comme après « quand », une action à venir (l'examen de juin prochain) se met au futur de l'indicatif, comme « auront » dans la principale ; le subjonctif est exclu."
+    }
+  },
+  {
+    "id": "m-109", "kind": "mood", "context": "daily",
+    "sentence": "Quand nous ___ (avoir) le feu vert du client vendredi, nous lancerons la mise en production.",
+    "verb": "avoir", "mood": "ind",
+    "accepted": ["aurons"], "ruleId": "IND-quand-futur",
+    "why": {
+      "es": "«Cuando tengamos el visto bueno» lleva subjuntivo en español, pero en francés «quand» + acción futura va con indicativo, en futur, como «lancerons» en la principal.",
+      "fr": "Après « quand », une action à venir se met au futur de l'indicatif, comme « lancerons » dans la principale ; jamais de subjonctif."
+    }
+  },
+  {
+    "id": "m-110", "kind": "mood", "context": "exam",
+    "sentence": "Nous ne pensons pas que les élèves ___ (être) plus heureux avec un uniforme qu'avec leurs propres vêtements.",
+    "verb": "être", "mood": "subj", "stem": "irregular",
+    "accepted": ["soient"], "ruleId": "SUBJ-negated-opinion",
+    "why": {
+      "es": "«Ne pas penser que» (en negativo) expresa una opinión dudosa y pide subjuntivo, como «no pensamos que los alumnos sean más felices»; en afirmativo iría indicativo.",
+      "fr": "« Ne pas penser que » : l'opinion niée devient incertaine et demande le subjonctif (à la forme affirmative, on aurait l'indicatif)."
+    }
+  },
+  {
+    "id": "m-111", "kind": "mood", "context": "daily",
+    "sentence": "Il est préférable que vous ___ (aller) à la pharmacie cet après-midi : elle ferme tôt le dimanche.",
+    "verb": "aller", "mood": "subj", "stem": "irregular",
+    "accepted": ["alliez"], "ruleId": "SUBJ-impersonal-judgement",
+    "why": {
+      "es": "«Il est préférable que» es un juicio impersonal, parecido a «il vaut mieux que», y pide subjuntivo: «es preferible que vayan a la farmacia esta tarde».",
+      "fr": "« Il est préférable que » est un jugement impersonnel, voisin de « il vaut mieux que » : il demande le subjonctif."
+    }
+  },
+  {
+    "id": "m-112", "kind": "mood", "context": "exam",
+    "sentence": "En classe de français, les élèves ouvrent toujours l'assistant d'IA après que l'enseignante leur ___ (dire) de commencer le travail.",
+    "verb": "dire", "mood": "ind",
+    "accepted": ["a dit"], "ruleId": "IND-apres-que",
+    "why": {
+      "es": "«Après que» va siempre con indicativo (al revés que «avant que»). La indicación de la maestra viene antes de abrir el asistente: es un hecho ya terminado, passé composé.",
+      "fr": "« Après que » se construit avec l'indicatif, jamais avec le subjonctif. La consigne précède l'ouverture de l'assistant : fait terminé, donc passé composé."
+    }
+  },
+  {
+    "id": "m-113", "kind": "mood", "context": "daily",
+    "sentence": "Je ne crois pas que mes voisins du dessus ___ (chercher) un autre logement avant la fin de leur bail, l'été prochain.",
+    "verb": "chercher", "mood": "subj", "stem": "regular",
+    "accepted": ["cherchent"], "ruleId": "SUBJ-negated-opinion",
+    "why": {
+      "es": "«Ne pas croire que» (en negativo) expresa una opinión dudosa y pide subjuntivo, como «no creo que busquen otro departamento»; en afirmativo iría indicativo.",
+      "fr": "« Ne pas croire que » à la forme négative exprime une opinion incertaine : subjonctif (à la forme affirmative, l'indicatif)."
+    }
+  },
+  {
+    "id": "m-114", "kind": "mood", "context": "exam",
+    "sentence": "Les étudiants sont heureux que la ville leur ___ (offrir) un abonnement gratuit dès septembre prochain.",
+    "verb": "offrir", "mood": "subj", "stem": "regular",
+    "accepted": ["offre"], "ruleId": "SUBJ-emotion",
+    "why": {
+      "es": "«Être heureux que» expresa una emoción y pide subjuntivo: «los estudiantes están felices de que la ciudad les ofrezca un pase gratis».",
+      "fr": "« Être heureux que » exprime un sentiment et demande le subjonctif ; les sujets sont différents (les étudiants, la ville), même si l'action est à venir."
+    }
+  },
+  {
+    "id": "m-115", "kind": "mood", "context": "daily",
+    "sentence": "À la patinoire, nous arrivons toujours une heure avant que le match ___ (commencer), pour nous échauffer.",
+    "verb": "commencer", "mood": "subj", "stem": "regular",
+    "accepted": ["commence"], "ruleId": "SUBJ-conjunction",
+    "why": {
+      "es": "«Avant que» siempre pide subjuntivo, igual que «antes de que» en español: «antes de que empiece el partido».",
+      "fr": "« Avant que » demande toujours le subjonctif (à l'inverse d'« après que »), et les sujets sont différents (nous, le match)."
+    }
+  },
+  {
+    "id": "m-116", "kind": "mood", "context": "exam",
+    "sentence": "Il est incontestable que les élèves ___ (oublier) souvent ce qu'ils copient sans y réfléchir.",
+    "verb": "oublier", "mood": "ind",
+    "accepted": ["oublient"], "ruleId": "IND-certainty",
+    "why": {
+      "es": "«Il est incontestable que» expresa certeza (lo contrario de la duda) y va con indicativo, como «es innegable que olvidan». Es un hábito general: presente.",
+      "fr": "« Il est incontestable que » exprime la certitude : indicatif (la certitude est l'inverse du doute). C'est une habitude générale, donc le présent."
+    }
+  },
+  {
+    "id": "m-117", "kind": "mood", "context": "daily",
+    "sentence": "Je ne suis pas sûr que tu ___ (trouver) des piments poblanos frais à l'épicerie du coin samedi prochain.",
+    "verb": "trouver", "mood": "subj", "stem": "regular",
+    "accepted": ["trouves"], "ruleId": "SUBJ-doubt",
+    "why": {
+      "es": "«Ne pas être sûr que» expresa duda y pide subjuntivo, como «no estoy seguro de que encuentres chiles poblanos frescos»; con «je suis sûr que» iría indicativo.",
+      "fr": "« Ne pas être sûr que » exprime le doute et demande le subjonctif (« je suis sûr que » serait suivi de l'indicatif)."
+    }
+  },
+  {
+    "id": "m-118", "kind": "mood", "context": "exam",
+    "sentence": "Inquiets pour le récif corallien, les plongeurs de Cozumel espèrent que les autorités ___ (trouver) une solution au tourisme de masse lors du sommet régional de mars prochain.",
+    "verb": "trouver", "mood": "ind",
+    "accepted": ["trouveront", "trouvent"], "ruleId": "IND-esperer",
+    "why": {
+      "es": "En español «esperan que las autoridades encuentren» lleva subjuntivo, pero «espérer que» va con indicativo, nunca con subjuntivo. La cumbre es el próximo marzo: futur (o presente con valor de futuro).",
+      "fr": "« Espérer que » se construit avec l'indicatif, jamais avec le subjonctif. Le sommet aura lieu en mars prochain : futur (ou présent à valeur de futur)."
+    }
+  },
+  {
+    "id": "m-119", "kind": "mood", "context": "daily",
+    "sentence": "À Guadalajara, ma mère est fière que mon petit frère ___ (vouloir) s'inscrire en informatique à l'université l'an prochain.",
+    "verb": "vouloir", "mood": "subj", "stem": "irregular",
+    "accepted": ["veuille"], "ruleId": "SUBJ-emotion",
+    "why": {
+      "es": "«Être fier que» expresa una emoción (el orgullo) y pide subjuntivo, como «está orgullosa de que quiera estudiar informática».",
+      "fr": "« Être fier que » exprime un sentiment et demande le subjonctif ; les sujets sont différents (ma mère, mon frère)."
+    }
+  },
+  {
+    "id": "m-120", "kind": "mood", "context": "exam",
+    "sentence": "Il est souhaitable que les parents ___ (connaître) le contenu des jeux vidéo auxquels leurs enfants jouent chaque soir.",
+    "verb": "connaître", "mood": "subj", "stem": "regular",
+    "accepted": ["connaissent"], "ruleId": "SUBJ-impersonal-judgement",
+    "why": {
+      "es": "«Il est souhaitable que» es un juicio impersonal (como «il est important que») y pide subjuntivo: «es deseable que los padres conozcan el contenido».",
+      "fr": "« Il est souhaitable que » est un jugement impersonnel : il demande le subjonctif, comme « il est important que »."
+    }
+  },
+  {
+    "id": "m-121", "kind": "mood", "context": "daily",
+    "sentence": "Avec la panne sur la ligne verte, il est nécessaire que nous ___ (partir) vingt minutes plus tôt demain matin.",
+    "verb": "partir", "mood": "subj", "stem": "regular",
+    "accepted": ["partions"], "ruleId": "SUBJ-necessity",
+    "why": {
+      "es": "«Il est nécessaire que» expresa necesidad y pide subjuntivo, igual que «es necesario que salgamos veinte minutos antes».",
+      "fr": "« Il est nécessaire que » exprime la nécessité, comme « il faut que » : il demande toujours le subjonctif."
+    }
+  },
+  {
+    "id": "m-122", "kind": "mood", "context": "exam",
+    "sentence": "La cantine affiche la composition des plats chaque jour pour que les enfants ___ (savoir) ce qu'ils mangent.",
+    "verb": "savoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["sachent"], "ruleId": "SUBJ-conjunction",
+    "why": {
+      "es": "«Pour que» expresa finalidad y siempre pide subjuntivo, igual que «para que» en español: «para que los niños sepan lo que comen».",
+      "fr": "« Pour que » exprime le but et demande toujours le subjonctif ; les sujets sont différents (la cantine, les enfants), sinon on dirait « pour » + infinitif."
+    }
+  },
+  {
+    "id": "m-123", "kind": "mood", "context": "daily",
+    "sentence": "Chaque novembre, après que la première neige ___ (tomber), mon voisin installe son abri Tempo dans l'entrée.",
+    "verb": "tomber", "mood": "ind",
+    "accepted": ["est tombée"], "ruleId": "IND-apres-que",
+    "why": {
+      "es": "«Après que» va siempre con indicativo, al revés que «avant que». Primero cae la nieve y después el vecino instala el abri: es un hecho ya terminado, passé composé.",
+      "fr": "« Après que » se construit avec l'indicatif, jamais avec le subjonctif (à l'inverse d'« avant que »). Le fait est terminé avant l'installation de l'abri : passé composé."
+    }
+  },
+  {
+    "id": "m-124", "kind": "mood", "context": "exam",
+    "sentence": "Il est bon que le bénévolat ___ (être) un choix libre plutôt qu'une obligation légale.",
+    "verb": "être", "mood": "subj", "stem": "irregular",
+    "accepted": ["soit"], "ruleId": "SUBJ-impersonal-judgement",
+    "why": {
+      "es": "«Il est bon que» es un juicio impersonal y pide subjuntivo, como «es bueno que el voluntariado sea una elección libre».",
+      "fr": "« Il est bon que » est un jugement impersonnel, comme « il est important que » : il demande le subjonctif."
+    }
+  },
+  {
+    "id": "m-125", "kind": "mood", "context": "daily",
+    "sentence": "Je pense que Bruno ___ (habiter) toujours près du métro Beaubien : invite-le à la soirée de samedi.",
+    "verb": "habiter", "mood": "ind",
+    "accepted": ["habite"], "ruleId": "IND-affirmed-opinion",
+    "why": {
+      "es": "«Je pense que» en afirmativo expresa una opinión firme y va con indicativo, como «pienso que vive todavía cerca del metro»; solo con «je ne pense pas que» pasaría a subjuntivo. Es una situación actual: presente.",
+      "fr": "« Je pense que » à la forme affirmative exprime une opinion ferme : indicatif (à la forme négative, on passerait au subjonctif). La situation est actuelle, donc le présent."
+    }
+  }
+]
