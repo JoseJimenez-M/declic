@@ -1,0 +1,131 @@
+import { useEffect, useState } from "preact/hooks";
+import { loadContent } from "./content/load";
+import type { Item } from "./content/types";
+import { localDate } from "./dates";
+import type { Attempt } from "./flow";
+import { buildSession } from "./session";
+import { nextState, type Outcome } from "./srs";
+import { streak } from "./stats";
+import { addAttempts, loadAttempts, loadState, saveState, type AppState, type Settings } from "./storage";
+import { Exercise } from "./ui/Exercise";
+import { Home } from "./ui/Home";
+import { SettingsScreen } from "./ui/Settings";
+import { StatsScreen } from "./ui/Stats";
+
+const content = loadContent();
+const DAILY = 10;
+
+type Screen = { name: "home" } | { name: "exercise"; queue: Item[]; extra: boolean } | { name: "stats" } | { name: "settings" };
+
+export function App() {
+  const [state, setState] = useState<AppState | null>(null);
+  const [attempts, setAttempts] = useState<Attempt[]>([]);
+  const [screen, setScreen] = useState<Screen>({ name: "home" });
+
+  useEffect(() => {
+    void Promise.all([loadState(), loadAttempts()]).then(([s, a]) => {
+      setState(s);
+      setAttempts(a);
+    });
+  }, []);
+
+  if (!state) {
+    return (
+      <main class="app">
+        <p class="muted">Cargando…</p>
+      </main>
+    );
+  }
+
+  const today = localDate();
+  const doneToday = state.today.date === today ? state.today.done : 0;
+  const home = () => setScreen({ name: "home" });
+
+  /** Every state change goes through a functional update and is persisted right away. */
+  const change = (fn: (prev: AppState) => AppState) =>
+    setState((prev) => {
+      if (!prev) return prev;
+      const next = fn(prev);
+      if (next !== prev) void saveState(next);
+      return next;
+    });
+
+  const patchSettings = (patch: Partial<Settings>) => change((prev) => ({ ...prev, settings: { ...prev.settings, ...patch } }));
+
+  const startSession = (extra: boolean) => {
+    const size = extra ? DAILY : Math.max(0, DAILY - doneToday);
+    const queue = buildSession(content.items, state.states, today, state.settings.filter, size);
+    setScreen({ name: "exercise", queue, extra });
+  };
+
+  const onAttempts = (list: Attempt[]) => {
+    void addAttempts(list);
+    setAttempts((prev) => [...prev, ...list]);
+  };
+
+  const onItemDone = (item: Item, outcome: Outcome, extra: boolean) =>
+    change((prev) => {
+      const day = localDate();
+      const done = (prev.today.date === day ? prev.today.done : 0) + (extra ? 0 : 1);
+      const completedDays =
+        !extra && done >= DAILY && !prev.completedDays.includes(day) ? [...prev.completedDays, day] : prev.completedDays;
+      return {
+        ...prev,
+        states: { ...prev.states, [item.id]: nextState(prev.states[item.id], outcome, day) },
+        today: { date: day, done },
+        completedDays,
+      };
+    });
+
+  const onReport = (itemId: string) =>
+    change((prev) =>
+      prev.reports.some((r) => r.itemId === itemId) ? prev : { ...prev, reports: [...prev.reports, { itemId, at: new Date().toISOString() }] },
+    );
+
+  if (screen.name === "exercise") {
+    return (
+      <Exercise
+        queue={screen.queue}
+        rules={content.rules}
+        lang={state.settings.lang}
+        onLang={(lang) => patchSettings({ lang })}
+        onAttempts={onAttempts}
+        onItemDone={(item, outcome) => onItemDone(item, outcome, screen.extra)}
+        onReport={onReport}
+        onExit={home}
+      />
+    );
+  }
+  if (screen.name === "stats") {
+    return <StatsScreen attempts={attempts} state={state} rules={content.rules} today={today} onBack={home} />;
+  }
+  if (screen.name === "settings") {
+    return (
+      <SettingsScreen
+        state={state}
+        attempts={attempts}
+        rules={content.rules}
+        today={today}
+        onSettings={patchSettings}
+        onImported={(s, a) => {
+          setState(s);
+          setAttempts(a);
+        }}
+        onBack={home}
+      />
+    );
+  }
+  return (
+    <Home
+      doneToday={doneToday}
+      daily={DAILY}
+      streak={streak(state.completedDays, today)}
+      filter={state.settings.filter}
+      onFilter={(filter) => patchSettings({ filter })}
+      onStart={() => startSession(false)}
+      onExtra={() => startSession(true)}
+      onStats={() => setScreen({ name: "stats" })}
+      onSettings={() => setScreen({ name: "settings" })}
+    />
+  );
+}

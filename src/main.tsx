@@ -1,3 +1,5 @@
 import { render } from "preact";
+import { App } from "./app";
+import "./styles.css";
 
-render(<main>Déclic</main>, document.getElementById("app")!);
+render(<App />, document.getElementById("app")!);

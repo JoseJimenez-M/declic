@@ -5,3 +5,4 @@ dist/
 *.crt
 *.b64
 .DS_Store
+.claude/
