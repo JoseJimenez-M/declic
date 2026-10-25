@@ -11,6 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - name: Version from tag
+        run: |
+          tag="$GITHUB_REF_NAME"
+          if [[ ! "$tag" =~ ^v([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+            echo "::error::Tag '$tag' is not valid. Use exactly v<major>.<minor>.<patch> with digits only, for example v1.2.3."
+            exit 1
+          fi
+          major=$((10#${BASH_REMATCH[1]}))
+          minor=$((10#${BASH_REMATCH[2]}))
+          patch=$((10#${BASH_REMATCH[3]}))
+          if (( minor > 99 || patch > 99 )); then
+            echo "::error::Tag '$tag' has minor or patch above 99 (minor=$minor, patch=$patch). The version code needs both between 0 and 99."
+            exit 1
+          fi
+          echo "DECLIC_VERSION_NAME=$major.$minor.$patch" >> "$GITHUB_ENV"
+          echo "DECLIC_VERSION_CODE=$((major * 10000 + minor * 100 + patch))" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v7
         with:
           node-version: 22
@@ -28,12 +44,12 @@ jobs:
         run: echo "$DECLIC_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/declic.p12"
         env:
           DECLIC_KEYSTORE_B64: ${{ secrets.DECLIC_KEYSTORE_B64 }}
-      - name: Version from tag
+      - name: Check keystore
         run: |
-          v="${GITHUB_REF_NAME#v}"
-          IFS=. read -r major minor patch <<< "$v"
-          echo "DECLIC_VERSION_NAME=$v" >> "$GITHUB_ENV"
-          echo "DECLIC_VERSION_CODE=$((major * 10000 + minor * 100 + patch))" >> "$GITHUB_ENV"
+          if ! test -s "$RUNNER_TEMP/declic.p12"; then
+            echo "::error::Decoded keystore is empty. Check that the DECLIC_KEYSTORE_B64 secret is set and holds the base64 of the .p12 file."
+            exit 1
+          fi
       - name: Build signed APK
         working-directory: android
         run: chmod +x gradlew && ./gradlew assembleRelease
