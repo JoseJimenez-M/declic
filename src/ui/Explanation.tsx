@@ -11,9 +11,12 @@ export function Explanation({ why, rule, lang, onLang }: Props) {
       </div>
       {why && <p>{why[lang]}</p>}
       {rule && (
-        <p>
-          <strong>{rule.title[lang]}</strong>: {rule.explanation[lang]}
-        </p>
+        <>
+          <p>
+            <strong>{rule.title[lang]}</strong>
+          </p>
+          <p>{rule.explanation[lang]}</p>
+        </>
       )}
       {rule?.trap && <p class="trap">{rule.trap[lang]}</p>}
     </div>

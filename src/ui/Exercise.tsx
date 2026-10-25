@@ -1,4 +1,4 @@
-import { useRef, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 import type { Item, Rule } from "../content/types";
 import { apply, outcomeOf, start, type Attempt, type FlowEvent, type FlowState } from "../flow";
 import type { Outcome } from "../srs";
@@ -63,6 +63,14 @@ export function Exercise(p: Props) {
   const [input, setInput] = useState("");
   const [reported, setReported] = useState(false);
   const shownAt = useRef(Date.now());
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // autoFocus only applies on first mount, so focus the field explicitly whenever the typing step becomes active.
+  const fbKind = flow?.feedback?.kind;
+  const typingActive = !!flow && !flow.done && flow.step === 3 && fbKind !== "wrong-choice" && fbKind !== "revealed";
+  useEffect(() => {
+    if (typingActive) inputRef.current?.focus();
+  }, [index, flow?.slotIndex, flow?.step, flow?.typingAttempt, typingActive]);
 
   if (!flow) {
     return (
@@ -171,6 +179,7 @@ export function Exercise(p: Props) {
             }}
           >
             <input
+              ref={inputRef}
               type="text"
               value={input}
               onInput={(e) => setInput((e.target as HTMLInputElement).value)}
