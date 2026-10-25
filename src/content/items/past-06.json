@@ -1,0 +1,944 @@
+[
+  {
+    "id": "p-126",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Mardi à dix heures",
+    "present": "Pendant que je [finis] le rapport, ma collègue [répond] déjà aux courriels des clients.",
+    "past": "Mardi à dix heures, pendant que je finissais le rapport, ma collègue répondait déjà aux courriels des clients.",
+    "slots": [
+      {
+        "verb": "finir",
+        "subject": "je",
+        "tense": "imp",
+        "accepted": [
+          "finissais"
+        ],
+        "ruleId": "IMP-simultaneous",
+        "why": {
+          "es": "'Pendant que' une dos acciones que ocurren a la vez: terminar el reporte está en curso, como 'terminaba' en español (copretérito).",
+          "fr": "« Pendant que » relie deux actions qui se déroulent en même temps : finir le rapport est une action en cours, dont on ne voit ni le début ni la fin."
+        }
+      },
+      {
+        "verb": "répondre",
+        "subject": "ma collègue",
+        "tense": "imp",
+        "accepted": [
+          "répondait"
+        ],
+        "ruleId": "IMP-simultaneous",
+        "why": {
+          "es": "Contestar los correos corre en paralelo con el reporte, y 'déjà' a las diez la muestra ya en curso: 'ya contestaba' en español.",
+          "fr": "Répondre aux courriels se passe en parallèle, et « déjà » à dix heures montre une action déjà en cours : imparfait."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-127",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Jeudi à l'aube",
+    "present": "Un boulanger de Longueuil [vend] ses premières baguettes quand, tout à coup, il [voit] des flammes derrière le four.",
+    "past": "Jeudi à l'aube, un boulanger de Longueuil vendait ses premières baguettes quand, tout à coup, il a vu des flammes derrière le four.",
+    "slots": [
+      {
+        "verb": "vendre",
+        "subject": "un boulanger de Longueuil",
+        "tense": "imp",
+        "accepted": [
+          "vendait"
+        ],
+        "ruleId": "IMP-ongoing-interrupted",
+        "why": {
+          "es": "Vender las primeras baguettes estaba en curso cuando aparecieron las llamas: 'vendía' en español, sin que se vea el final de la venta.",
+          "fr": "Vendre les premières baguettes est l'action en cours au moment où les flammes apparaissent : on n'en voit ni le début ni la fin."
+        }
+      },
+      {
+        "verb": "voir",
+        "subject": "il",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a vu"
+        ],
+        "ruleId": "PC-sudden",
+        "why": {
+          "es": "'Tout à coup' anuncia un hecho imprevisto que corta la venta: 'vio' en español, un solo momento.",
+          "fr": "« Tout à coup » annonce un fait imprévu qui coupe l'action en cours : un instant, un fait terminé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-128",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Samedi matin, au marché Jean-Talon",
+    "present": "Je [choisis] des tomates quand une vendeuse [vient] me proposer des fraises.",
+    "past": "Samedi matin, au marché Jean-Talon, je choisissais des tomates quand une vendeuse est venue me proposer des fraises.",
+    "slots": [
+      {
+        "verb": "choisir",
+        "subject": "je",
+        "tense": "imp",
+        "accepted": [
+          "choisissais"
+        ],
+        "ruleId": "IMP-ongoing-interrupted",
+        "why": {
+          "es": "Escoger los jitomates estaba en curso cuando llegó la vendedora: 'escogía' en español, la acción de fondo.",
+          "fr": "Choisir des tomates est l'action en cours au moment où la vendeuse arrive : on n'en voit ni le début ni la fin."
+        }
+      },
+      {
+        "verb": "venir",
+        "subject": "une vendeuse",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est venue"
+        ],
+        "ruleId": "PC-interrupting-event",
+        "why": {
+          "es": "Que la vendedora se acerque es el hecho puntual que interrumpe la elección: 'vino' en español.",
+          "fr": "L'arrivée de la vendeuse est l'événement ponctuel qui interrompt le choix : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-129",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Samedi après-midi, à Saint-Jean-sur-Richelieu",
+    "present": "Un homme [se promène] avec son chien sur la rivière gelée quand, tout à coup, l'animal [tombe] dans l'eau glacée.",
+    "past": "Samedi après-midi, à Saint-Jean-sur-Richelieu, un homme se promenait avec son chien sur la rivière gelée quand, tout à coup, l'animal est tombé dans l'eau glacée.",
+    "slots": [
+      {
+        "verb": "se promener",
+        "subject": "un homme",
+        "tense": "imp",
+        "accepted": [
+          "se promenait"
+        ],
+        "ruleId": "IMP-ongoing-interrupted",
+        "why": {
+          "es": "Pasear con el perro sobre el río estaba en curso cuando ocurre el accidente: 'paseaba' en español, sin que se vea el final del paseo.",
+          "fr": "La promenade sur la rivière est l'action en cours au moment de l'accident : on n'en voit ni le début ni la fin."
+        }
+      },
+      {
+        "verb": "tomber",
+        "subject": "l'animal",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est tombé"
+        ],
+        "ruleId": "PC-sudden",
+        "why": {
+          "es": "'Tout à coup' anuncia el hecho imprevisto que corta el paseo: 'se cayó' en español, un solo momento.",
+          "fr": "« Tout à coup » annonce un fait imprévu qui coupe la promenade : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-130",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Lundi dernier",
+    "present": "Quand je [sors] du bureau à minuit, le dépanneur du coin [est] déjà fermé.",
+    "past": "Lundi dernier, quand je suis sorti du bureau à minuit, le dépanneur du coin était déjà fermé.",
+    "slots": [
+      {
+        "verb": "sortir",
+        "subject": "je",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "suis sorti",
+          "suis sortie"
+        ],
+        "ruleId": "PC-punctual-event",
+        "why": {
+          "es": "'Quand' introduce aquí un hecho único y terminado, la salida de la oficina a medianoche: 'salí' en español.",
+          "fr": "« Quand » introduit ici un fait unique et terminé, la sortie du bureau à minuit : passé composé."
+        }
+      },
+      {
+        "verb": "être",
+        "subject": "le dépanneur du coin",
+        "tense": "imp",
+        "accepted": [
+          "était"
+        ],
+        "ruleId": "IMP-background",
+        "why": {
+          "es": "Con 'déjà' se describe cómo estaba la tienda en ese momento: es el escenario, como 'estaba cerrado' en español.",
+          "fr": "Avec « déjà », la phrase décrit la situation au moment de la sortie (le dépanneur fermé) : c'est le décor, imparfait."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-131",
+    "kind": "past",
+    "context": "exam",
+    "frame": "En mai dernier",
+    "present": "Il [pleut] pendant dix jours sans arrêt dans la vallée, puis la rivière [monte] jusqu'aux maisons.",
+    "past": "En mai dernier, il a plu pendant dix jours sans arrêt dans la vallée, puis la rivière est montée jusqu'aux maisons.",
+    "slots": [
+      {
+        "verb": "pleuvoir",
+        "subject": "il",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a plu"
+        ],
+        "ruleId": "PC-bounded-duration",
+        "why": {
+          "es": "'Pendant dix jours' pone principio y fin a la lluvia: el hecho ya terminó, como 'llovió' en español.",
+          "fr": "« Pendant dix jours » donne une durée délimitée, avec un début et une fin : fait terminé, donc passé composé."
+        }
+      },
+      {
+        "verb": "monter",
+        "subject": "la rivière",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est montée"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "'Puis' marca un hecho que sigue a otro y hace avanzar la historia: 'subió' en español, un hecho terminado.",
+          "fr": "« Puis » enchaîne un deuxième événement après le premier : chaque fait fait avancer l'histoire, passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-132",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Samedi soir",
+    "present": "Nous [nous promenons] pendant trois heures dans le Vieux-Québec, puis nous [mangeons] une poutine.",
+    "past": "Samedi soir, nous nous sommes promenés pendant trois heures dans le Vieux-Québec, puis nous avons mangé une poutine.",
+    "slots": [
+      {
+        "verb": "se promener",
+        "subject": "nous",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-pronominal",
+        "accepted": [
+          "nous sommes promenés",
+          "nous sommes promenées"
+        ],
+        "ruleId": "PC-bounded-duration",
+        "why": {
+          "es": "'Pendant trois heures' delimita la duración del paseo, que ya terminó: 'paseamos' en español.",
+          "fr": "« Pendant trois heures » donne une durée délimitée : la promenade est un fait terminé, donc passé composé."
+        }
+      },
+      {
+        "verb": "manger",
+        "subject": "nous",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "avons mangé"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "'Puis' introduce el siguiente hecho de la secuencia: 'comimos' en español, un hecho terminado.",
+          "fr": "« Puis » enchaîne l'événement suivant : le repas est un fait terminé, passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-133",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Mardi matin",
+    "present": "Un pêcheur de Gaspé [trouve] une bouteille dans ses filets, puis il [lit] la lettre écrite en 1989 par une fillette.",
+    "past": "Mardi matin, un pêcheur de Gaspé a trouvé une bouteille dans ses filets, puis il a lu la lettre écrite en 1989 par une fillette.",
+    "slots": [
+      {
+        "verb": "trouver",
+        "subject": "un pêcheur de Gaspé",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a trouvé"
+        ],
+        "ruleId": "PC-punctual-event",
+        "why": {
+          "es": "Encontrar la botella es un hecho único y terminado: 'encontró' en español.",
+          "fr": "Trouver la bouteille est un fait unique et terminé, qui lance la suite de l'histoire : passé composé."
+        }
+      },
+      {
+        "verb": "lire",
+        "subject": "il",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a lu"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "'Puis' marca el hecho siguiente: después de la botella, la carta. En español 'leyó', pretérito.",
+          "fr": "« Puis » marque l'événement suivant : après la bouteille, la lettre. Chaque fait fait avancer l'histoire."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-134",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Quand j'habitais près du parc Angrignon",
+    "present": "Je [cours] chaque matin dans le parc, mais un matin de brouillard, je [me trompe] de sentier.",
+    "past": "Quand j'habitais près du parc Angrignon, je courais chaque matin dans le parc, mais un matin de brouillard, je me suis trompé de sentier.",
+    "slots": [
+      {
+        "verb": "courir",
+        "subject": "je",
+        "tense": "imp",
+        "accepted": [
+          "courais"
+        ],
+        "ruleId": "IMP-habit",
+        "why": {
+          "es": "'Chaque matin' marca una costumbre del pasado: 'corría' en español, como 'solía correr'.",
+          "fr": "« Chaque matin » marque une habitude du passé : imparfait."
+        }
+      },
+      {
+        "verb": "se tromper",
+        "subject": "je",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-pronominal",
+        "accepted": [
+          "me suis trompé",
+          "me suis trompée"
+        ],
+        "ruleId": "PC-punctual-event",
+        "why": {
+          "es": "'Un matin de brouillard' fija una sola mañana, en contraste con la costumbre: 'me equivoqué' en español, un hecho puntual.",
+          "fr": "« Un matin de brouillard » fixe un moment précis qui rompt avec l'habitude : fait ponctuel, passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-135",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Mercredi dernier",
+    "present": "Des archéologues [sortent] de la terre une jarre vieille de deux mille ans, puis ils [rentrent] au laboratoire.",
+    "past": "Mercredi dernier, des archéologues ont sorti de la terre une jarre vieille de deux mille ans, puis ils sont rentrés au laboratoire.",
+    "slots": [
+      {
+        "verb": "sortir",
+        "subject": "des archéologues",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-transitive-switch",
+        "accepted": [
+          "ont sorti"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "Sacar la jarra es el primer hecho de una cadena que sigue con 'puis': un hecho terminado, como 'sacaron' en español.",
+          "fr": "Sortir la jarre est le premier événement d'une suite annoncée par « puis » : fait terminé, passé composé."
+        }
+      },
+      {
+        "verb": "rentrer",
+        "subject": "ils",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "sont rentrés"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "'Puis' marca el siguiente hecho de la cadena: 'regresaron' en español, un hecho terminado.",
+          "fr": "« Puis » enchaîne l'événement suivant de la suite : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-136",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Dimanche midi",
+    "present": "Ma nièce [apprend] depuis une heure à faire des tortillas avec ma tante quand mon oncle [arrive] les bras chargés de mangues.",
+    "past": "Dimanche midi, ma nièce apprenait depuis une heure à faire des tortillas avec ma tante quand mon oncle est arrivé les bras chargés de mangues.",
+    "slots": [
+      {
+        "verb": "apprendre",
+        "subject": "ma nièce",
+        "tense": "imp",
+        "accepted": [
+          "apprenait"
+        ],
+        "ruleId": "IMP-ongoing-interrupted",
+        "why": {
+          "es": "'Depuis une heure' con 'quand' muestra una acción que ya estaba en curso cuando llega el tío: en español, 'llevaba una hora aprendiendo'.",
+          "fr": "« Depuis une heure » avec « quand » montre une action déjà en cours au moment où l'oncle arrive : on n'en voit pas la fin."
+        }
+      },
+      {
+        "verb": "arriver",
+        "subject": "mon oncle",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est arrivé"
+        ],
+        "ruleId": "PC-interrupting-event",
+        "why": {
+          "es": "La llegada del tío es el hecho puntual que interrumpe la clase: 'llegó' en español.",
+          "fr": "L'arrivée de l'oncle est l'événement ponctuel qui interrompt la leçon : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-137",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Dimanche après-midi",
+    "present": "Un cycliste [tombe] sur la piste cyclable du canal Lachine, puis un passant [appelle] une ambulance.",
+    "past": "Dimanche après-midi, un cycliste est tombé sur la piste cyclable du canal Lachine, puis un passant a appelé une ambulance.",
+    "slots": [
+      {
+        "verb": "tomber",
+        "subject": "un cycliste",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est tombé"
+        ],
+        "ruleId": "PC-punctual-event",
+        "why": {
+          "es": "Caerse es un hecho único y terminado que abre la historia: 'se cayó' en español.",
+          "fr": "Tomber est un fait unique et terminé qui lance l'histoire : passé composé."
+        }
+      },
+      {
+        "verb": "appeler",
+        "subject": "un passant",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a appelé"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "'Puis' marca el hecho que sigue a la caída: 'llamó' en español, otro hecho terminado.",
+          "fr": "« Puis » enchaîne l'événement suivant après la chute : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-138",
+    "kind": "past",
+    "context": "daily",
+    "frame": "En décembre dernier",
+    "present": "Mon grand-père [a] quatre-vingt-dix ans quand il [prend] l'avion pour la première fois de sa vie.",
+    "past": "En décembre dernier, mon grand-père avait quatre-vingt-dix ans quand il a pris l'avion pour la première fois de sa vie.",
+    "slots": [
+      {
+        "verb": "avoir",
+        "subject": "mon grand-père",
+        "tense": "imp",
+        "accepted": [
+          "avait"
+        ],
+        "ruleId": "IMP-state",
+        "why": {
+          "es": "La edad es un estado, no un hecho: va en imparfait, como 'tenía noventa años' en español.",
+          "fr": "L'âge est un état, pas un événement : on le décrit à l'imparfait."
+        }
+      },
+      {
+        "verb": "prendre",
+        "subject": "il",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a pris"
+        ],
+        "ruleId": "PC-punctual-event",
+        "why": {
+          "es": "'Pour la première fois' señala un hecho único y terminado: 'tomó el avión' en español.",
+          "fr": "« Pour la première fois » signale un fait unique et terminé : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-139",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Mardi matin",
+    "present": "Un petit garçon [naît] dans une rame de métro entre deux stations, puis la mère et son fils [partent] en ambulance.",
+    "past": "Mardi matin, un petit garçon est né dans une rame de métro entre deux stations, puis la mère et son fils sont partis en ambulance.",
+    "slots": [
+      {
+        "verb": "naître",
+        "subject": "un petit garçon",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est né"
+        ],
+        "ruleId": "PC-punctual-event",
+        "why": {
+          "es": "El nacimiento es un hecho único y terminado: 'nació' en español, un solo momento.",
+          "fr": "Naître est un événement unique et terminé : passé composé."
+        }
+      },
+      {
+        "verb": "partir",
+        "subject": "la mère et son fils",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "sont partis"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "'Puis' marca el hecho siguiente: 'se fueron' en español, un hecho terminado.",
+          "fr": "« Puis » enchaîne l'événement suivant : le départ est un fait terminé, passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-140",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Vendredi soir",
+    "present": "La rame [est] presque vide quand, tout à coup, une fanfare [entre] dans la voiture.",
+    "past": "Vendredi soir, la rame était presque vide quand, tout à coup, une fanfare est entrée dans la voiture.",
+    "slots": [
+      {
+        "verb": "être",
+        "subject": "la rame",
+        "tense": "imp",
+        "accepted": [
+          "était"
+        ],
+        "ruleId": "IMP-background",
+        "why": {
+          "es": "Describe cómo estaba el tren antes de que pasara algo: el escenario, como 'estaba' en español.",
+          "fr": "La phrase décrit le décor (la rame presque vide) avant l'événement : imparfait."
+        }
+      },
+      {
+        "verb": "entrer",
+        "subject": "une fanfare",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est entrée"
+        ],
+        "ruleId": "PC-sudden",
+        "why": {
+          "es": "'Tout à coup' anuncia un hecho imprevisto que rompe el escenario: 'entró' en español, un solo momento.",
+          "fr": "« Tout à coup » annonce un fait imprévu qui rompt le décor : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-141",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Depuis septembre",
+    "present": "Le gardien de nuit d'un musée de Québec [passe] chaque nuit devant la salle des momies, mais une nuit de novembre, il [entend] un bruit étrange.",
+    "past": "Depuis septembre, le gardien de nuit d'un musée de Québec passait chaque nuit devant la salle des momies, mais une nuit de novembre, il a entendu un bruit étrange.",
+    "slots": [
+      {
+        "verb": "passer",
+        "subject": "le gardien de nuit d'un musée de Québec",
+        "tense": "imp",
+        "accepted": [
+          "passait"
+        ],
+        "ruleId": "IMP-habit",
+        "why": {
+          "es": "'Chaque nuit', repetido desde septiembre, marca una costumbre del pasado: 'pasaba' en español, como 'solía pasar'.",
+          "fr": "« Chaque nuit », répété depuis septembre, marque une habitude du passé : imparfait."
+        }
+      },
+      {
+        "verb": "entendre",
+        "subject": "il",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a entendu"
+        ],
+        "ruleId": "PC-punctual-event",
+        "why": {
+          "es": "'Une nuit de novembre' señala una sola noche que rompe la costumbre: 'oyó' en español, un hecho puntual.",
+          "fr": "« Une nuit de novembre » isole une nuit précise qui rompt l'habitude : fait ponctuel, passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-142",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Lundi matin",
+    "present": "Je [passe] une heure à dégager ma voiture de la neige, puis je [vais] au travail.",
+    "past": "Lundi matin, j'ai passé une heure à dégager ma voiture de la neige, puis je suis allé au travail.",
+    "slots": [
+      {
+        "verb": "passer",
+        "subject": "je",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-transitive-switch",
+        "accepted": [
+          "ai passé"
+        ],
+        "ruleId": "PC-bounded-duration",
+        "why": {
+          "es": "'Une heure' delimita la duración, con principio y fin: 'pasé una hora' en español, un esfuerzo ya terminado.",
+          "fr": "« Une heure » donne une durée délimitée, avec un début et une fin : fait terminé, passé composé."
+        }
+      },
+      {
+        "verb": "aller",
+        "subject": "je",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "suis allé",
+          "suis allée"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "'Puis' marca el hecho siguiente: 'fui' en español, un hecho terminado.",
+          "fr": "« Puis » enchaîne l'événement suivant de la suite : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-143",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Jeudi matin",
+    "present": "Les élèves d'une école de Mont-Tremblant [lisent] en silence quand, soudain, un ours noir [entre] dans la cour.",
+    "past": "Jeudi matin, les élèves d'une école de Mont-Tremblant lisaient en silence quand, soudain, un ours noir est entré dans la cour.",
+    "slots": [
+      {
+        "verb": "lire",
+        "subject": "les élèves d'une école de Mont-Tremblant",
+        "tense": "imp",
+        "accepted": [
+          "lisaient"
+        ],
+        "ruleId": "IMP-ongoing-interrupted",
+        "why": {
+          "es": "Leer en silencio es la acción en curso cuando entra el oso: 'leían' en español, sin que se vea el final de la lectura.",
+          "fr": "Lire en silence est l'action en cours au moment où l'ours apparaît : on n'en voit ni le début ni la fin."
+        }
+      },
+      {
+        "verb": "entrer",
+        "subject": "un ours noir",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est entré"
+        ],
+        "ruleId": "PC-sudden",
+        "why": {
+          "es": "'Soudain' anuncia un hecho imprevisto que corta la lectura: 'entró' en español, un solo momento.",
+          "fr": "« Soudain » annonce un événement imprévu qui coupe l'action en cours : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-144",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Samedi dernier",
+    "present": "Nous [montons] trois fois l'escalier de mon nouvel immeuble avec des caisses de livres.",
+    "past": "Samedi dernier, nous avons monté trois fois l'escalier de mon nouvel immeuble avec des caisses de livres.",
+    "slots": [
+      {
+        "verb": "monter",
+        "subject": "nous",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-transitive-switch",
+        "accepted": [
+          "avons monté"
+        ],
+        "ruleId": "PC-counted-repetition",
+        "why": {
+          "es": "'Trois fois' dice cuántas veces ocurrió, así que el hecho es contado y terminado: 'subimos' en español.",
+          "fr": "« Trois fois » dit combien de fois : le fait est compté et terminé, donc passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-145",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Lundi soir, dans les Laurentides",
+    "present": "Quand les sauveteurs [arrivent] auprès du randonneur perdu depuis la veille, il [a] très froid.",
+    "past": "Lundi soir, dans les Laurentides, quand les sauveteurs sont arrivés auprès du randonneur perdu depuis la veille, il avait très froid.",
+    "slots": [
+      {
+        "verb": "arriver",
+        "subject": "les sauveteurs",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "sont arrivés"
+        ],
+        "ruleId": "PC-punctual-event",
+        "why": {
+          "es": "Después de 'quand', la llegada de los rescatistas es un hecho único y terminado: 'llegaron' en español.",
+          "fr": "Après « quand », l'arrivée des sauveteurs est un fait unique et terminé : passé composé."
+        }
+      },
+      {
+        "verb": "avoir",
+        "subject": "il",
+        "tense": "imp",
+        "accepted": [
+          "avait"
+        ],
+        "ruleId": "IMP-state",
+        "why": {
+          "es": "Tener frío es un estado físico en ese momento, no un hecho: 'tenía' en español.",
+          "fr": "Avoir froid est un état physique au moment où les secours arrivent : imparfait."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-146",
+    "kind": "past",
+    "context": "daily",
+    "frame": "L'été dernier",
+    "present": "Ma sœur [vit] chez moi pendant trois mois, puis elle [part] pour Guadalajara.",
+    "past": "L'été dernier, ma sœur a vécu chez moi pendant trois mois, puis elle est partie pour Guadalajara.",
+    "slots": [
+      {
+        "verb": "vivre",
+        "subject": "ma sœur",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a vécu"
+        ],
+        "ruleId": "PC-bounded-duration",
+        "why": {
+          "es": "'Pendant trois mois' delimita la duración con principio y fin: 'vivió' en español, una estancia ya terminada.",
+          "fr": "« Pendant trois mois » donne une durée délimitée : le séjour est terminé, passé composé."
+        }
+      },
+      {
+        "verb": "partir",
+        "subject": "elle",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est partie"
+        ],
+        "ruleId": "PC-sequence",
+        "why": {
+          "es": "'Puis' marca el hecho siguiente: 'se fue' en español, un hecho terminado.",
+          "fr": "« Puis » enchaîne l'événement suivant : le départ, passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-147",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Dimanche soir, au Festival de jazz",
+    "present": "La chanteuse [revient] trois fois sur scène sous les applaudissements du public.",
+    "past": "Dimanche soir, au Festival de jazz, la chanteuse est revenue trois fois sur scène sous les applaudissements du public.",
+    "slots": [
+      {
+        "verb": "revenir",
+        "subject": "la chanteuse",
+        "tense": "pc",
+        "aux": "etre",
+        "auxRuleId": "AUX-etre-motion",
+        "accepted": [
+          "est revenue"
+        ],
+        "ruleId": "PC-counted-repetition",
+        "why": {
+          "es": "'Trois fois' dice cuántas veces volvió al escenario, así que el hecho es contado y terminado: 'regresó' en español.",
+          "fr": "« Trois fois » dit combien de fois : le fait est compté et terminé, donc passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-148",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Mardi matin",
+    "present": "Je [parle] au téléphone avec ma mère dans la salle d'attente du médecin quand l'infirmière [appelle] mon nom.",
+    "past": "Mardi matin, je parlais au téléphone avec ma mère dans la salle d'attente du médecin quand l'infirmière a appelé mon nom.",
+    "slots": [
+      {
+        "verb": "parler",
+        "subject": "je",
+        "tense": "imp",
+        "accepted": [
+          "parlais"
+        ],
+        "ruleId": "IMP-ongoing-interrupted",
+        "why": {
+          "es": "Hablar por teléfono estaba en curso cuando la enfermera dijo mi nombre: 'hablaba' en español.",
+          "fr": "Parler au téléphone est l'action en cours au moment où l'infirmière intervient : imparfait."
+        }
+      },
+      {
+        "verb": "appeler",
+        "subject": "l'infirmière",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a appelé"
+        ],
+        "ruleId": "PC-interrupting-event",
+        "why": {
+          "es": "Que la enfermera diga mi nombre es el hecho puntual que interrumpe la llamada: 'llamó' en español.",
+          "fr": "L'appel de l'infirmière est l'événement ponctuel qui interrompt la conversation : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-149",
+    "kind": "past",
+    "context": "exam",
+    "frame": "Mercredi matin",
+    "present": "Une retraitée de Laval [retourne] la terre de son potager quand, soudain, elle [trouve] une bague de mariage perdue il y a trente ans.",
+    "past": "Mercredi matin, une retraitée de Laval retournait la terre de son potager quand, soudain, elle a trouvé une bague de mariage perdue il y a trente ans.",
+    "slots": [
+      {
+        "verb": "retourner",
+        "subject": "une retraitée de Laval",
+        "tense": "imp",
+        "accepted": [
+          "retournait"
+        ],
+        "ruleId": "IMP-ongoing-interrupted",
+        "why": {
+          "es": "Remover la tierra estaba en curso cuando apareció la sorpresa: 'removía' en español, sin que se vea el final del trabajo.",
+          "fr": "Retourner la terre est l'action en cours au moment où la bague apparaît : on n'en voit ni le début ni la fin."
+        }
+      },
+      {
+        "verb": "trouver",
+        "subject": "elle",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a trouvé"
+        ],
+        "ruleId": "PC-sudden",
+        "why": {
+          "es": "'Soudain' anuncia el hallazgo imprevisto que corta el trabajo: 'encontró' en español.",
+          "fr": "« Soudain » annonce un fait imprévu qui coupe l'action en cours : passé composé."
+        }
+      }
+    ]
+  },
+  {
+    "id": "p-150",
+    "kind": "past",
+    "context": "daily",
+    "frame": "Mercredi soir",
+    "present": "Nous [perdons] 3 à 2 quand, à dix secondes de la fin, mon ami Luis [réussit] à égaliser.",
+    "past": "Mercredi soir, nous perdions 3 à 2 quand, à dix secondes de la fin, mon ami Luis a réussi à égaliser.",
+    "slots": [
+      {
+        "verb": "perdre",
+        "subject": "nous",
+        "tense": "imp",
+        "accepted": [
+          "perdions"
+        ],
+        "ruleId": "IMP-ongoing-interrupted",
+        "why": {
+          "es": "Ir perdiendo 3 a 2 es la situación en curso cuando pasa otra cosa: 'perdíamos' en español.",
+          "fr": "Perdre 3 à 2 est la situation en cours au moment de l'égalisation : on n'en voit pas la fin, donc imparfait."
+        }
+      },
+      {
+        "verb": "réussir",
+        "subject": "mon ami Luis",
+        "tense": "pc",
+        "aux": "avoir",
+        "auxRuleId": "AUX-avoir-default",
+        "accepted": [
+          "a réussi"
+        ],
+        "ruleId": "PC-interrupting-event",
+        "why": {
+          "es": "Lograr el empate es el hecho puntual que cambia la situación: 'logró empatar' en español, un solo momento.",
+          "fr": "Réussir à égaliser est l'événement ponctuel qui interrompt la situation : passé composé."
+        }
+      }
+    ]
+  }
+]
