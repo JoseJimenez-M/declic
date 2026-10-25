@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.p12
+*.key
+*.crt
+*.b64
+.DS_Store
