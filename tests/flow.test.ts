@@ -115,14 +115,15 @@ describe("flow", () => {
     expect(state.feedback).toMatchObject({ kind: "revealed", answer: "viendras" });
   });
 
-  it("scores fail when one slot fails and the other is clean", () => {
-    const { state } = run(start(pastItem), [choose("pc"), next, type("lisais"), choose("pc"), choose("etre"), type("est arrivée")]);
+  it("scores fail when the second slot fails and the first is clean", () => {
+    // Slot 1 gets a wrong first choice (imp instead of pc); outcomeOf must look past the clean slot 0.
+    const { state } = run(start(pastItem), [choose("imp"), type("lisais"), choose("imp"), next, choose("etre"), type("est arrivée")]);
     expect(state.done).toBe(true);
-    expect(state.results).toEqual(["failed", "clean"]);
+    expect(state.results).toEqual(["clean", "failed"]);
     expect(outcomeOf(state)).toBe("fail");
   });
 
-  it("scores near-fixed when one slot is near-fixed and the other is clean", () => {
+  it("scores near-fixed when the first slot is near-fixed and the second is clean", () => {
     const { state, attempts } = run(start(pastItem), [choose("imp"), type("lisait"), type("lisais"), choose("pc"), choose("etre"), type("est arrivée")]);
     expect(attempts[1]).toMatchObject({ slot: 0, step: 3, attempt: 1, correct: false, category: "ending" });
     expect(state.done).toBe(true);

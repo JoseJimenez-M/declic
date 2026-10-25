@@ -19,9 +19,11 @@ const TODAY = "2026-10-25";
 
 describe("buildSession", () => {
   it("puts due items first, most overdue first, then fills with new items", () => {
+    // Bank order (p1, p2, p3, m3) differs from overdue order (p3, m3, p2), so only the sort can produce the result.
     const states = {
       p3: { box: 2 as const, due: "2026-10-20" },
-      m3: { box: 1 as const, due: "2026-10-24" },
+      m3: { box: 1 as const, due: "2026-10-22" },
+      p2: { box: 1 as const, due: "2026-10-24" },
       p1: { box: 3 as const, due: "2026-10-30" },
     };
     expect(ids(buildSession(bank, states, TODAY, "all", 4))).toEqual(["p3", "m3", "p2", "m1"]);
@@ -60,7 +62,8 @@ describe("session cap and mixing", () => {
     for (let n = 1; n <= 6; n++) due.push(mk(`dp${n}`, "past", "daily"), mk(`dm${n}`, "mood", "daily"));
     const states = Object.fromEntries(due.map((item, n) => dueIn(item, `2026-10-${String(n + 1).padStart(2, "0")}`)));
     const fresh = [mk("np1", "past", "daily"), mk("nm1", "mood", "daily"), mk("np2", "past", "exam")];
-    const result = ids(buildSession([...fresh, ...due], states, TODAY, "all", 10));
+    // The due items sit in the bank in reverse overdue order, so bank order cannot explain the selection.
+    const result = ids(buildSession([...fresh, ...[...due].reverse()], states, TODAY, "all", 10));
     const mostOverdue = due.slice(0, 10).map((i) => i.id);
     expect(result).toHaveLength(10);
     expect([...result].sort()).toEqual([...mostOverdue].sort());
@@ -79,7 +82,7 @@ describe("session cap and mixing", () => {
     };
     // New items come first in the bank on purpose, so bank order cannot explain the result.
     const result = buildSession([...fresh, ...due], states, TODAY, "all", 5);
-    expect(new Set(ids(result))).toEqual(new Set(["dp1", "dm1", "dp2", "np1", "nm1"]));
+    expect(ids(result)).toEqual(["dp1", "dm1", "dp2", "nm1", "np1"]);
     expect(result.map((i) => i.kind)).toEqual(["past", "mood", "past", "mood", "past"]);
   });
 
@@ -93,6 +96,7 @@ describe("session cap and mixing", () => {
 });
 
 describe("interleave with an unknown context", () => {
+  // A regression here would hang the run (the loop is synchronous) rather than fail an assertion.
   it("terminates and leaves the unplaceable item out", () => {
     const stray: Item = { ...pastItem, id: "stray", context: "weird" as unknown as Item["context"] };
     expect(ids(interleave([...bank, stray]))).toEqual(["p1", "m1", "p2", "m2", "p3", "m3"]);
