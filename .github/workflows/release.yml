@@ -1,0 +1,46 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npx cap sync android
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Decode keystore
+        run: echo "$DECLIC_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/declic.p12"
+        env:
+          DECLIC_KEYSTORE_B64: ${{ secrets.DECLIC_KEYSTORE_B64 }}
+      - name: Version from tag
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          IFS=. read -r major minor patch <<< "$v"
+          echo "DECLIC_VERSION_NAME=$v" >> "$GITHUB_ENV"
+          echo "DECLIC_VERSION_CODE=$((major * 10000 + minor * 100 + patch))" >> "$GITHUB_ENV"
+      - name: Build signed APK
+        working-directory: android
+        run: chmod +x gradlew && ./gradlew assembleRelease
+        env:
+          DECLIC_KEYSTORE_PATH: ${{ runner.temp }}/declic.p12
+          DECLIC_KEYSTORE_PASSWORD: ${{ secrets.DECLIC_KEYSTORE_PASSWORD }}
+      - run: cp android/app/build/outputs/apk/release/app-release.apk "declic-${GITHUB_REF_NAME}.apk"
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: declic-${{ github.ref_name }}.apk
