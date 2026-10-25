@@ -15,6 +15,9 @@ const LABELS: Record<string, string> = {
   irregular: "Raíz irregular",
 };
 
+/** Taps closer than this to the previous screen change are ignored: a double tap would land on the next card. */
+const TAP_GUARD_MS = 300;
+
 const NEAR_HINT: Record<string, string> = {
   accent: "Casi: revisa los acentos.",
   agreement: "Casi: revisa la concordancia del participio.",
@@ -85,6 +88,10 @@ export function Exercise(p: Props) {
   const ms = () => Math.max(0, Date.now() - shownAt.current);
 
   const send = (event: FlowEvent) => {
+    // The next card has an identical button grid, so a double tap would record a wrong choice or a Help as a failure.
+    // A negative elapsed time (clock moved back) is not a double tap.
+    const since = Date.now() - shownAt.current;
+    if (event.type !== "next" && since >= 0 && since < TAP_GUARD_MS) return;
     const r = apply(flow, event, new Date().toISOString());
     if (r.attempts.length > 0) p.onAttempts(r.attempts);
     if (r.state.done && !flow.done) p.onItemDone(flow.item, outcomeOf(r.state));
@@ -188,6 +195,7 @@ export function Exercise(p: Props) {
               autoFocus
               autoComplete="off"
               autoCapitalize="off"
+              autocorrect="off"
               spellcheck={false}
             />
           </form>

@@ -26,12 +26,16 @@ export function App() {
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   const [screen, setScreen] = useState<Screen>({ name: "home" });
   const [tick, setTick] = useState(0);
+  const [loadError, setLoadError] = useState("");
 
   useEffect(() => {
-    void Promise.all([loadState(), loadAttempts()]).then(([s, a]) => {
-      setState(s);
-      setAttempts(a);
-    });
+    Promise.all([loadState(), loadAttempts()]).then(
+      ([s, a]) => {
+        setState(s);
+        setAttempts(a);
+      },
+      (e: unknown) => setLoadError(e instanceof Error ? e.message : String(e)),
+    );
   }, []);
 
   // Android keeps the WebView alive in the background: render again when the app comes back, so the day rolls over after midnight.
@@ -62,7 +66,14 @@ export function App() {
   if (!state) {
     return (
       <main class="app">
-        <p class="muted">Cargando…</p>
+        {loadError ? (
+          <>
+            <p class="big">No se pudieron cargar tus datos. Cierra y vuelve a abrir la app.</p>
+            <p class="muted">{loadError}</p>
+          </>
+        ) : (
+          <p class="muted">Cargando…</p>
+        )}
       </main>
     );
   }
