@@ -98,4 +98,69 @@ describe("flow", () => {
     const { state } = run(start(moodInd), [choose("ind"), type("viendras")]);
     expect(apply(state, help, NOW).attempts).toEqual([]);
   });
+
+  it("Help on step 3 after a near first attempt records attempt 2, reveals the form and fails the item", () => {
+    let { state, attempts } = run(start(moodSubj), [choose("subj"), choose("irregular"), type("fasse"), help]);
+    expect(attempts).toHaveLength(4);
+    expect(attempts[3]).toMatchObject({ step: 3, attempt: 2, help: true, chosen: "", correct: false });
+    expect(state.feedback).toEqual({ kind: "revealed", answer: "fasses", ruleId: "SUBJ-necessity", why: moodSubj.why });
+    ({ state } = run(state, [next]));
+    expect(state.done).toBe(true);
+    expect(outcomeOf(state)).toBe("fail");
+  });
+
+  it("Help on step 3 at the first attempt records attempt 1 and reveals the first accepted form", () => {
+    const { state, attempts } = run(start(moodInd), [choose("ind"), help]);
+    expect(attempts[1]).toMatchObject({ step: 3, attempt: 1, help: true, chosen: "", correct: false });
+    expect(state.feedback).toMatchObject({ kind: "revealed", answer: "viendras" });
+  });
+
+  it("scores fail when one slot fails and the other is clean", () => {
+    const { state } = run(start(pastItem), [choose("pc"), next, type("lisais"), choose("pc"), choose("etre"), type("est arrivée")]);
+    expect(state.done).toBe(true);
+    expect(state.results).toEqual(["failed", "clean"]);
+    expect(outcomeOf(state)).toBe("fail");
+  });
+
+  it("scores near-fixed when one slot is near-fixed and the other is clean", () => {
+    const { state, attempts } = run(start(pastItem), [choose("imp"), type("lisait"), type("lisais"), choose("pc"), choose("etre"), type("est arrivée")]);
+    expect(attempts[1]).toMatchObject({ slot: 0, step: 3, attempt: 1, correct: false, category: "ending" });
+    expect(state.done).toBe(true);
+    expect(state.results).toEqual(["near-fixed", "clean"]);
+    expect(outcomeOf(state)).toBe("near-fixed");
+  });
+
+  it("explains a wrong choice on step 2 and moves to typing after next", () => {
+    let { state, attempts } = run(start(pastItem), [choose("imp"), type("lisais"), choose("pc"), choose("avoir")]);
+    expect(state.slotIndex).toBe(1);
+    expect(state.feedback).toEqual({ kind: "wrong-choice", answer: "etre", ruleId: "AUX-etre-motion", why: undefined });
+    expect(attempts[3]).toMatchObject({ slot: 1, step: 2, chosen: "avoir", correct: false, ruleId: "AUX-etre-motion" });
+    ({ state } = run(state, [next]));
+    expect(state.slotIndex).toBe(1);
+    expect(state.step).toBe(3);
+    expect(state.feedback).toBeNull();
+  });
+
+  it("keeps far feedback non-blocking and ignores next on it", () => {
+    const { state } = run(start(moodSubj), [choose("subj"), choose("irregular"), type("allons")]);
+    expect(state.feedback).toEqual({ kind: "far" });
+    expect(state.typingAttempt).toBe(2);
+    const after = apply(state, next, NOW);
+    expect(after.state).toBe(state);
+    expect(after.attempts).toEqual([]);
+  });
+
+  it("ignores choose on the typing step and type on a choice step", () => {
+    const typing = run(start(moodSubj), [choose("subj"), choose("irregular")]).state;
+    expect(typing.step).toBe(3);
+    const chosen = apply(typing, choose("subj"), NOW);
+    expect(chosen.attempts).toEqual([]);
+    expect(chosen.state).toBe(typing);
+
+    const first = start(moodSubj);
+    expect(first.step).toBe(1);
+    const typed = apply(first, type("fasses"), NOW);
+    expect(typed.attempts).toEqual([]);
+    expect(typed.state).toBe(first);
+  });
 });
