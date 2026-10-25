@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Déclic</title>
+  <desc id="desc">A lowercase e whose acute accent sparks like a click: the moment a French tense finally clicks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B1F2E"/>
+      <stop offset="1" stop-color="#0E1018"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#D97757"/>
+      <stop offset="1" stop-color="#F0A27C"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <!-- the e: a bar, then an arc from its right end up and around, open at the lower right -->
+  <path d="M 88 160 H 168 A 40 40 0 1 0 156.3 188.3" fill="none" stroke="#F7F3EE" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- the acute accent -->
+  <line x1="120" y1="96" x2="144" y2="66" stroke="url(#accent)" stroke-width="18" stroke-linecap="round"/>
+  <!-- the click: three rays off the tip of the accent -->
+  <g stroke="#F4B393" stroke-width="7" stroke-linecap="round">
+    <line x1="160" y1="64.3" x2="175" y2="62.8"/>
+    <line x1="154.1" y1="53.6" x2="163.5" y2="41.9"/>
+    <line x1="142.3" y1="50.1" x2="140.8" y2="35.2"/>
+  </g>
+</svg>
