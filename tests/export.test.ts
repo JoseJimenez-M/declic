@@ -53,6 +53,6 @@ describe("statsMarkdown", () => {
   });
 
   it("follows the vault style: no em dash", () => {
-    expect(md).not.toContain("—");
+    expect(md).not.toContain("\u2014");
   });
 });
