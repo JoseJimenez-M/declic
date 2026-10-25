@@ -1,0 +1,252 @@
+[
+  {
+    "id": "m-001", "kind": "mood", "context": "daily",
+    "sentence": "Demain, il faut que nous ___ (prendre) le métro de 7 h 30 pour arriver à l'heure.",
+    "verb": "prendre", "mood": "subj", "stem": "regular",
+    "accepted": ["prenions"], "ruleId": "SUBJ-necessity",
+    "why": {
+      "es": "«Il faut que» expresa necesidad y siempre pide subjuntivo. Con «nous» se usa el radical de «nous prenons»: que nous prenions.",
+      "fr": "« Il faut que » exprime la nécessité et demande le subjonctif. Avec « nous », on garde le radical de « nous prenons » : que nous prenions."
+    }
+  },
+  {
+    "id": "m-002", "kind": "mood", "context": "exam",
+    "sentence": "Je pense que le télétravail ___ (avoir) déjà de nombreux avantages pour les parents.",
+    "verb": "avoir", "mood": "ind",
+    "accepted": ["a"], "ruleId": "IND-affirmed-opinion",
+    "why": {
+      "es": "«Je pense que» en afirmativo expresa una opinión firme y va con indicativo (en negativo, «je ne pense pas que», pediría subjuntivo). «Déjà» sitúa la idea en el presente: le télétravail a.",
+      "fr": "« Je pense que » à la forme affirmative exprime une opinion ferme et se construit avec l'indicatif. « Déjà » situe l'avantage dans le présent : le télétravail a."
+    }
+  },
+  {
+    "id": "m-003", "kind": "mood", "context": "daily",
+    "sentence": "Ce soir, quand tu ___ (arriver) au dépanneur, la file sera déjà longue.",
+    "verb": "arriver", "mood": "ind",
+    "accepted": ["arriveras"], "ruleId": "IND-quand-futur",
+    "why": {
+      "es": "En español dirías «cuando llegues» (subjuntivo), pero en francés «quand» + acción futura va con futur: quand tu arriveras. La principal también está en futuro.",
+      "fr": "Après « quand », une action à venir se met au futur, comme dans la principale : quand tu arriveras. Le subjonctif est impossible ici."
+    }
+  },
+  {
+    "id": "m-004", "kind": "mood", "context": "exam",
+    "sentence": "Il est normal que les adolescents ___ (vouloir) partager leurs photos sur les réseaux sociaux.",
+    "verb": "vouloir", "mood": "subj", "stem": "irregular",
+    "accepted": ["veuillent"], "ruleId": "SUBJ-impersonal-judgement",
+    "why": {
+      "es": "«Il est normal que» es un juicio impersonal y pide subjuntivo. «Vouloir» tiene radical irregular: qu'ils veuillent.",
+      "fr": "« Il est normal que » est un jugement impersonnel et demande le subjonctif. Vouloir a un radical irrégulier : qu'ils veuillent."
+    }
+  },
+  {
+    "id": "m-005", "kind": "mood", "context": "daily",
+    "sentence": "Le propriétaire veut que nous ___ (payer) le loyer avant le 1er du mois.",
+    "verb": "payer", "mood": "subj", "stem": "regular",
+    "accepted": ["payions"], "ruleId": "SUBJ-will",
+    "why": {
+      "es": "«Vouloir que» expresa voluntad y pide subjuntivo, como «quiere que paguemos». Con «nous» se usa el radical de «nous payons»: que nous payions.",
+      "fr": "« Vouloir que » exprime la volonté et demande le subjonctif, car le sujet change (le propriétaire, nous). Avec « nous », radical de « nous payons » : que nous payions."
+    }
+  },
+  {
+    "id": "m-006", "kind": "mood", "context": "exam",
+    "sentence": "Il est évident que beaucoup d'automobilistes ___ (conduire) trop vite au centre-ville chaque matin.",
+    "verb": "conduire", "mood": "ind",
+    "accepted": ["conduisent"], "ruleId": "IND-certainty",
+    "why": {
+      "es": "«Il est évident que» expresa certeza y va con indicativo, no con subjuntivo. Presente plural: ils conduisent.",
+      "fr": "« Il est évident que » exprime une certitude : indicatif présent, « ils conduisent »."
+    }
+  },
+  {
+    "id": "m-007", "kind": "mood", "context": "daily",
+    "sentence": "Je doute que le serveur ___ (tenir) jusqu'à la fin du déploiement de ce soir.",
+    "verb": "tenir", "mood": "subj", "stem": "regular",
+    "accepted": ["tienne"], "ruleId": "SUBJ-doubt",
+    "why": {
+      "es": "«Douter que» expresa duda y pide subjuntivo, igual que «dudo que aguante». Radical de «ils tiennent»: que le serveur tienne.",
+      "fr": "« Douter que » exprime le doute et demande le subjonctif. Tenir garde le radical d'« ils tiennent » : que le serveur tienne."
+    }
+  },
+  {
+    "id": "m-008", "kind": "mood", "context": "exam",
+    "sentence": "Bien que les journées ___ (être) plus longues, beaucoup de salariés préfèrent la semaine de quatre jours.",
+    "verb": "être", "mood": "subj", "stem": "irregular",
+    "accepted": ["soient"], "ruleId": "SUBJ-conjunction",
+    "why": {
+      "es": "«Bien que» siempre pide subjuntivo y, a diferencia de «aunque», nunca lleva indicativo. «Être» es irregular: que les journées soient.",
+      "fr": "« Bien que » demande toujours le subjonctif, jamais l'indicatif (contrairement à « aunque » en espagnol). Être est irrégulier : que les journées soient."
+    }
+  },
+  {
+    "id": "m-009", "kind": "mood", "context": "daily",
+    "sentence": "J'espère que le médecin ___ (pouvoir) te recevoir cet après-midi.",
+    "verb": "pouvoir", "mood": "ind",
+    "accepted": ["pourra", "peut"], "ruleId": "IND-esperer",
+    "why": {
+      "es": "En español «espero que» lleva subjuntivo, pero «espérer que» va con indicativo: «pourra» (futur) o «peut» (presente), nunca «puisse».",
+      "fr": "« Espérer que » se construit avec l'indicatif : « pourra » (futur) ou « peut » (présent à valeur de futur proche), jamais « puisse »."
+    }
+  },
+  {
+    "id": "m-010", "kind": "mood", "context": "exam",
+    "sentence": "Je ne pense pas que les uniformes ___ (avoir) vraiment un effet sur les résultats scolaires.",
+    "verb": "avoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["aient"], "ruleId": "SUBJ-negated-opinion",
+    "why": {
+      "es": "«Je ne pense pas que» expresa una opinión dudosa y pide subjuntivo (en afirmativo, «je pense que», llevaría indicativo). «Avoir» es irregular: qu'ils aient.",
+      "fr": "« Je ne pense pas que » exprime une opinion niée : subjonctif (à la forme affirmative, on aurait l'indicatif). Avoir est irrégulier : qu'ils aient."
+    }
+  },
+  {
+    "id": "m-011", "kind": "mood", "context": "daily",
+    "sentence": "Je suis content que tu ___ (pouvoir) venir au concert samedi prochain.",
+    "verb": "pouvoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["puisses"], "ruleId": "SUBJ-emotion",
+    "why": {
+      "es": "«Être content que» expresa emoción y pide subjuntivo, como «me alegra que puedas». «Pouvoir» es irregular: que tu puisses.",
+      "fr": "« Être content que » exprime un sentiment et demande le subjonctif. Pouvoir est irrégulier : que tu puisses."
+    }
+  },
+  {
+    "id": "m-012", "kind": "mood", "context": "exam",
+    "sentence": "Dans certaines écoles, après que les élèves ___ (écrire) leur rédaction, une IA la corrige en quelques secondes.",
+    "verb": "écrire", "mood": "ind",
+    "accepted": ["ont écrit"], "ruleId": "IND-apres-que",
+    "why": {
+      "es": "«Après que» va con indicativo, aunque en español «después de que» a veces lleve subjuntivo. La principal está en presente («une IA la corrige»), así que la acción anterior va en passé composé: ont écrit, nunca «aient écrit».",
+      "fr": "« Après que » se construit avec l'indicatif, contrairement à « avant que ». La principale est au présent (« une IA la corrige »), donc l'action antérieure se met au passé composé : ont écrit."
+    }
+  },
+  {
+    "id": "m-013", "kind": "mood", "context": "daily",
+    "sentence": "Il faut que je ___ (faire) une demande de renouvellement à la SAAQ avant vendredi.",
+    "verb": "faire", "mood": "subj", "stem": "irregular",
+    "accepted": ["fasse"], "ruleId": "SUBJ-necessity",
+    "why": {
+      "es": "«Il faut que» expresa necesidad y siempre pide subjuntivo. «Faire» es irregular: que je fasse.",
+      "fr": "« Il faut que » exprime la nécessité et demande le subjonctif. Faire est irrégulier : que je fasse."
+    }
+  },
+  {
+    "id": "m-014", "kind": "mood", "context": "exam",
+    "sentence": "Beaucoup d'usagers souhaitent que le transport en commun ___ (devenir) gratuit.",
+    "verb": "devenir", "mood": "subj", "stem": "regular",
+    "accepted": ["devienne"], "ruleId": "SUBJ-will",
+    "why": {
+      "es": "«Souhaiter que» expresa deseo y pide subjuntivo, como «desean que se vuelva gratuito». Radical de «ils deviennent»: que le transport devienne.",
+      "fr": "« Souhaiter que » exprime un souhait et demande le subjonctif. Devenir garde le radical d'« ils deviennent » : que le transport devienne."
+    }
+  },
+  {
+    "id": "m-015", "kind": "mood", "context": "daily",
+    "sentence": "Je suis sûr que Marc ___ (courir) plus vite que moi depuis qu'il s'entraîne tous les matins.",
+    "verb": "courir", "mood": "ind",
+    "accepted": ["court"], "ruleId": "IND-certainty",
+    "why": {
+      "es": "«Je suis sûr que» expresa certeza y va con indicativo (con negación, «je ne suis pas sûr que», cambiaría a subjuntivo). «Depuis qu'il s'entraîne» sitúa la acción en el presente: Marc court.",
+      "fr": "« Je suis sûr que » exprime la certitude : indicatif. « Depuis qu'il s'entraîne » situe l'action dans le présent : Marc court."
+    }
+  },
+  {
+    "id": "m-016", "kind": "mood", "context": "exam",
+    "sentence": "Je ne suis pas sûr que les enfants ___ (savoir) encore écrire à la main.",
+    "verb": "savoir", "mood": "subj", "stem": "irregular",
+    "accepted": ["sachent"], "ruleId": "SUBJ-doubt",
+    "why": {
+      "es": "«Ne pas être sûr que» expresa duda y pide subjuntivo. «Savoir» es irregular: que les enfants sachent.",
+      "fr": "« Ne pas être sûr que » exprime le doute et demande le subjonctif. Savoir est irrégulier : que les enfants sachent."
+    }
+  },
+  {
+    "id": "m-017", "kind": "mood", "context": "daily",
+    "sentence": "Je prépare les tamales à condition que tu ___ (mettre) la table.",
+    "verb": "mettre", "mood": "subj", "stem": "regular",
+    "accepted": ["mettes"], "ruleId": "SUBJ-conjunction",
+    "why": {
+      "es": "«À condition que» siempre pide subjuntivo. Radical de «ils mettent»: que tu mettes.",
+      "fr": "« À condition que » demande toujours le subjonctif. Mettre garde le radical d'« ils mettent » : que tu mettes."
+    }
+  },
+  {
+    "id": "m-018", "kind": "mood", "context": "exam",
+    "sentence": "Quand les touristes ___ (venir) en masse l'été prochain, les habitants se plaindront du bruit.",
+    "verb": "venir", "mood": "ind",
+    "accepted": ["viendront"], "ruleId": "IND-quand-futur",
+    "why": {
+      "es": "En español se dice «cuando vengan» (subjuntivo), pero en francés «quand» + acción futura va con futur: quand les touristes viendront. La principal también está en futuro.",
+      "fr": "Après « quand », une action à venir se met au futur : quand les touristes viendront. Le subjonctif est impossible ici."
+    }
+  },
+  {
+    "id": "m-019", "kind": "mood", "context": "daily",
+    "sentence": "Il vaut mieux que tu ___ (partir) avant midi : la tempête de neige arrive cet après-midi.",
+    "verb": "partir", "mood": "subj", "stem": "regular",
+    "accepted": ["partes"], "ruleId": "SUBJ-impersonal-judgement",
+    "why": {
+      "es": "«Il vaut mieux que» es un juicio impersonal y pide subjuntivo, como «es mejor que te vayas». Radical de «ils partent»: que tu partes.",
+      "fr": "« Il vaut mieux que » est un jugement impersonnel et demande le subjonctif : que tu partes."
+    }
+  },
+  {
+    "id": "m-020", "kind": "mood", "context": "exam",
+    "sentence": "Cette mère a peur que sa fille ___ (perdre) le goût de la lecture si elle joue trop aux jeux vidéo.",
+    "verb": "perdre", "mood": "subj", "stem": "regular",
+    "accepted": ["perde"], "ruleId": "SUBJ-emotion",
+    "why": {
+      "es": "«Avoir peur que» expresa temor, una emoción, y pide subjuntivo, como «teme que pierda». Radical de «ils perdent»: que sa fille perde.",
+      "fr": "« Avoir peur que » exprime un sentiment et demande le subjonctif : que sa fille perde."
+    }
+  },
+  {
+    "id": "m-021", "kind": "mood", "context": "daily",
+    "sentence": "J'espère que ma mère ___ (venir) me voir à Montréal pour Noël.",
+    "verb": "venir", "mood": "ind",
+    "accepted": ["viendra", "vient"], "ruleId": "IND-esperer",
+    "why": {
+      "es": "En español «espero que venga» lleva subjuntivo, pero «j'espère que» va con indicativo: «viendra» (futur) o «vient» (presente), nunca «vienne».",
+      "fr": "« J'espère que » se construit avec l'indicatif : « viendra » ou « vient », jamais « vienne »."
+    }
+  },
+  {
+    "id": "m-022", "kind": "mood", "context": "exam",
+    "sentence": "Il est nécessaire que les repas scolaires ___ (être) équilibrés et abordables.",
+    "verb": "être", "mood": "subj", "stem": "irregular",
+    "accepted": ["soient"], "ruleId": "SUBJ-necessity",
+    "why": {
+      "es": "«Il est nécessaire que» expresa necesidad y pide subjuntivo. «Être» es irregular: que les repas soient.",
+      "fr": "« Il est nécessaire que » exprime la nécessité et demande le subjonctif. Être est irrégulier : que les repas soient."
+    }
+  },
+  {
+    "id": "m-023", "kind": "mood", "context": "daily",
+    "sentence": "Le dimanche, après que les enfants ___ (finir) leurs devoirs, nous appelons leurs grands-parents au Mexique.",
+    "verb": "finir", "mood": "ind",
+    "accepted": ["ont fini"], "ruleId": "IND-apres-que",
+    "why": {
+      "es": "«Après que» siempre va con indicativo, nunca subjuntivo («aient fini» es un error frecuente). La principal está en presente de costumbre («nous appelons»), así que la acción anterior va en passé composé: ont fini.",
+      "fr": "« Après que » se construit avec l'indicatif, jamais le subjonctif. La principale est au présent d'habitude (« nous appelons »), donc l'action antérieure se met au passé composé : ont fini."
+    }
+  },
+  {
+    "id": "m-024", "kind": "mood", "context": "exam",
+    "sentence": "Je ne crois pas qu'un adolescent ___ (voir) l'intérêt du bénévolat obligatoire.",
+    "verb": "voir", "mood": "subj", "stem": "regular",
+    "accepted": ["voie"], "ruleId": "SUBJ-negated-opinion",
+    "why": {
+      "es": "«Je ne crois pas que» expresa una opinión dudosa y pide subjuntivo (en afirmativo llevaría indicativo). Radical de «ils voient»: qu'un adolescent voie.",
+      "fr": "« Je ne crois pas que » exprime une opinion niée : subjonctif. Voir garde le radical d'« ils voient » : qu'un adolescent voie."
+    }
+  },
+  {
+    "id": "m-025", "kind": "mood", "context": "daily",
+    "sentence": "Mon entraîneur de hockey veut que tu ___ (aller) à la patinoire dès 6 h du matin.",
+    "verb": "aller", "mood": "subj", "stem": "irregular",
+    "accepted": ["ailles"], "ruleId": "SUBJ-will",
+    "why": {
+      "es": "«Vouloir que» expresa voluntad y pide subjuntivo. «Aller» es irregular: que tu ailles.",
+      "fr": "« Vouloir que » exprime la volonté et demande le subjonctif. Aller est irrégulier : que tu ailles."
+    }
+  }
+]

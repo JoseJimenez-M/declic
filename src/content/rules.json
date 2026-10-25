@@ -1,1 +1,258 @@
-[]
+[
+  {
+    "id": "IMP-background",
+    "title": { "es": "Imparfait: el escenario", "fr": "Imparfait : le décor" },
+    "explanation": {
+      "es": "El imparfait (description) pinta el escenario de la historia, igual que el copretérito: lo que había o pasaba alrededor mientras la acción avanza. Ejemplo: «Il y avait de la fumée et les voisins criaient.»",
+      "fr": "L'imparfait (description) installe le décor de l'histoire : ce qui existe ou se passe autour pendant que l'action avance. Exemple : « Il y avait de la fumée et les voisins criaient. »"
+    }
+  },
+  {
+    "id": "IMP-habit",
+    "title": { "es": "Imparfait: costumbre pasada", "fr": "Imparfait : habitude passée" },
+    "explanation": {
+      "es": "Una habitude (costumbre repetida del pasado) va en imparfait, como el copretérito «tomaba» o «solía tomar». Marcadores típicos: tous les jours, chaque été, souvent. Ejemplo: «Je prenais le métro tous les jours.»",
+      "fr": "Une habitude du passé (tous les jours, chaque été, souvent, d'habitude) se met à l'imparfait. Exemple : « Je prenais le métro tous les jours. »"
+    }
+  },
+  {
+    "id": "IMP-state",
+    "title": { "es": "Imparfait: estados y clima", "fr": "Imparfait : états et météo" },
+    "explanation": {
+      "es": "Edad, clima, hora, sentimientos y estados físicos o mentales van en imparfait, igual que el copretérito (tenía, hacía, estaba). Ejemplo: «Il était huit heures et j'avais peur.»",
+      "fr": "L'âge, la météo, l'heure, les sentiments et les états physiques ou mentaux se mettent à l'imparfait. Exemple : « Il était huit heures et j'avais peur. »"
+    }
+  },
+  {
+    "id": "IMP-ongoing-interrupted",
+    "title": { "es": "Imparfait: acción en curso", "fr": "Imparfait : action en cours" },
+    "explanation": {
+      "es": "La acción que estaba en curso (sin principio ni fin a la vista) cuando pasó otra cosa va en imparfait, como «leía» en «leía cuando sonó el teléfono». Ejemplo: «Je lisais quand le téléphone a sonné.»",
+      "fr": "L'action en cours au moment où un autre événement arrive (on n'en voit ni le début ni la fin) se met à l'imparfait. Exemple : « Je lisais quand le téléphone a sonné. »"
+    }
+  },
+  {
+    "id": "IMP-simultaneous",
+    "title": { "es": "Imparfait: pendant que", "fr": "Imparfait : pendant que" },
+    "explanation": {
+      "es": "Con pendant que, dos acciones paralelas en curso van las dos en imparfait, como «mientras cocinaba, él veía la tele». Ejemplo: «Pendant que je cuisinais, il regardait la télé.»",
+      "fr": "Avec pendant que, deux actions parallèles en cours se mettent toutes les deux à l'imparfait. Exemple : « Pendant que je cuisinais, il regardait la télé. »"
+    }
+  },
+  {
+    "id": "PC-punctual-event",
+    "title": { "es": "Passé composé: hecho puntual", "fr": "Passé composé : fait ponctuel" },
+    "explanation": {
+      "es": "Un hecho único y terminado (action ponctuelle) va en passé composé, como el pretérito: «llamé», «llegó». Ejemplo: «Hier, j'ai appelé le propriétaire.»",
+      "fr": "Un fait unique et terminé (action ponctuelle) se met au passé composé. Exemple : « Hier, j'ai appelé le propriétaire. »"
+    }
+  },
+  {
+    "id": "PC-sequence",
+    "title": { "es": "Passé composé: hechos sucesivos", "fr": "Passé composé : faits successifs" },
+    "explanation": {
+      "es": "Cuando los hechos se suceden uno tras otro (d'abord, puis, ensuite), cada uno hace avanzar la historia y va en passé composé, como una cadena de pretéritos. Ejemplo: «Il a ouvert la porte, il est entré, puis il a crié.»",
+      "fr": "Quand des événements se suivent (d'abord, puis, ensuite), chacun fait avancer l'histoire et se met au passé composé. Exemple : « Il a ouvert la porte, il est entré, puis il a crié. »"
+    }
+  },
+  {
+    "id": "PC-interrupting-event",
+    "title": { "es": "Hecho que interrumpe", "fr": "Événement qui interrompt" },
+    "explanation": {
+      "es": "El hecho puntual que corta una acción en curso va en passé composé, y la acción cortada se queda en imparfait. Ejemplo: «Elle marchait quand elle est tombée.»",
+      "fr": "L'événement ponctuel qui coupe une action en cours se met au passé composé, et l'action coupée reste à l'imparfait. Exemple : « Elle marchait quand elle est tombée. »"
+    }
+  },
+  {
+    "id": "PC-sudden",
+    "title": { "es": "Soudain: passé composé", "fr": "Soudain : passé composé" },
+    "explanation": {
+      "es": "Soudain, tout à coup y brusquement anuncian algo imprevisto y piden passé composé, como «de repente» + pretérito. Ejemplo: «Tout à coup, les lumières se sont éteintes.»",
+      "fr": "Soudain, tout à coup et brusquement annoncent un fait imprévu : on emploie le passé composé. Exemple : « Tout à coup, les lumières se sont éteintes. »"
+    }
+  },
+  {
+    "id": "PC-bounded-duration",
+    "title": { "es": "Duración delimitada", "fr": "Durée délimitée" },
+    "explanation": {
+      "es": "Si la duración tiene principio y fin (pendant deux heures, de 8 h à 10 h), el hecho está terminado y va en passé composé, como el pretérito: «esperé dos horas». Ejemplo: «J'ai attendu pendant deux heures.»",
+      "fr": "Une durée avec un début et une fin (pendant deux heures, de 8 h à 10 h) décrit un fait terminé : passé composé. Exemple : « J'ai attendu pendant deux heures. »"
+    }
+  },
+  {
+    "id": "PC-counted-repetition",
+    "title": { "es": "Repetición contada", "fr": "Répétition comptée" },
+    "explanation": {
+      "es": "Si dices cuántas veces pasó (une fois, deux fois, trois fois), el hecho es contado y terminado: passé composé. Sin número, una repetición habitual iría en imparfait. Ejemplo: «J'ai appelé trois fois.»",
+      "fr": "Quand on dit combien de fois (une fois, deux fois, trois fois), le fait est compté et terminé : passé composé. Sans nombre, une répétition habituelle est à l'imparfait. Exemple : « J'ai appelé trois fois. »"
+    }
+  },
+  {
+    "id": "AUX-avoir-default",
+    "title": { "es": "Avoir: auxiliar por defecto", "fr": "Avoir : auxiliaire par défaut" },
+    "explanation": {
+      "es": "La mayoría de los verbos forman el passé composé con avoir, como «haber» en español: j'ai mangé, elle a fini, nous avons compris. Solo unos cuantos usan être. El participio no concuerda con el sujeto.",
+      "fr": "La plupart des verbes forment le passé composé avec avoir : j'ai mangé, elle a fini, nous avons compris. Seuls quelques verbes prennent être. Le participe ne s'accorde pas avec le sujet."
+    }
+  },
+  {
+    "id": "AUX-etre-motion",
+    "title": { "es": "Être: verbos de movimiento", "fr": "Être : verbes de mouvement" },
+    "explanation": {
+      "es": "Estos verbos de movimiento o de cambio de estado forman el passé composé con être: aller, venir, arriver, partir, entrer, sortir, monter, descendre, rester, tomber, naître, mourir, retourner, passer, rentrer, devenir, revenir. El participio concuerda con el sujeto: elle est arrivée, ils sont partis.",
+      "fr": "Ces verbes de mouvement ou de changement d'état prennent être au passé composé : aller, venir, arriver, partir, entrer, sortir, monter, descendre, rester, tomber, naître, mourir, retourner, passer, rentrer, devenir, revenir. Le participe s'accorde avec le sujet : elle est arrivée, ils sont partis."
+    },
+    "trap": {
+      "es": "En español siempre se usa «haber» (he ido, ha llegado), pero en francés estos verbos piden être: «je suis allé», nunca «j'ai allé».",
+      "fr": "L'espagnol emploie toujours « haber » (he ido, ha llegado), mais ici le français exige être : « je suis allé », jamais « j'ai allé »."
+    }
+  },
+  {
+    "id": "AUX-etre-pronominal",
+    "title": { "es": "Être: verbos pronominales", "fr": "Être : verbes pronominaux" },
+    "explanation": {
+      "es": "Todos los verbos pronominales (se lever, se réveiller, s'habiller...) forman el passé composé con être, y el pronombre va antes del auxiliar. El participio concuerda en general con el sujeto: elle s'est levée, ils se sont réveillés.",
+      "fr": "Tous les verbes pronominaux (se lever, se réveiller, s'habiller...) prennent être au passé composé, avec le pronom avant l'auxiliaire. Le participe s'accorde en général avec le sujet : elle s'est levée, ils se sont réveillés."
+    },
+    "trap": {
+      "es": "En español «me he levantado» usa «haber», pero en francés el auxiliar es siempre être: «je me suis levé», nunca «je m'ai levé».",
+      "fr": "L'espagnol dit « me he levantado » avec « haber », mais en français l'auxiliaire est toujours être : « je me suis levé », jamais « je m'ai levé »."
+    }
+  },
+  {
+    "id": "AUX-transitive-switch",
+    "title": { "es": "Avoir con complemento directo", "fr": "Avoir avec un COD" },
+    "explanation": {
+      "es": "Sortir, monter, descendre, passer, rentrer y retourner pasan a avoir cuando llevan un complemento directo (COD): il a sorti la poubelle, elle a monté les valises. Sin COD siguen con être: il est sorti, elle est montée.",
+      "fr": "Sortir, monter, descendre, passer, rentrer et retourner prennent avoir quand ils ont un complément d'objet direct (COD) : il a sorti la poubelle, elle a monté les valises. Sans COD, ils gardent être : il est sorti, elle est montée."
+    }
+  },
+  {
+    "id": "SUBJ-necessity",
+    "title": { "es": "Subjonctif: necesidad", "fr": "Subjonctif : nécessité" },
+    "explanation": {
+      "es": "Las expresiones de necesidad (il faut que, il est nécessaire que, il est essentiel que) piden subjonctif, como en «es necesario que vengas». Ejemplo: «Il faut que tu viennes demain.»",
+      "fr": "Il faut que, il est nécessaire que et il est essentiel que expriment la nécessité et demandent le subjonctif. Exemple : « Il faut que tu viennes demain. »"
+    }
+  },
+  {
+    "id": "SUBJ-will",
+    "title": { "es": "Subjonctif: voluntad", "fr": "Subjonctif : volonté" },
+    "explanation": {
+      "es": "Vouloir, souhaiter, exiger, préférer y demander que piden subjonctif, como «quiero que vengas»: «Je veux que tu viennes.» Con el mismo sujeto se usa el infinitivo: «Je veux partir.»",
+      "fr": "Vouloir, souhaiter, exiger, préférer et demander que demandent le subjonctif : « Je veux que tu viennes. » Avec le même sujet, on utilise l'infinitif : « Je veux partir. »"
+    }
+  },
+  {
+    "id": "SUBJ-emotion",
+    "title": { "es": "Subjonctif: emoción", "fr": "Subjonctif : émotion" },
+    "explanation": {
+      "es": "Las expresiones de emoción (être content que, avoir peur que, regretter que, être surpris que) piden subjonctif, como en «me alegra que estés aquí». Ejemplo: «Je suis content que tu sois là.»",
+      "fr": "Après une expression de sentiment (être content que, avoir peur que, regretter que, être surpris que), on emploie le subjonctif. Exemple : « Je suis content que tu sois là. »"
+    }
+  },
+  {
+    "id": "SUBJ-doubt",
+    "title": { "es": "Subjonctif: duda", "fr": "Subjonctif : doute" },
+    "explanation": {
+      "es": "La duda o la posibilidad incierta (douter que, il est possible que, il se peut que, ne pas être sûr que) piden subjonctif, igual que en «dudo que venga». Ejemplo: «Je doute qu'il vienne.»",
+      "fr": "Le doute ou la possibilité incertaine (douter que, il est possible que, il se peut que, ne pas être sûr que) demande le subjonctif. Exemple : « Je doute qu'il vienne. »"
+    }
+  },
+  {
+    "id": "SUBJ-negated-opinion",
+    "title": { "es": "Opinión negada: subjonctif", "fr": "Opinion niée : subjonctif" },
+    "explanation": {
+      "es": "Penser, croire y trouver en forma negativa (ne pas penser que) expresan una opinión dudosa y piden subjonctif, como en «no creo que venga». Ejemplo: «Je ne pense pas qu'il vienne.» En forma afirmativa van con indicatif.",
+      "fr": "Penser, croire et trouver à la forme négative (ne pas penser que) expriment une opinion incertaine et demandent le subjonctif. Exemple : « Je ne pense pas qu'il vienne. » À la forme affirmative, on utilise l'indicatif."
+    }
+  },
+  {
+    "id": "SUBJ-impersonal-judgement",
+    "title": { "es": "Subjonctif: juicio impersonal", "fr": "Subjonctif : jugement impersonnel" },
+    "explanation": {
+      "es": "Un juicio impersonal (il est important que, il est dommage que, il vaut mieux que, il est normal que) pide subjonctif, como en «es importante que vengas». Ejemplo: «Il est dommage que tu partes.»",
+      "fr": "Un jugement impersonnel (il est important que, il est dommage que, il vaut mieux que, il est normal que) demande le subjonctif. Exemple : « Il est dommage que tu partes. »"
+    }
+  },
+  {
+    "id": "SUBJ-conjunction",
+    "title": { "es": "Conjunciones + subjonctif", "fr": "Conjonctions + subjonctif" },
+    "explanation": {
+      "es": "Estas conjunciones piden siempre subjonctif: bien que, pour que, avant que, à condition que, sans que. Ejemplo: «Bien qu'il pleuve, je sors.»",
+      "fr": "Ces conjonctions demandent toujours le subjonctif : bien que, pour que, avant que, à condition que, sans que. Exemple : « Bien qu'il pleuve, je sors. »"
+    },
+    "trap": {
+      "es": "En español «aunque» puede llevar indicativo («aunque llueve»), pero en francés «bien que» nunca: siempre subjonctif («bien qu'il pleuve», no «bien qu'il pleut»).",
+      "fr": "En espagnol, « aunque » peut être suivi de l'indicatif (« aunque llueve »), mais en français « bien que » n'accepte jamais l'indicatif : « bien qu'il pleuve », pas « bien qu'il pleut »."
+    }
+  },
+  {
+    "id": "IND-affirmed-opinion",
+    "title": { "es": "Opinión afirmada: indicatif", "fr": "Opinion affirmée : indicatif" },
+    "explanation": {
+      "es": "Penser, croire y trouver en forma afirmativa expresan una opinión firme y piden indicatif, como en «creo que viene». Ejemplo: «Je pense qu'il vient.»",
+      "fr": "Penser, croire et trouver à la forme affirmative expriment une opinion ferme et se construisent avec l'indicatif. Exemple : « Je pense qu'il vient. »"
+    }
+  },
+  {
+    "id": "IND-certainty",
+    "title": { "es": "Certeza: indicatif", "fr": "Certitude : indicatif" },
+    "explanation": {
+      "es": "La certeza (je suis sûr que, il est évident que, il est certain que) va con indicatif, como en «estoy seguro de que viene». Ejemplo: «Il est évident qu'elle a raison.» Con negación («je ne suis pas sûr que») cambia a subjonctif.",
+      "fr": "La certitude (je suis sûr que, il est évident que, il est certain que) se construit avec l'indicatif. Exemple : « Il est évident qu'elle a raison. » À la forme négative (« je ne suis pas sûr que »), on passe au subjonctif."
+    }
+  },
+  {
+    "id": "IND-esperer",
+    "title": { "es": "Espérer: indicatif", "fr": "Espérer : indicatif" },
+    "explanation": {
+      "es": "Espérer que va con indicatif: futur si es algo que vendrá, présent si es algo actual. Ejemplo: «J'espère que tu viendras demain.»",
+      "fr": "Espérer que se construit avec l'indicatif : futur pour ce qui va arriver, présent pour ce qui est vrai maintenant. Exemple : « J'espère que tu viendras demain. »"
+    },
+    "trap": {
+      "es": "En español «espero que» lleva subjuntivo («espero que vengas»), pero en francés se dice «j'espère que tu viendras», nunca «j'espère que tu viennes».",
+      "fr": "En espagnol, « espero que » est suivi du subjonctif (« espero que vengas »), mais en français : « j'espère que tu viendras », jamais « j'espère que tu viennes »."
+    }
+  },
+  {
+    "id": "IND-apres-que",
+    "title": { "es": "Après que: indicatif", "fr": "Après que : indicatif" },
+    "explanation": {
+      "es": "Après que va con indicatif, sobre todo en passé composé o futur antérieur: «Après qu'il est parti, j'ai appelé.» Es lo contrario de avant que, que sí pide subjonctif.",
+      "fr": "Après que se construit avec l'indicatif, surtout au passé composé ou au futur antérieur : « Après qu'il est parti, j'ai appelé. » C'est l'inverse d'avant que, qui demande le subjonctif."
+    },
+    "trap": {
+      "es": "En español «después de que» lleva subjuntivo cuando habla del futuro («después de que termines»), pero en francés va indicatif: «après que tu auras fini», nunca «après que tu aies fini».",
+      "fr": "En espagnol, pour le futur, « después de que » est suivi du subjonctif (« después de que termines »), mais en français : « après que tu auras fini », jamais « après que tu aies fini »."
+    }
+  },
+  {
+    "id": "IND-quand-futur",
+    "title": { "es": "Quand + futur", "fr": "Quand + futur" },
+    "explanation": {
+      "es": "Con quand, lorsque, dès que y aussitôt que, si la acción es futura se usa el futur (futur antérieur si ya habrá terminado). Ejemplo: «Quand tu viendras, on mangera.»",
+      "fr": "Après quand, lorsque, dès que et aussitôt que, on emploie le futur si l'action est à venir (futur antérieur si elle sera déjà terminée). Exemple : « Quand tu viendras, on mangera. »"
+    },
+    "trap": {
+      "es": "En español, para el futuro se usa subjuntivo («cuando vengas», «en cuanto llegues»), pero en francés va el futur (indicatif): «quand tu viendras», «dès que tu arriveras», nunca «quand tu viennes».",
+      "fr": "En espagnol, pour le futur, on met le subjonctif (« cuando vengas », « en cuanto llegues »), mais en français : « quand tu viendras », « dès que tu arriveras », jamais « quand tu viennes »."
+    }
+  },
+  {
+    "id": "STEM-regular",
+    "title": { "es": "Subjonctif regular: radicales", "fr": "Subjonctif régulier : radicaux" },
+    "explanation": {
+      "es": "Se usa el radical de «ils» en el présent (ils viennent: vienn-) para je, tu, il/elle, ils/elles, y el radical de «nous» (nous venons: ven-) para nous y vous. Terminaciones: -e, -es, -e, -ions, -iez, -ent. Ejemplo: que je vienne, que nous venions.",
+      "fr": "On prend le radical de « ils » au présent (ils viennent : vienn-) pour je, tu, il/elle, ils/elles, et le radical de « nous » (nous venons : ven-) pour nous et vous. Terminaisons : -e, -es, -e, -ions, -iez, -ent. Exemple : que je vienne, que nous venions."
+    }
+  },
+  {
+    "id": "STEM-irregular",
+    "title": { "es": "Subjonctif: formas irregulares", "fr": "Subjonctif : formes irrégulières" },
+    "explanation": {
+      "es": "Estos verbos tienen un radical irregular en subjonctif y hay que memorizarlos. Formas clave: être (sois, soit, soyons), avoir (aie, ait, ayons), aller (aille, allions), faire (fasse), pouvoir (puisse), savoir (sache), vouloir (veuille, voulions), falloir (faille), valoir (vaille).",
+      "fr": "Ces verbes ont un radical irrégulier au subjonctif, à apprendre par cœur. Formes clés : être (sois, soit, soyons), avoir (aie, ait, ayons), aller (aille, allions), faire (fasse), pouvoir (puisse), savoir (sache), vouloir (veuille, voulions), falloir (faille), valoir (vaille)."
+    }
+  }
+]
